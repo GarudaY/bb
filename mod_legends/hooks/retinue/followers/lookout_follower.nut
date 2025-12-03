@@ -3,19 +3,19 @@
 	{
 		this.follower.create();
 		this.m.ID = "follower.lookout";
-		this.m.Name = "Outrider's Post";
-		this.m.Description = "Having a quick Lookout with sharp eyes travel in advance of the company can prove invaluable in being aware of dangers and points of interests before others become aware of the company.";
-		this.m.Image = "ui/campfire/legend_lookout_01";
-		this.m.Cost = 2500;
-		this.m.Effects = [
-			"Increases your sight radius by 25%",
-			"Reveals extended information about footprints"
-		];
+                this.m.Name = "Пост разведчиков";
+                this.m.Description = "Быстрый дозорный с острым зрением, отправленный впереди отряда, помогает вовремя узнать об опасностях и примечательных местах, прежде чем те заметят сам отряд.";
+                this.m.Image = "ui/campfire/legend_lookout_01";
+                this.m.Cost = 2500;
+                this.m.Effects = [
+                        "Увеличивает радиус обзора на 25%",
+                        "Показывает расширенную информацию о следах"
+                ];
 
-		this.addSkillRequirement("Have someone with the Lookout perk. Guaranteed on Thief, Poacher, Nomad and many others", [
-			::Legends.Perks.getID(::Legends.Perk.LegendLookout),
-			"background.legend_companion_melee",
-			"background.legend_companion_ranged"
+                this.addSkillRequirement("Нанять кого-то с умением 'Дозорный'. Гарантировано у Вора, Браконьера, Кочевника и многих других", [
+                        ::Legends.Perks.getID(::Legends.Perk.LegendLookout),
+                        "background.legend_companion_melee",
+                        "background.legend_companion_ranged"
 		]);
 	}
 

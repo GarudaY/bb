@@ -33,7 +33,7 @@
 	o.queryRosterInformation = function()
 	{
 		local result = queryRosterInformation();
-		result.SubTitle = "Have your men train for combat and learn from veterans";
+                result.SubTitle = "Пусть ваши люди тренируются для боя и учатся у ветеранов";
 		local brothers = this.World.getPlayerRoster().getAll();
 
 		foreach (bro in brothers) {
@@ -47,14 +47,14 @@
 						element.Training.push({
 							id = 100,
 							icon = "skills/status_effect_75.png",
-							name = "Thorough Training",
+                                                        name = "Углублённая тренировка",
 							tooltip = "world-town-screen.training-dialog-module.Train100",
 							price = this.getPrice(trait, 1)
 						});
 						element.Training.push({
 							id = 101,
 							icon = "skills/status_effect_75.png",
-							name = "Intense Training",
+                                                        name = "Интенсивная тренировка",
 							tooltip = "world-town-screen.training-dialog-module.Train101",
 							price = this.getPrice(trait, 3)
 						});
@@ -63,7 +63,7 @@
 						element.Training.push({
 							id = 102,
 							icon = "skills/status_effect_75.png",
-							name = "Merciless Regimen",
+                                                        name = "Безжалостный режим",
 							tooltip = "world-town-screen.training-dialog-module.Train102",
 							price = ::Legends.Training.CostRerollBase + trait.m.TraitRerollCount * ::Legends.Training.CostRerollScaled
 						});
@@ -81,14 +81,14 @@
 				training.push({
 					id = 100,
 					icon = "skills/status_effect_75.png",
-					name = "Thorough Training",
+                                        name = "Углублённая тренировка",
 					tooltip = "world-town-screen.training-dialog-module.Train100",
 					price = this.getPrice(trait, 1)
 				});
 				training.push({
 					id = 101,
 					icon = "skills/status_effect_75.png",
-					name = "Intense Training",
+                                        name = "Интенсивная тренировка",
 					tooltip = "world-town-screen.training-dialog-module.Train101",
 					price = this.getPrice(trait, 3)
 				});
@@ -97,7 +97,7 @@
 				training.push({
 					id = 102,
 					icon = "skills/status_effect_75.png",
-					name = "Merciless Regimen",
+                                    name = "Безжалостный режим",
 					tooltip = "world-town-screen.training-dialog-module.Train102",
 					price = ::Legends.Training.CostRerollBase + trait.m.TraitRerollCount * ::Legends.Training.CostRerollScaled
 				});
@@ -126,7 +126,7 @@
 					local traitConst = ::Legends.Training.addRandomTrainingTrait(entity);
 					trait.finishedTraining(traitConst);
 					::Time.scheduleEvent(::TimeUnit.Real, 200, this.showTraitPopup.bindenv(this),
-						::format("Trait [color=%s]%s[/color] gained. [color=%s]1[/color] perk point granted.", ::Const.UI.Color.PositiveEventValue, ::Legends.Traits.get(entity, traitConst).getName(), ::Const.UI.Color.PositiveEventValue)
+                                        ::format("Получена черта [color=%s]%s[/color]. Выдано [color=%s]1[/color] очко таланта.", ::Const.UI.Color.PositiveEventValue, ::Legends.Traits.get(entity, traitConst).getName(), ::Const.UI.Color.PositiveEventValue)
 					);
 				}
 				break;
@@ -141,7 +141,7 @@
 					local traitConst = ::Legends.Training.addRandomTrainingTrait(entity);
 					trait.finishedTraining(traitConst);
 					::Time.scheduleEvent(::TimeUnit.Real, 200, this.showTraitPopup.bindenv(this),
-						::format("Trait [color=%s]%s[/color] gained. [color=%s]1[/color] perk point granted.", ::Const.UI.Color.PositiveEventValue, ::Legends.Traits.get(entity, traitConst).getName(), ::Const.UI.Color.PositiveEventValue)
+                                        ::format("Получена черта [color=%s]%s[/color]. Выдано [color=%s]1[/color] очко таланта.", ::Const.UI.Color.PositiveEventValue, ::Legends.Traits.get(entity, traitConst).getName(), ::Const.UI.Color.PositiveEventValue)
 					);
 				}
 				break;
@@ -153,7 +153,7 @@
 				local traitConst = ::Legends.Training.addRandomTrainingTrait(entity);
 				trait.finishedTraining(traitConst);
 				::Time.scheduleEvent(::TimeUnit.Real, 200, this.showTraitPopup.bindenv(this),
-					::format("Trained trait changed to [color=%s]%s[/color].", ::Const.UI.Color.PositiveEventValue, ::Legends.Traits.get(entity, traitConst).getName())
+                                ::format("Тренируемая черта изменена на [color=%s]%s[/color].", ::Const.UI.Color.PositiveEventValue, ::Legends.Traits.get(entity, traitConst).getName())
 				);
 				break;
 		}
