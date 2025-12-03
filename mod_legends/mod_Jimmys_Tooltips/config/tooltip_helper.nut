@@ -121,21 +121,21 @@
 				text = text + (" [color=%negative%]" + "x" + stacks[name] + "[/color]");
 			}
 
-			if(title == "Ammo" && this.isKindOf(_entity, "player")){
+                        if(title == "Боеприпасы" && this.isKindOf(_entity, "player")){
 				tooltip.push({
 					id = startID + i,
 					type = "text",
 					icon = checkForIcon(prependIcon, item),
-					text = text + " Ammo: " + item.getAmmo() + " / " + item.getAmmoMax()
-				});
-			} else if (title == "Ammo" && !this.isKindOf(_entity, "player"))
-			{
-				tooltip.push({
-					id = startID + i,
-					type = "text",
-					icon = checkForIcon(prependIcon, item),
-					text = text + " " + "Ammo: infinite"
-				});
+                                        text = text + " Боеприпасы: " + item.getAmmo() + " / " + item.getAmmoMax()
+                                });
+                        } else if (title == "Боеприпасы" && !this.isKindOf(_entity, "player"))
+                        {
+                                tooltip.push({
+                                        id = startID + i,
+                                        type = "text",
+                                        icon = checkForIcon(prependIcon, item),
+                                        text = text + " " + "Боеприпасы: бесконечно"
+                                });
 			}
 			else{
 				tooltip.push({
@@ -246,7 +246,7 @@
 				id = 2048,
 				type = "hint",
 				icon = "ui/icons/mouse_right_button.png",
-				text = "Expand tooltip"
+                                text = "Развернуть подсказку"
 			});
 			return tooltip;
 		}
@@ -293,7 +293,7 @@
 
 					local isUnderIronWill = function ()
 					{
-						local pattern = this.regexp("Iron Will");
+                                                local pattern = this.regexp("Iron Will");
 
 						foreach( _, row in addedTooltipHints )
 						{
@@ -318,14 +318,14 @@
 					}
 					else
 					{
-						injuryRow.text += "[color=%positive%]" + " (Iron Will)[/color]";
+                                                injuryRow.text += "[color=%positive%]" + " (Несгибаемая воля)[/color]";
 					}
 
 					tooltip.push(injuryRow);
 				}
 
 				statusEffects = removeDuplicates(statusEffects);
-				pushSection(statusEffects, "Status perks", 150, 1);
+                                pushSection(statusEffects, "Статусные умения", 150, 1);
 			}
 			else
 			{
@@ -345,11 +345,11 @@
 
 		local activePerks = _entity.getSkills().query(this.Const.SkillType.Active, false, true);
 		activePerks = removeDuplicates(activePerks);
-		pushSection(activePerks, "Usable perks", 200, 1);
+                pushSection(activePerks, "Активные умения", 200, 1);
 		local thresholdToCompact = 0;
 		local perks = _entity.getSkills().query(this.Const.SkillType.Perk, false, true);
 		perks = removeDuplicates(perks);
-		pushSectionName(perks, "Perks", 300);
+                pushSectionName(perks, "Умения", 300);
 
 		if (perks.len() < thresholdToCompact)
 		{
@@ -395,7 +395,7 @@
 			if(mainhand != null){
 				local name = mainhand.getName();
 				//::logInfo(name);
-				pushSectionName(mainhand, "Equipped Items:", 400);
+                                pushSectionName(mainhand, "Надетые предметы:", 400);
 				if(mainhand.isItemType(this.Const.Items.ItemType.Ammo)){
 					tooltip.push({
 						id = 401,
@@ -440,7 +440,7 @@
 			foreach (item in items){
 				local name = item.getName();
 				// ::logInfo(name);
-				pushSectionName(item, "Bags", 430);
+                                pushSectionName(item, "Сумки", 430);
 				if(item.isItemType(this.Const.Items.ItemType.Ammo)){
 					tooltip.push({
 						id = 431,
@@ -461,10 +461,10 @@
 		}
 
 		local accessories = _entity.getItems().getAllItemsAtSlot(this.Const.ItemSlot.Accessory);
-		pushSection(accessories, "Accessory", 600, 0, "ui/items/");
+                pushSection(accessories, "Аксессуар", 600, 0, "ui/items/");
 
 		local ammos = _entity.getItems().getAllItemsAtSlot(this.Const.ItemSlot.Ammo);
-		pushSection(ammos, "Ammo", 700, 0, "ui/items/");
+                pushSection(ammos, "Боеприпасы", 700, 0, "ui/items/");
 
 		if(_targetedWithSkill == null && ::ModJimmysTooltips.Mod.ModSettings.getSetting("Skills").getValue() && mainhand != null){
 			local skills = mainhand.getSkills();
@@ -482,11 +482,11 @@
 		}
 
 		local itemsOnGround = _entity.getTile().Items;
-		pushSection(itemsOnGround, "Item" + getPlural(itemsOnGround) + " on ground", 700, 0, "ui/items/", true);
-	}
-	else
-	{
-		pushSectionName("ModJimmysTooltips_ShowLootChance", "Chance to loot equipment:", 700);
+                pushSection(itemsOnGround, "Предмет" + getPlural(itemsOnGround) + " на земле", 700, 0, "ui/items/", true);
+        }
+        else
+        {
+                pushSectionName("ModJimmysTooltips_ShowLootChance", "Шанс получить снаряжение:", 700);
 		tooltip.top().type = "hint"; // move this to hint to separate as sections
 		tooltip.extend(::ModJimmysTooltips.modGetEquipmentLootChance(_entity, _targetedWithSkill, 700));
 	}
@@ -497,37 +497,37 @@
 			id = 600,
 			type = "hint",
 			icon = "ui/icons/melee_skill.png",
-			text = "[color=%positive%]"+properties.getMeleeSkill()+"[/color] Melee Skill"
+                        text = "[color=%positive%]"+properties.getMeleeSkill()+"[/color] Навык ближнего боя"
 		});
 		tooltip.push({
 			id = 601,
 			type = "hint",
 			icon = "ui/icons/melee_defense.png",
-			text = "[color=%positive%]"+properties.getMeleeDefense()+"[/color] Melee Defense"
+                        text = "[color=%positive%]"+properties.getMeleeDefense()+"[/color] Защита в ближнем бою"
 		});
 		tooltip.push({
 			id = 602,
 			type = "hint",
 			icon = "ui/icons/ranged_skill.png",
-			text = "[color=%positive%]"+properties.getRangedSkill()+"[/color] Ranged Skill"
+                        text = "[color=%positive%]"+properties.getRangedSkill()+"[/color] Навык дальнего боя"
 		});
 		tooltip.push({
 			id = 603,
 			type = "hint",
 			icon = "ui/icons/ranged_defense.png",
-			text = "[color=%positive%]"+properties.getRangedDefense()+"[/color] Ranged Defense"
+                        text = "[color=%positive%]"+properties.getRangedDefense()+"[/color] Защита от дальних атак"
 		});
 		tooltip.push({
 			id = 604,
 			type = "hint",
 			icon = "ui/icons/initiative.png",
-			text = "[color=%positive%]"+_entity.getInitiative()+"[/color] Initiative"
+                        text = "[color=%positive%]"+_entity.getInitiative()+"[/color] Инициатива"
 		});
 		tooltip.push({
 			id = 605,
 			type = "hint",
 			icon = "ui/icons/bravery.png",
-			text = "[color=%positive%]"+_entity.getBravery()+"[/color] Resolve"
+                        text = "[color=%positive%]"+_entity.getBravery()+"[/color] Решительность"
 			divider = "bottom" // add a diviver
 		});
 	}
@@ -537,18 +537,18 @@
 			id = 606,
 			type = "hint",
 			icon = "ui/skin/icon_wait.png",
-			text = "Press \""
-			+ ::MSU.System.Keybinds.KeybindsByMod[::ModJimmysTooltips.ID].rawget("updateTooltip").getKeyCombinations()
-			+ "\" key to show the chance to loot equipment"
+                        text = "Нажмите клавишу \""
+                        + ::MSU.System.Keybinds.KeybindsByMod[::ModJimmysTooltips.ID].rawget("updateTooltip").getKeyCombinations()
+                        + "\" чтобы увидеть шанс получить снаряжение"
 		});
 	else
 		tooltip.push({
 			id = 606,
 			type = "hint",
 			icon = "ui/skin/icon_wait.png",
-			text = "Press \""
-			+ ::MSU.System.Keybinds.KeybindsByMod[::ModJimmysTooltips.ID].rawget("updateTooltip").getKeyCombinations()
-			+ "\" key to show the default tooltip"
+                        text = "Нажмите клавишу \""
+                        + ::MSU.System.Keybinds.KeybindsByMod[::ModJimmysTooltips.ID].rawget("updateTooltip").getKeyCombinations()
+                        + "\" чтобы показать стандартную подсказку"
 		});
 
 	return tooltip;
@@ -556,11 +556,11 @@
 
 local function colorizeInRed( _text )
 {
-	return "[color=%negative%]" + _text + "[/color]"
+        return "[color=%negative%]" + _text + "[/color]"
 };
 local function colorizeInGreen( _text )
 {
-	return "[color=%positive%]" + _text + "[/color]"
+        return "[color=%positive%]" + _text + "[/color]"
 }
 
 ::ModJimmysTooltips.modGetEquipmentLootChance <- function( _entity, _targetedWithSkill = null, _startID = 0 )
@@ -569,7 +569,7 @@ local function colorizeInGreen( _text )
 		return [{
 			id = _startID,
 			type = "hint",
-			text = colorizeInRed("Can\'t loot any equipment from this entity")
+                        text = colorizeInRed("Нельзя получить снаряжение с этой цели")
 			divider = "bottom" // add a diviver
 		}];
 
