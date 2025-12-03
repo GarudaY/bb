@@ -1,163 +1,163 @@
 // perk names introduced in legends
-::Const.Strings.PerkName.LegendAnchor <- "Anchor";
-::Const.Strings.PerkName.LegendFirstBlood <- "First Blood";
-::Const.Strings.PerkName.LegendBallistics <- "Ballistics";
-::Const.Strings.PerkName.LegendBackswing <- "Backswing";
-::Const.Strings.PerkName.LegendDebilitate <- "Debilitate";
-::Const.Strings.PerkName.LegendPointBlank <- "Point Blank";
-::Const.Strings.PerkName.LegendSlaughterer <- "Slaughterer";
-::Const.Strings.PerkName.LegendBetweenTheEyes <- "Between the Eyes";
-::Const.Strings.PerkName.LegendSkillfulStacking <- "Skillful Stacking";
-::Const.Strings.PerkName.LegendEfficientPacking <- "Efficient Packing";
-::Const.Strings.PerkName.LegendAmmoBinding <- "Ammunition Binding";
-::Const.Strings.PerkName.LegendAmmoBundles <- "Ammunition Bundles";
-::Const.Strings.PerkName.LegendMedPackages <- "Medicine Packages";
-::Const.Strings.PerkName.LegendMedIngredients <- "Medicine Ingredients";
-::Const.Strings.PerkName.LegendToolsDrawers <- "Tools Drawers";
-::Const.Strings.PerkName.LegendToolsSpares <- "Spare Parts";
-::Const.Strings.PerkName.LegendBarterConvincing <- "Convincing Proposals";
-::Const.Strings.PerkName.LegendBarterTrustworthy <- "Trustworthy Demeanour";
-::Const.Strings.PerkName.LegendBribe <- "Bribe";
-::Const.Strings.PerkName.LegendOffBookDeal <- "Off-Book Deal";
-::Const.Strings.PerkName.LegendRebound <- "Rebound";
-::Const.Strings.PerkName.LegendFeint <- "Feint";
-::Const.Strings.PerkName.LegendLookout <- "Lookout";
-::Const.Strings.PerkName.LegendBoondockBlade <- "Boondock Blade";
-::Const.Strings.PerkName.LegendVengeance <- "Vengeance";
-::Const.Strings.PerkName.LegendDoubleStrike <- "Double Strike";
-::Const.Strings.PerkName.LegendImmovableObject <- "Immovable Object";
-::Const.Strings.PerkName.LegendBloodyHarvest <- "Bloody Harvest";
-::Const.Strings.PerkName.LegendPerfectFocus <- "Perfect Focus";
-::Const.Strings.PerkName.LegendReturnFavor <- "Return Favor";
-::Const.Strings.PerkName.LegendSprint <- "Sprint";
-::Const.Strings.PerkName.LegendInspire <- "Inspire";
-::Const.Strings.PerkName.LegendAthlete <- "Athlete";
-::Const.Strings.PerkName.LegendQuickStep <- "Quick Step";
-::Const.Strings.PerkName.LegendCascade <- "Cascade strikes";
-::Const.Strings.PerkName.LegendEvasion <- "Evasion";
-::Const.Strings.PerkName.LegendHoldTheLine <- "Hold the line";
-::Const.Strings.PerkName.LegendCoordinatedVolleys <- "Coordinated Volleys";
-::Const.Strings.PerkName.LegendForwardPush <- "Push Forward";
-::Const.Strings.PerkName.LegendComposure <- "Composure";
-::Const.Strings.PerkName.LegendNightvision <- "Nightvision";
-::Const.Strings.PerkName.LegendRelax <- "Relax";
-::Const.Strings.PerkName.LegendUberNimble <- "Nudist";
-::Const.Strings.PerkName.LegendMuscularity <- "Muscularity";
-::Const.Strings.PerkName.LegendBattleheart <- "Battleheart";
-::Const.Strings.PerkName.LegendTrueBeliever <- "True Believer";
-::Const.Strings.PerkName.LegendPoisonImmunity <- "Poison Immunity";
-::Const.Strings.PerkName.LegendInventorAnatomy <- "Anatomical Studies";
-::Const.Strings.PerkName.LegendBerserkerRage <- "Berserker Rage";
-::Const.Strings.PerkName.LegendAssuredConquest <- "Assured Conquest";
-::Const.Strings.PerkName.LegendBigGameHunter <- "Big Game Hunter";
-::Const.Strings.PerkName.LegendSecondWind <- "Second Wind";
-::Const.Strings.PerkName.LegendMarkTarget <- "Mark Target";
-::Const.Strings.PerkName.LegendFieldTriage <- "Field Triage";
-::Const.Strings.PerkName.LegendFieldRepairs <- "Field Repairs";
-::Const.Strings.PerkName.LegendDangerPay <- "Danger Pay";
-::Const.Strings.PerkName.LegendPiercingShot <- "Piercing Shot";
-::Const.Strings.PerkName.LegendTeacher <- "Teacher";
-::Const.Strings.PerkName.LegendForcefulSwing <- "Forceful Swing";
-::Const.Strings.PerkName.LegendSpecSpearWall <- "Spearwaller";
-::Const.Strings.PerkName.LegendThrustMaster <- "Thrust Master";
-::Const.Strings.PerkName.LegendBalance <- "Balance";
-::Const.Strings.PerkName.LegendPerfectFit <- "Perfect Fit";
-::Const.Strings.PerkName.LegendLithe <- "Lithe";
-::Const.Strings.PerkName.LegendInTheZone <- "In the Zone";
-::Const.Strings.PerkName.LegendHidden <- "Camouflage";
-::Const.Strings.PerkName.LegendBlendIn <- "Blend in";
-::Const.Strings.PerkName.LegendDrumsOfWar <- "War Chant";
-::Const.Strings.PerkName.LegendSpecStaffStun <- "Staff Spins";
-::Const.Strings.PerkName.LegendPugilist <- "Pugilist";
-::Const.Strings.PerkName.LegendGrappler <- "Grappler";
-::Const.Strings.PerkName.LegendAmbidextrous <- "Ambidextrous";
-::Const.Strings.PerkName.LegendPummelIntoSubmission <- "Pummel into Submission";
-::Const.Strings.PerkName.LegendFieldTreats <- "Field Treats";
-::Const.Strings.PerkName.LegendSmashingShields <- "Smashing Shields";
-::Const.Strings.PerkName.LegendSmackdown <- "Smackdown";
-::Const.Strings.PerkName.LegendBoneBreaker <- "Bone Breaker";
-::Const.Strings.PerkName.LegendClarity <- "Clarity";
-::Const.Strings.PerkName.LegendAlert <- "Alert";
-::Const.Strings.PerkName.LegendBloodbath <- "Bloodbath";
-::Const.Strings.PerkName.LegendFreedomOfMovement <- "Freedom of Movement";
-::Const.Strings.PerkName.LegendOnslaught <- "Onslaught";
-::Const.Strings.PerkName.LegendBackToBasics <- "Back to Basics";
-::Const.Strings.PerkName.LegendPushTheAdvantage <- "Push The Advantage";
-::Const.Strings.PerkName.LegendMindOverBody <- "Mind over Body";
-::Const.Strings.PerkName.LegendEscapeArtist <- "Escape Artist";
-::Const.Strings.PerkName.LegendGatherer <- "Gatherer";
-::Const.Strings.PerkName.LegendPotionBrewer <- "Potion Brewer";
-::Const.Strings.PerkName.LegendPrepareBleed <- "Exsanguination";
-::Const.Strings.PerkName.LegendPrepareGraze <- "Evisceration";
-::Const.Strings.PerkName.LegendCarnage <- "Carnage";
-::Const.Strings.PerkName.LegendUntouchable <- "Untouchable";
-::Const.Strings.PerkName.LegendAssassinate <- "Assassinate";
-::Const.Strings.PerkName.LegendMealPreperation <- "Meal Preparation";
-::Const.Strings.PerkName.LegendAlcoholBrewing <- "Alcohol Brewing";
-::Const.Strings.PerkName.LegendDrumsOfLife <- "Song of Life";
-::Const.Strings.PerkName.LegendLacerate <- "Lacerate";
-::Const.Strings.PerkName.LegendPeaceful <- "Peaceable";
-::Const.Strings.PerkName.LegendNetRepair <- "Net Repair";
-::Const.Strings.PerkName.LegendNetCasting <- "Net Casting";
-::Const.Strings.PerkName.LegendPacifist <- "Pacifist";
-::Const.Strings.PerkName.LegendCampCook <- "Camp Cooking";
-::Const.Strings.PerkName.LegendPackleader <- "Pack Leader";
-::Const.Strings.PerkName.LegendDogWhisperer <- "Dog Whisperer";
-::Const.Strings.PerkName.LegendDogBreeder <- "Dog Breeder";
-::Const.Strings.PerkName.LegendDogHandling <- "Dog Handling";
-::Const.Strings.PerkName.LegendDogMaster <- "Dog Master";
-::Const.Strings.PerkName.LegendHeightenedReflexes <- "Heightened Reflexes";
-::Const.Strings.PerkName.LegendWindReader <- "Wind Reader";
-::Const.Strings.PerkName.LegendChoke <- "Choke";
-::Const.Strings.PerkName.LegendPaymaster <- "Paymaster";
-::Const.Strings.PerkName.LegendQuartermaster <- "Quartermaster";
-::Const.Strings.PerkName.LegendBarterGreed <- "Greed";
-::Const.Strings.PerkName.LegendPrayerOfLife <- "Prayer of Hope";
-::Const.Strings.PerkName.LegendPrayerOfFaith <- "Prayer of Faith";
-::Const.Strings.PerkName.LegendHolyFlame <- "Holy Flame";
-::Const.Strings.PerkName.LegendShieldsUp <- "Shields Up!";
-::Const.Strings.PerkName.LegendIncoming <- "Incoming!";
-::Const.Strings.PerkName.LegendZombieBite <- "Zombie bite";
-::Const.Strings.PerkName.LegendCheerOn <- "Cheer On";
-::Const.Strings.PerkName.LegendLeap <- "Leap";
-::Const.Strings.PerkName.LegendTumble <- "Tumble";
-::Const.Strings.PerkName.LegendBackflip <- "Backflip";
-::Const.Strings.PerkName.LegendTwirl <- "Twirl";
-::Const.Strings.PerkName.LegendHairSplitter <- "Hair Splitter";
-::Const.Strings.PerkName.LegendScrollIngredients <- "Interpretation";
-::Const.Strings.PerkName.LegendScholar <- "Scholar";
-::Const.Strings.PerkName.LegendHerbcraft <- "Herbcraft";
-::Const.Strings.PerkName.LegendWoodworking <- "Woodworking";
-::Const.Strings.PerkName.LegendOreHunter <- "Ore Hunter";
-::Const.Strings.PerkName.LegendThrowSand <- "Throw Sand";
-::Const.Strings.PerkName.LegendLastStand <- "Last Stand";
-::Const.Strings.PerkName.LegendGuideSteps <- "Guide Steps";
-::Const.Strings.PerkName.LegendTasteThePain <- "Taste the Pain";
-::Const.Strings.PerkName.LegendKnifeplay <- "Knifeplay";
-::Const.Strings.PerkName.LegendOpportunist <- "Opportunist";
-::Const.Strings.PerkName.LegendPrepared <- "Prepared";
-::Const.Strings.PerkName.LegendLurker <- "Lurker";
-::Const.Strings.PerkName.LegendNightRaider <- "Night Raider";
-::Const.Strings.PerkName.LegendAdaptive <- "Adaptive";
-::Const.Strings.PerkName.LegendRecuperation <- "Recuperation";
-::Const.Strings.PerkName.LegendClimb <- "Climb";
-::Const.Strings.PerkName.LegendFashionable <- "Fashionable";
-::Const.Strings.PerkName.LegendHelpful <- "Helpful";
-::Const.Strings.PerkName.LegendLionheart <- "Lionheart";
-::Const.Strings.PerkName.LegendStrengthInNumbers <- "Strength in Numbers";
-::Const.Strings.PerkName.LegendPatientHunter <- "The Patient Hunter";
-::Const.Strings.PerkName.LegendBarrage <- "Barrage";
-::Const.Strings.PerkName.LegendStaffBlock <- "Staff Block";
-::Const.Strings.PerkName.LegendMinnesanger <- "Minnesänger";
-::Const.Strings.PerkName.LegendMeistersanger <- "Meistersänger";
-::Const.Strings.PerkName.LegendHimshaw <- "Himshaw";
-::Const.Strings.PerkName.LegendSwagger <- "Swagger";
-::Const.Strings.PerkName.LegendKeenEyesight <- "Keen Eyesight";
-::Const.Strings.PerkName.LegendSleightOfHand <- "Sleight of Hand";
-::Const.Strings.PerkName.LegendPromisedPotential <- "Promised Potential";
-::Const.Strings.PerkName.LegendWheelMaintenance <- "Wheel Maintenance";
-::Const.Strings.PerkName.LegendMasterTrainer <- "Master Trainer";
-::Const.Strings.PerkName.LegendWhipThemInShape <- "Whip them in Shape";
+::Const.Strings.PerkName.LegendAnchor <- "Якорь";
+::Const.Strings.PerkName.LegendFirstBlood <- "Первая кровь";
+::Const.Strings.PerkName.LegendBallistics <- "Баллистика";
+::Const.Strings.PerkName.LegendBackswing <- "Обратный замах";
+::Const.Strings.PerkName.LegendDebilitate <- "Обездвижить";
+::Const.Strings.PerkName.LegendPointBlank <- "В упор";
+::Const.Strings.PerkName.LegendSlaughterer <- "Мясник";
+::Const.Strings.PerkName.LegendBetweenTheEyes <- "Между глаз";
+::Const.Strings.PerkName.LegendSkillfulStacking <- "Умелая укладка";
+::Const.Strings.PerkName.LegendEfficientPacking <- "Эффективная упаковка";
+::Const.Strings.PerkName.LegendAmmoBinding <- "Сухие припасы";
+::Const.Strings.PerkName.LegendAmmoBundles <- "Боезапасные наборы";
+::Const.Strings.PerkName.LegendMedPackages <- "Медицинские наборы";
+::Const.Strings.PerkName.LegendMedIngredients <- "Медицинские ингредиенты";
+::Const.Strings.PerkName.LegendToolsDrawers <- "Ящики с инструментами";
+::Const.Strings.PerkName.LegendToolsSpares <- "Запасные детали";
+::Const.Strings.PerkName.LegendBarterConvincing <- "Убедительные сделки";
+::Const.Strings.PerkName.LegendBarterTrustworthy <- "Внушающий доверие";
+::Const.Strings.PerkName.LegendBribe <- "Взятка";
+::Const.Strings.PerkName.LegendOffBookDeal <- "Серая сделка";
+::Const.Strings.PerkName.LegendRebound <- "Отскок";
+::Const.Strings.PerkName.LegendFeint <- "Ложный выпад";
+::Const.Strings.PerkName.LegendLookout <- "Дозорный";
+::Const.Strings.PerkName.LegendBoondockBlade <- "Деревенский клинок";
+::Const.Strings.PerkName.LegendVengeance <- "Месть";
+::Const.Strings.PerkName.LegendDoubleStrike <- "Двойной удар";
+::Const.Strings.PerkName.LegendImmovableObject <- "Неподвижный объект";
+::Const.Strings.PerkName.LegendBloodyHarvest <- "Кровавое жниво";
+::Const.Strings.PerkName.LegendPerfectFocus <- "Идеальная концентрация";
+::Const.Strings.PerkName.LegendReturnFavor <- "Вернуть услугу";
+::Const.Strings.PerkName.LegendSprint <- "Спринт";
+::Const.Strings.PerkName.LegendInspire <- "Вдохновить";
+::Const.Strings.PerkName.LegendAthlete <- "Атлет";
+::Const.Strings.PerkName.LegendQuickStep <- "Быстрый шаг";
+::Const.Strings.PerkName.LegendCascade <- "Каскад ударов";
+::Const.Strings.PerkName.LegendEvasion <- "Уклонение";
+::Const.Strings.PerkName.LegendHoldTheLine <- "Держать строй";
+::Const.Strings.PerkName.LegendCoordinatedVolleys <- "Скоординированные залпы";
+::Const.Strings.PerkName.LegendForwardPush <- "Толчок вперёд";
+::Const.Strings.PerkName.LegendComposure <- "Хладнокровие";
+::Const.Strings.PerkName.LegendNightvision <- "Ночное зрение";
+::Const.Strings.PerkName.LegendRelax <- "Расслабиться";
+::Const.Strings.PerkName.LegendUberNimble <- "Нудист";
+::Const.Strings.PerkName.LegendMuscularity <- "Мускулистый";
+::Const.Strings.PerkName.LegendBattleheart <- "Закалённый боем";
+::Const.Strings.PerkName.LegendTrueBeliever <- "Истинно верующий";
+::Const.Strings.PerkName.LegendPoisonImmunity <- "Иммунитет к яду";
+::Const.Strings.PerkName.LegendInventorAnatomy <- "Анатомические исследования";
+::Const.Strings.PerkName.LegendBerserkerRage <- "Ярость берсерка";
+::Const.Strings.PerkName.LegendAssuredConquest <- "Неотвратимая победа";
+::Const.Strings.PerkName.LegendBigGameHunter <- "Охотник на крупную дичь";
+::Const.Strings.PerkName.LegendSecondWind <- "Второе дыхание";
+::Const.Strings.PerkName.LegendMarkTarget <- "Отметить цель";
+::Const.Strings.PerkName.LegendFieldTriage <- "Полевое триажирование";
+::Const.Strings.PerkName.LegendFieldRepairs <- "Полевой ремонт";
+::Const.Strings.PerkName.LegendDangerPay <- "Оплата риска";
+::Const.Strings.PerkName.LegendPiercingShot <- "Пробивающий выстрел";
+::Const.Strings.PerkName.LegendTeacher <- "Наставник";
+::Const.Strings.PerkName.LegendForcefulSwing <- "Мощный взмах";
+::Const.Strings.PerkName.LegendSpecSpearWall <- "Копьестен";
+::Const.Strings.PerkName.LegendThrustMaster <- "Мастер уколов";
+::Const.Strings.PerkName.LegendBalance <- "Равновесие";
+::Const.Strings.PerkName.LegendPerfectFit <- "Идеальная посадка";
+::Const.Strings.PerkName.LegendLithe <- "Гибкость";
+::Const.Strings.PerkName.LegendInTheZone <- "Поток";
+::Const.Strings.PerkName.LegendHidden <- "Камуфляж";
+::Const.Strings.PerkName.LegendBlendIn <- "Слиться";
+::Const.Strings.PerkName.LegendDrumsOfWar <- "Боевой клич";
+::Const.Strings.PerkName.LegendSpecStaffStun <- "Вращения посохом";
+::Const.Strings.PerkName.LegendPugilist <- "Кулачный боец";
+::Const.Strings.PerkName.LegendGrappler <- "Борец";
+::Const.Strings.PerkName.LegendAmbidextrous <- "Амбидекстр";
+::Const.Strings.PerkName.LegendPummelIntoSubmission <- "Избить до покорности";
+::Const.Strings.PerkName.LegendFieldTreats <- "Полевые лакомства";
+::Const.Strings.PerkName.LegendSmashingShields <- "Крушитель щитов";
+::Const.Strings.PerkName.LegendSmackdown <- "Сокрушение";
+::Const.Strings.PerkName.LegendBoneBreaker <- "Костолом";
+::Const.Strings.PerkName.LegendClarity <- "Ясность";
+::Const.Strings.PerkName.LegendAlert <- "Настороженность";
+::Const.Strings.PerkName.LegendBloodbath <- "Кровавая баня";
+::Const.Strings.PerkName.LegendFreedomOfMovement <- "Свобода движения";
+::Const.Strings.PerkName.LegendOnslaught <- "Натиск";
+::Const.Strings.PerkName.LegendBackToBasics <- "Возвращение к основам";
+::Const.Strings.PerkName.LegendPushTheAdvantage <- "Развить преимущество";
+::Const.Strings.PerkName.LegendMindOverBody <- "Разум превыше тела";
+::Const.Strings.PerkName.LegendEscapeArtist <- "Мастер побегов";
+::Const.Strings.PerkName.LegendGatherer <- "Собиратель";
+::Const.Strings.PerkName.LegendPotionBrewer <- "Варка зелий";
+::Const.Strings.PerkName.LegendPrepareBleed <- "Обезкровливание";
+::Const.Strings.PerkName.LegendPrepareGraze <- "Потрошение";
+::Const.Strings.PerkName.LegendCarnage <- "Резня";
+::Const.Strings.PerkName.LegendUntouchable <- "Неприкасаемый";
+::Const.Strings.PerkName.LegendAssassinate <- "Убрать";
+::Const.Strings.PerkName.LegendMealPreperation <- "Приготовление пищи";
+::Const.Strings.PerkName.LegendAlcoholBrewing <- "Пивоварение";
+::Const.Strings.PerkName.LegendDrumsOfLife <- "Песнь жизни";
+::Const.Strings.PerkName.LegendLacerate <- "Рассечение";
+::Const.Strings.PerkName.LegendPeaceful <- "Миролюбие";
+::Const.Strings.PerkName.LegendNetRepair <- "Ремонт сетей";
+::Const.Strings.PerkName.LegendNetCasting <- "Метатель сетей";
+::Const.Strings.PerkName.LegendPacifist <- "Пацифист";
+::Const.Strings.PerkName.LegendCampCook <- "Походный повар";
+::Const.Strings.PerkName.LegendPackleader <- "Вожак стаи";
+::Const.Strings.PerkName.LegendDogWhisperer <- "Псина-шёпот";
+::Const.Strings.PerkName.LegendDogBreeder <- "Заводчик собак";
+::Const.Strings.PerkName.LegendDogHandling <- "Дрессировка собак";
+::Const.Strings.PerkName.LegendDogMaster <- "Пёсохозяин";
+::Const.Strings.PerkName.LegendHeightenedReflexes <- "Обострённые рефлексы";
+::Const.Strings.PerkName.LegendWindReader <- "Чтец ветра";
+::Const.Strings.PerkName.LegendChoke <- "Удушение";
+::Const.Strings.PerkName.LegendPaymaster <- "Плацмейстер";
+::Const.Strings.PerkName.LegendQuartermaster <- "Интендант";
+::Const.Strings.PerkName.LegendBarterGreed <- "Жадность";
+::Const.Strings.PerkName.LegendPrayerOfLife <- "Молитва надежды";
+::Const.Strings.PerkName.LegendPrayerOfFaith <- "Молитва веры";
+::Const.Strings.PerkName.LegendHolyFlame <- "Святое пламя";
+::Const.Strings.PerkName.LegendShieldsUp <- "Щиты вверх!";
+::Const.Strings.PerkName.LegendIncoming <- "Берегись!";
+::Const.Strings.PerkName.LegendZombieBite <- "Укус зомби";
+::Const.Strings.PerkName.LegendCheerOn <- "Подбодрить";
+::Const.Strings.PerkName.LegendLeap <- "Прыжок";
+::Const.Strings.PerkName.LegendTumble <- "Кувырок";
+::Const.Strings.PerkName.LegendBackflip <- "Сальто назад";
+::Const.Strings.PerkName.LegendTwirl <- "Вертушка";
+::Const.Strings.PerkName.LegendHairSplitter <- "Потрошитель волос";
+::Const.Strings.PerkName.LegendScrollIngredients <- "Толкование";
+::Const.Strings.PerkName.LegendScholar <- "Учёный";
+::Const.Strings.PerkName.LegendHerbcraft <- "Травничество";
+::Const.Strings.PerkName.LegendWoodworking <- "Столярное дело";
+::Const.Strings.PerkName.LegendOreHunter <- "Искатель руды";
+::Const.Strings.PerkName.LegendThrowSand <- "Бросок песка";
+::Const.Strings.PerkName.LegendLastStand <- "Последний бой";
+::Const.Strings.PerkName.LegendGuideSteps <- "Направляющие шаги";
+::Const.Strings.PerkName.LegendTasteThePain <- "Вкус боли";
+::Const.Strings.PerkName.LegendKnifeplay <- "Игры с ножом";
+::Const.Strings.PerkName.LegendOpportunist <- "Оппортунист";
+::Const.Strings.PerkName.LegendPrepared <- "Подготовлен";
+::Const.Strings.PerkName.LegendLurker <- "Крадущийся";
+::Const.Strings.PerkName.LegendNightRaider <- "Ночной рейдер";
+::Const.Strings.PerkName.LegendAdaptive <- "Адаптивность";
+::Const.Strings.PerkName.LegendRecuperation <- "Восстановление";
+::Const.Strings.PerkName.LegendClimb <- "Лазание";
+::Const.Strings.PerkName.LegendFashionable <- "Щёголь";
+::Const.Strings.PerkName.LegendHelpful <- "Услужливый";
+::Const.Strings.PerkName.LegendLionheart <- "Львиное сердце";
+::Const.Strings.PerkName.LegendStrengthInNumbers <- "Сила в числе";
+::Const.Strings.PerkName.LegendPatientHunter <- "Терпеливый охотник";
+::Const.Strings.PerkName.LegendBarrage <- "Заградительный огонь";
+::Const.Strings.PerkName.LegendStaffBlock <- "Блок посохом";
+::Const.Strings.PerkName.LegendMinnesanger <- "Миннезингер";
+::Const.Strings.PerkName.LegendMeistersanger <- "Мейстерзингер";
+::Const.Strings.PerkName.LegendHimshaw <- "Химшоу";
+::Const.Strings.PerkName.LegendSwagger <- "Важная походка";
+::Const.Strings.PerkName.LegendKeenEyesight <- "Острое зрение";
+::Const.Strings.PerkName.LegendSleightOfHand <- "Ловкость рук";
+::Const.Strings.PerkName.LegendPromisedPotential <- "Скрытый потенциал";
+::Const.Strings.PerkName.LegendWheelMaintenance <- "Уход за колёсами";
+::Const.Strings.PerkName.LegendMasterTrainer <- "Старший дрессировщик";
+::Const.Strings.PerkName.LegendWhipThemInShape <- "Выбить форму";
 ::Const.Strings.PerkName.LegendTacticalManeuvers <- "Tactical Maneuvers";
 ::Const.Strings.PerkName.LegendVersatile <- "Versatile";
 
@@ -367,66 +367,66 @@
 ::Const.Strings.PerkName.LegendSummonCatapult <- "Summon Catapult"; //pulled due to issues with deployment, could work in the future.
 
 ::Const.Strings.PerkDescription.LegendAnchor <- @"
-Hold your ground!
+Держи позицию!
 
-[color=%passive%][u]Passive:[/u][/color]
-• Gain a stacking [color=%positive%]+5[/color] Melee Skill, Ranged Skill and Melee Defense as long as you have not moved during your turn. You will start combat with 1 stack.
+[color=%passive%][u]Пассивно:[/u][/color]
+• Получайте накапливаемые [color=%positive%]+5[/color] к навыку ближнего боя, навыку стрельбы и защите в ближнем бою, пока в свой ход не двигаетесь. Битва начинается с 1 накопленного эффекта.
 
-• If you were to receive [color=%status%]Stagger[/color] instead remove a stack.
+• Если бы вы получили [color=%status%]Ошеломление[/color], вместо этого потеряйте один накопленный эффект.
 ";
 
 ::Const.Strings.PerkDescription.LegendFirstBlood <- @"
-Early bird gets the worm!
+Кто раньше встал — того и добыча.
 
-[color=%passive%][u]Passive:[/u][/color]
-• Gain [color=%positive%]20%[/color] Damage and [color=%positive%]+50%[/color] Threshold to inflict injury on enemies with full hitpoints.
+[color=%passive%][u]Пассивно:[/u][/color]
+• Наносите на [color=%positive%]20%[/color] больше урона и имеете на [color=%positive%]+50%[/color] выше порог для нанесения травмы целям с полным здоровьем.
 ";
 
 ::Const.Strings.PerkDescription.LegendBallistics <- @"
-Through familiarity and training with your weapon, you know just how your projectiles will fly.
+Благодаря привычке и тренировке вы точно знаете, как полетят ваши снаряды.
 
-[color=%passive%][u]Passive:[/u][/color]
-• Up to [color=%positive%]+20%[/color] of any damage ignores armor depending on the distance to the target, with the highest bonus in melee and lowest at maximum range for [color=%skill%]Shoot Bolt[/color]. For [color=%skill%]Shoot Heavy Bolt[/color] and [color=%skill%]Shoot Stake[/color] the bonus goes up to [color=%positive%]+30%[/color] instead.
+[color=%passive%][u]Пассивно:[/u][/color]
+• До [color=%positive%]+20%[/color] урона может игнорировать броню в зависимости от расстояния до цели: максимум в ближнем бою и минимум на пределе дистанции для [color=%skill%]Выстрела болтом[/color]. Для [color=%skill%]Выстрела тяжёлым болтом[/color] и [color=%skill%]Выстрела колом[/color] бонус достигает [color=%positive%]+30%[/color].
 
-• The range penalty to hitchance is reduced by [color=%negative%]-2[/color] per tile.
+• Штраф за дистанцию к шансу попадания уменьшается на [color=%negative%]-2[/color] за каждую клетку.
 ";
 
 ::Const.Strings.PerkDescription.LegendBackswing <- @"
-Use your built up inertia to wreak havoc on the second swing.
+Используйте набранную инерцию, чтобы обрушить разрушение вторым взмахом.
 
-[color=%passive%][u]Passive:[/u][/color]
-• After performing [color=%skill%]Round Swing[/color], [color=%skill%]Swing[/color], [color=%skill%]Thresh[/color], [color=%skill%]Reap[/color], [color=%skill%]Castigate[/color] and [color=%skill%]Shatter[/color] you can perform a followup for [color=%negative%]-50%[/color] Fatigue and Action Points. [color=%skill%]Swing[/color] Damage is reduced by [color=%negative%]-25%[/color] and for the rest of the skills by [color=%negative%]-50%[/color].
+[color=%passive%][u]Пассивно:[/u][/color]
+• После применения [color=%skill%]Кругового удара[/color], [color=%skill%]Взмаха[/color], [color=%skill%]Молотилки[/color], [color=%skill%]Жатвы[/color], [color=%skill%]Порки[/color] и [color=%skill%]Раскола[/color] вы можете выполнить повтор за [color=%negative%]-50%[/color] усталости и очков действия. Урон у [color=%skill%]Взмаха[/color] снижен на [color=%negative%]-25%[/color], у остальных навыков — на [color=%negative%]-50%[/color].
 
-• Moving, ending your turn or waiting will all remove this effect.
+• Движение, завершение хода или ожидание снимают этот эффект.
 ";
 
 ::Const.Strings.PerkDescription.LegendDebilitate <- @"
-Ankles, hands, elbows and knees, you've learned how to fight dirty to secure victory.
+Лодыжки, кисти, локти и колени — вы научились драться грязно, чтобы добиться победы.
 
-[color=%active%][u]Active:[/u][/color]
-• Unlocks the [color=%skill%]Debilitate[/color] skill which can prime your next attack to [color=%status%]Cripple[/color] a target for three turns, reducing their ability to inflict damage by [color=%negative%]-25%[/color] and increasing the damage they take by [color=%positive%]+15%[/color].
+[color=%active%][u]Активно:[/u][/color]
+• Открывает навык [color=%skill%]Обездвижить[/color], подготавливающий следующий удар к наложению [color=%status%]Увечья[/color] на три хода, снижая наносимый целью урон на [color=%negative%]-25%[/color] и повышая получаемый ею урон на [color=%positive%]+15%[/color].
 
-• Costs [color=%negative%]3[/color] AP and [color=%negative%]10[/color] Fatigue.
+• Стоит [color=%negative%]3[/color] ОД и [color=%negative%]10[/color] усталости.
 ";
 
 ::Const.Strings.PerkDescription.LegendReturnFavor <- @"
-Strike back with interest!
+Ответный удар с процентами!
 
-[color=%active%][u]Active:[/u][/color]
-• Unlocks the [color=%skill%]Return Favor[/color] skill which when activated has a [color=%positive%]75%[/color] chance to [color=%status%]Stun[/color] any opponent missing a melee attack against this character in retaliation.
+[color=%active%][u]Активно:[/u][/color]
+• Открывает навык [color=%skill%]Вернуть услугу[/color], который при активации даёт [color=%positive%]75%[/color] шанс [color=%status%]оглушить[/color] любого противника, промахнувшегося по этому бойцу в ближнем бою.
 
-• Immunities and resistances against being [color=%status%]Stunned[/color] still apply.
+• Иммунитеты и сопротивления к [color=%status%]оглушению[/color] продолжают действовать.
 
-• Costs [color=%negative%]3[/color] AP and [color=%negative%]30[/color] Fatigue.
+• Стоит [color=%negative%]3[/color] ОД и [color=%negative%]30[/color] усталости.
 ";
 
 ::Const.Strings.PerkDescription.LegendPerfectFocus <- @"
-Take a deep breath, then get to work.
+Сделайте глубокий вдох — и за работу.
 
-[color=%active%][u]Active:[/u][/color]
-• Unlocks the [color=%skill%]Perfect Focus[/color] skill which allows the use of all other skills at [color=%negative%]half[/color] the normal Action Point cost (rounded down), but increases Fatigue cost by [color=%positive%]+75%[/color] for one round.
+[color=%active%][u]Активно:[/u][/color]
+• Открывает навык [color=%skill%]Идеальная концентрация[/color], позволяющий использовать все остальные навыки за [color=%negative%]половину[/color] обычной стоимости ОД (округляется вниз), но увеличивающий затраты усталости на [color=%positive%]+75%[/color] на один раунд.
 
-• Costs [color=%negative%]1[/color] AP and [color=%negative%]10[/color] Fatigue.
+• Стоит [color=%negative%]1[/color] ОД и [color=%negative%]10[/color] усталости.
 ";
 
 // ::Const.Strings.PerkDescription.Furor <- @"
@@ -437,96 +437,96 @@ Take a deep breath, then get to work.
 //	";
 
 ::Const.Strings.PerkDescription.LegendBloodyHarvest <- @"
-There's wolves, bears, nachzehrers, and you. All beings of vicious slaughter.
+Волки, медведи, трупоеды — и вы. Все мы существа безудержной бойни.
 
-[color=%passive%][u]Passive:[/u][/color]
-• Gain [color=%positive%]+10%[/color] chance to hit and damage for all Melee area of effect attacks.
+[color=%passive%][u]Пассивно:[/u][/color]
+• Получайте [color=%positive%]+10%[/color] к шансу попадания и урону для всех ударов по области в ближнем бою.
 ";
 
 ::Const.Strings.PerkDescription.LegendImmovableObject <- @"
-Heavy armor, a trusty shield and your heels dug into the ground and you can weather any storm.
+Тяжёлая броня, верный щит и пятки, вдавленные в землю, позволяют пережить любой шторм.
 
-[color=%passive%][u]Passive:[/u][/color]
-• For every 10 points of gear weight from all slot gain [color=%positive%]1[/color] Resolve and [color=%negative%]1%[/color] less damage ignoring armor.
+[color=%passive%][u]Пассивно:[/u][/color]
+• За каждые 10 веса экипировки со всех слотов получите [color=%positive%]1[/color] решимости и на [color=%negative%]1%[/color] меньше урона, проходящего сквозь броню.
 
-• If you have at least 50 gear weight become immune to stuns.
+• При весе экипировки 50 и более становитесь невосприимчивы к оглушению.
 
-• If you have at least 80 gear weight and [color=%perk%]Steel Brow[/color] become immune to knockback and grab.
+• При весе 80 и более и наличии [color=%perk%]Стального лба[/color] становитесь невосприимчивы к отбрасыванию и захвату.
 ";
 
 ::Const.Strings.PerkDescription.LegendDoubleStrike <- @"
-Master the art of following up for devastating effects.
+Мастерство добивания влечёт разрушительные последствия.
 
-[color=%passive%][u]Passive:[/u][/color]
-• After landing a hit, the next attack this turn does [color=%positive%]25%[/color] overall damage and it costs [color=%negative%]20%[/color] less Fatigue than normal.
+[color=%passive%][u]Пассивно:[/u][/color]
+• После успешного удара следующий в этом ходу наносит [color=%positive%]25%[/color] дополнительного общего урона и требует [color=%negative%]20%[/color] меньше усталости.
 
-• If the attack misses, the effect is lost.
+• При промахе эффект теряется.
 ";
 
 ::Const.Strings.PerkDescription.LegendVengeance <- @"
-'You've done it now!'
+«Ну теперь ты доигрался!»
 
-[color=%passive%][u]Passive:[/u][/color]
-• After receiving a blow, the next attack this character attempts will inflict [color=%positive%]+100%[/color] damage to both Hitpoints and armor.
+[color=%passive%][u]Пассивно:[/u][/color]
+• После полученного удара следующая атака этого бойца нанесёт [color=%positive%]+100%[/color] урона по здоровью и броне.
 
-• If the attack misses the effect is wasted. Does not work from friendly fire or any self inflicted damage.
+• При промахе эффект пропадает. Не срабатывает от дружественного огня или самонанесённого урона.
 
-• Additionally a party member or pet dying will trigger the effect.
+• Эффект также сработает, если погибнет союзник или питомец.
 ";
 
 ::Const.Strings.PerkDescription.LegendTrophyHunter <- @"
-Each fight tells a story, with your glory and strength growing in their end.
+Каждая битва рассказывает историю, а с ней растут ваша слава и сила.
 
-[color=%passive%][u]Passive:[/u][/color]
-• The gruesome trophies this character has collected will increase their Hitpoints, Fatigue, Resolve and Initiative by 1.
+[color=%passive%][u]Пассивно:[/u][/color]
+• Жуткие трофеи, что собирает этот боец, увеличивают его здоровье, усталость, решимость и инициативу на 1.
 
-• Will also allow them to terrify their opponents when enganged in melee and increase total Damage Done.
+• Позволяет запугивать противников в ближнем бою и повышает общий наносимый урон.
 
-• Total kills over 5 for a given faction will not count.
+• Убийства выше пяти на одну фракцию не засчитываются.
 ";
 
 ::Const.Strings.PerkDescription.LegendBruiser <- @"
-Your muscles are an unstoppable force, shattering armor with every strike!
+Ваши мышцы — неудержимая сила, ломающая броню каждым ударом!
 
-[color=%passive%][u]Passive:[/u][/color]
-• Effectiveness vs. Armor is increased by [color=%positive%]+10%[/color] for any weapon used.
+[color=%passive%][u]Пассивно:[/u][/color]
+• Эффективность против брони повышена на [color=%positive%]+10%[/color] для любого используемого оружия.
 ";
 
 ::Const.Strings.PerkDescription.LegendCrusher <- @"
-Put full force in your every blow!
+Вкладывайте всю мощь в каждый удар!
 
-[color=%passive%][u]Passive:[/u][/color]
-• Shield damage is increased by [color=%positive%]+50%[/color] when using the Split Shield skill.
+[color=%passive%][u]Пассивно:[/u][/color]
+• Урон щитам увеличен на [color=%positive%]+50%[/color] при использовании навыка «Расколоть щит».
 ";
 
 ::Const.Strings.PerkDescription.LegendPointBlank <- @"
-Don't fire until you see the whites of their eyes!
+Не стреляй, пока не увидишь белки их глаз!
 
-[color=%passive%][u]Passive:[/u][/color]
-• When using a ranged weapon against a target 4 or less tiles away, inflict additional damage, scaling based on [color=%positive%]20%[/color] of Ranged Defense.
+[color=%passive%][u]Пассивно:[/u][/color]
+• При стрельбе по цели в пределах 4 клеток наносите дополнительный урон, зависящий от [color=%positive%]20%[/color] защиты от дальнего боя.
 
-• When using Throwing Weapons inflict additional damage, scaling based on [color=%positive%]30%[/color] of Melee Skill or [color=%positive%]50%[/color] of Ranged Defense, whichever stat is highest, but maximum range is reduced to 3.
+• При использовании метательного оружия наносите дополнительный урон, зависящий от [color=%positive%]30%[/color] навыка ближнего боя или [color=%positive%]50%[/color] защиты от дальнего боя (берётся больший показатель), но максимальная дальность снижается до 3.
 
-• Allows you to use Throwing Weapons in melee.
+• Позволяет применять метательное оружие в ближнем бою.
 ";
 
 ::Const.Strings.PerkDescription.LegendSlaughterer <- @"
-'I powdered my pigeon for the ribcage slaughter!!!'
+«Я припудрил голубя ради резни по рёбрам!!!»
 
-[color=%passive%][u]Passive:[/u][/color]
-• Melee kills are always fatalities (if the weapon allows).
+[color=%passive%][u]Пассивно:[/u][/color]
+• Убийства в ближнем бою всегда приводят к расчленению (если оружие позволяет).
 
-• Fatalities have a [color=%negative%]-5[/color] penalty to enemy Resolve checks.
+• Фатальные удары дают противнику штраф [color=%negative%]-5[/color] к проверке решимости.
 
-• Having the 'Bloodthirsty' trait allows you to trigger an additional positive morale check when killing an enemy.
+• Черта «Кровожадный» позволяет дополнительно поднять мораль при убийстве врага.
 ";
 
 ::Const.Strings.PerkDescription.LegendBetweenTheEyes <- @"
-Blows to the head hurt!
+Удары по голове больно бьют!
 
-[color=%passive%][u]Passive:[/u][/color]The chance to hit the head for critical damage is increased by [color=%positive%]+10%[/color] for all attacks.
+[color=%passive%][u]Пассивно:[/u][/color] Шанс попадания в голову с критическим уроном увеличен на [color=%positive%]+10%[/color] для всех атак.
 
-[color=%passive%][u]Passive:[/u][/color]
+[color=%passive%][u]Пассивно:[/u][/color]
 ";
 
 ::Const.Strings.PerkDescription.LegendDeflect <- @"

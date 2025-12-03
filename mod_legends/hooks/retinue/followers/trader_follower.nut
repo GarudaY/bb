@@ -3,24 +3,24 @@
 	{
 		this.follower.create();
 		this.m.ID = "follower.trader";
-		this.m.Name = "Secure Chests";
-		this.m.Description = "While not common, some companies have special goods stashed away to tell on the road to travellers. These goods are always kept in the most fortified chests the company has to offer, to prevent prying fingers from outside and inside the camp.";
-		this.m.Image = "ui/campfire/legend_trader_01";
-		this.m.Cost = 3500;
-		this.m.Effects = [
-			"Increases the amount of trade goods for sale by 1 for each location that produces them, like salt near salt mines, allowing you to trade at higher volumes"
-		];
+                this.m.Name = "Запертые сундуки";
+                this.m.Description = "Хотя это и редкость, у некоторых отрядов есть особые товары, которые можно показать путникам в дороге. Эти товары всегда хранятся в самых укреплённых сундуках, чтобы защитить их от чужих рук снаружи и внутри лагеря.";
+                this.m.Image = "ui/campfire/legend_trader_01";
+                this.m.Cost = 3500;
+                this.m.Effects = [
+                        "Увеличивает количество торговых товаров на продажу на 1 за каждую локацию, где они производятся (например, соль возле соляных шахт), что позволяет торговать большими объёмами"
+                ];
 
-		this.addRequirement("Sold 25 trade goods", function() {
-			return ::World.Statistics.getFlags().getAsInt("TradeGoodsSold") >= 25;
-		}, false, function( _r ) {
-			_r.Count <- 25;
-			_r.UpdateText <- function() {
-				this.Text = "Sold " + ::Math.min(this.Count, ::World.Statistics.getFlags().getAsInt("TradeGoodsSold")) + "/" + this.Count + " trade goods"
-			};
-		});
+                this.addRequirement("Продать 25 торговых товаров", function() {
+                        return ::World.Statistics.getFlags().getAsInt("TradeGoodsSold") >= 25;
+                }, false, function( _r ) {
+                        _r.Count <- 25;
+                        _r.UpdateText <- function() {
+                                this.Text = "Продано торговых товаров: " + ::Math.min(this.Count, ::World.Statistics.getFlags().getAsInt("TradeGoodsSold")) + "/" + this.Count
+                        };
+                });
 
-		this.addSkillRequirement("Have at least one of the following backgrounds: Caravan Hand, Peddler, Trader, Donkey", [
+                this.addSkillRequirement("Иметь хотя бы одну из следующих предысторий: Караванщик, Бродячий торговец, Торговец, Осёл", [
 			"background.caravan_hand",
 			"background.legend_trader",
 			"background.legend_commander_trader",
