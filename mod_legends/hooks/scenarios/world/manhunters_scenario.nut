@@ -273,7 +273,7 @@
 					id = 16,
 					type = "text",
 					icon = "ui/icons/xp_received.png",
-					text = "[color=%negative%]-25%[/color] Experience Gain"
+                                    text = "[color=%negative%]-25%[/color] Получаемого опыта"
 				});
 			}
 			else if (_background.getID() == "background.apprentice")
@@ -287,7 +287,7 @@
 					id = 16,
 					type = "text",
 					icon = "ui/icons/xp_received.png",
-					text = "[color=%positive%]+5%[/color] Experience Gain"
+                                    text = "[color=%positive%]+5%[/color] Получаемого опыта"
 				});
 			}
 			else
@@ -296,7 +296,7 @@
 					id = 16,
 					type = "text",
 					icon = "ui/icons/xp_received.png",
-					text = "[color=%negative%]-10%[/color] Experience Gain"
+                                    text = "[color=%negative%]-10%[/color] Получаемого опыта"
 				});
 			}
 		}
@@ -306,19 +306,19 @@
 				id = 16,
 				type = "text",
 				icon = "ui/icons/xp_received.png",
-				text = "[color=%positive%]+10%[/color] Experience Gain"
+                            text = "[color=%positive%]+10%[/color] Получаемого опыта"
 			});
 			_tooltip.push({
 				id = 17,
 				type = "text",
 				icon = "ui/icons/xp_received.png",
-				text = "Limited to character level 7"
+                            text = "Ограничение до 7 уровня персонажа"
 			});
 			_tooltip.push({
 				id = 18,
 				type = "text",
 				icon = "ui/icons/days_wounded.png",
-				text = "Is permanently dead if struck down and will not survive with a permanent injury"
+                            text = "Погибает окончательно при добивании и не выживет с постоянным ранением"
 			});
 		}
 	}

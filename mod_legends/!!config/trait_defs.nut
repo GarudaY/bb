@@ -1047,7 +1047,7 @@ traitDefs.push({
 	ID = "racial.skeleton",
 	Script = "scripts/skills/racial/skeleton_racial",
 	Const = "RacialSkeleton",
-	Name = "Resistant to Ranged Attacks",
+	Name = "Устойчивость к дальним атакам",
 });
 
 ::Legends.Trait.RacialSerpent <- null;
@@ -1063,7 +1063,7 @@ traitDefs.push({
 	ID = "racial.unhold",
 	Script = "scripts/skills/racial/unhold_racial",
 	Const = "RacialUnhold",
-	Name = "Unhold Passive",
+	Name = "Пассивная способность унхольда",
 });
 
 ::Legends.Trait.RacialGolem <- null;
@@ -1087,7 +1087,7 @@ traitDefs.push({
 	ID = "racial.champion",
 	Script = "scripts/skills/racial/champion_racial",
 	Const = "RacialChampion",
-	Name = "Champion",
+	Name = "Чемпион",
 });
 
 ::Legends.Trait.RacialGhost <- null;
@@ -1095,7 +1095,7 @@ traitDefs.push({
 	ID = "racial.ghost",
 	Script = "scripts/skills/racial/ghost_racial",
 	Const = "RacialGhost",
-	Name = "Incorporeal",
+	Name = "Бестелесность",
 });
 
 ::Legends.Trait.RacialGoblinAmbusher <- null;
@@ -1103,7 +1103,7 @@ traitDefs.push({
 	ID = "racial.goblin_ambusher",
 	Script = "scripts/skills/racial/goblin_ambusher_racial",
 	Const = "RacialGoblinAmbusher",
-	Name = "Poison",
+	Name = "Яд",
 });
 
 ::Legends.Trait.RacialGoblinShaman <- null;
@@ -1111,7 +1111,7 @@ traitDefs.push({
 	ID = "racial.goblin_shaman",
 	Script = "scripts/skills/racial/goblin_shaman_racial",
 	Const = "RacialGoblinShaman",
-	Name = "Shaman",
+	Name = "Шаман",
 });
 
 ::Legends.Trait.RacialLindwurm <- null;
@@ -1119,7 +1119,7 @@ traitDefs.push({
 	ID = "racial.lindwurm",
 	Script = "scripts/skills/racial/lindwurm_racial",
 	Const = "RacialLindwurm",
-	Name = "Acid Blood",
+	Name = "Кислая кровь",
 });
 
 ::Legends.Trait.RacialSchrat <- null;
@@ -1127,7 +1127,7 @@ traitDefs.push({
 	ID = "racial.schrat",
 	Script = "scripts/skills/racial/schrat_racial",
 	Const = "RacialSchrat",
-	Name = "Shielded",
+	Name = "Защищён",
 });
 
 ::Legends.Trait.RacialSpider <- null;
@@ -1135,7 +1135,7 @@ traitDefs.push({
 	ID = "racial.spider",
 	Script = "scripts/skills/racial/spider_racial",
 	Const = "RacialSpider",
-	Name = "Poison",
+	Name = "Яд",
 });
 
 ::Legends.Trait.RacialTricksterGod <- null;
@@ -1151,7 +1151,7 @@ traitDefs.push({
 	ID = "racial.vampire",
 	Script = "scripts/skills/racial/vampire_racial",
 	Const = "RacialVampire",
-	Name = "Vampire",
+	Name = "Вампир",
 });
 
 ::Legends.Trait.RacialLegendBogUnhold <- null;
@@ -1159,7 +1159,7 @@ traitDefs.push({
 	ID = "racial.legend_bog_unhold",
 	Script = "scripts/skills/racial/legend_bog_unhold_racial",
 	Const = "RacialLegendBogUnhold",
-	Name = "Unhold Passive",
+	Name = "Пассивная способность унхольда",
 });
 
 ::Legends.Trait.RacialLegendGreenwoodSchrat <- null;
@@ -1167,7 +1167,7 @@ traitDefs.push({
 	ID = "racial.legend_greenwood_schrat",
 	Script = "scripts/skills/racial/legend_greenwood_schrat_racial",
 	Const = "RacialLegendGreenwoodSchrat",
-	Name = "Shielded",
+	Name = "Защищён",
 });
 
 ::Legends.Trait.RacialLegendHorse <- null;
@@ -1175,7 +1175,7 @@ traitDefs.push({
 	ID = "racial.legend_horse",
 	Script = "scripts/skills/racial/legend_horse_racial",
 	Const = "RacialLegendHorse",
-	Name = "Horse Movement",
+	Name = "Передвижение верхом",
 });
 
 ::Legends.Trait.RacialLegendKobold <- null;
@@ -1183,7 +1183,7 @@ traitDefs.push({
 	ID = "racial.legend_kobold",
 	Script = "scripts/skills/racial/legend_kobold_racial",
 	Const = "RacialLegendKobold",
-	Name = "Slippery",
+	Name = "Скользкий",
 });
 
 ::Legends.Trait.RacialLegendMummy <- null;
@@ -1191,7 +1191,7 @@ traitDefs.push({
 	ID = "racial.legend_mummy",
 	Script = "scripts/skills/racial/legend_mummy_racial",
 	Const = "RacialLegendMummy",
-	Name = "Resistant to Ranged Attacks",
+	Name = "Устойчивость к дальним атакам",
 });
 
 ::Legends.Trait.RacialLegendRabble <- null;
@@ -1199,7 +1199,7 @@ traitDefs.push({
 	ID = "racial.legend_rabble",
 	Script = "scripts/skills/racial/legend_rabble_racial",
 	Const = "RacialLegendRabble",
-	Name = "Coerced",
+	Name = "Принуждение",
 });
 
 ::Legends.Trait.RacialLegendRedbackSpider <- null;
@@ -1207,7 +1207,7 @@ traitDefs.push({
 	ID = "racial.legend_redback_spider",
 	Script = "scripts/skills/racial/legend_redback_spider_racial",
 	Const = "RacialLegendRedbackSpider",
-	Name = "Redback Poison",
+	Name = "Яд красноспинки",
 });
 
 ::Legends.Trait.RacialLegendClusterSpider <- null;
@@ -1215,7 +1215,7 @@ traitDefs.push({
 	ID = "racial.legend_cluster_spider",
 	Script = "scripts/skills/racial/legend_cluster_spider_racial",
 	Const = "RacialLegendClusterSpider",
-	Name = "Cluster",
+	Name = "Скопление",
 });
 
 ::Legends.Trait.RacialLegendRockUnhold <- null;
@@ -1223,7 +1223,7 @@ traitDefs.push({
 	ID = "racial.legend_rock_unhold",
 	Script = "scripts/skills/racial/legend_rock_unhold_racial",
 	Const = "RacialLegendRockUnhold",
-	Name = "Rock Unhold Passive",
+	Name = "Пассивная способность каменного унхольда",
 });
 
 ::Legends.Trait.RacialLegendWerewolf <- null;
@@ -1231,7 +1231,7 @@ traitDefs.push({
 	ID = "racial.legend_werewolf",
 	Script = "scripts/skills/racial/legend_werewolf_racial",
 	Const = "RacialLegendWerewolf",
-	Name = "Blind Rage",
+	Name = "Слепая ярость",
 });
 
 ::Legends.Trait.RacialFleshGolem <- null;
@@ -1239,7 +1239,7 @@ traitDefs.push({
 	ID = "racial.flesh_golem",
 	Script = "scripts/skills/racial/flesh_golem_racial",
 	Const = "RacialFleshGolem",
-	Name = "Flesh Golem Racial",
+	Name = "Расовая способность мясного голема",
 });
 
 ::Legends.Trait.RacialGrandDiviner <- null;
@@ -1247,7 +1247,7 @@ traitDefs.push({
 	ID = "racial.grand_diviner",
 	Script = "scripts/skills/racial/grand_diviner_racial",
 	Const = "RacialGrandDiviner",
-	Name = "Diviner\'s Fury",
+	Name = "Ярость прорицателя",
 });
 
 

@@ -3,15 +3,15 @@
 	{
 		this.follower.create();
 		this.m.ID = "follower.agent";
-		this.m.Name = "Messenger's Rest";
-		this.m.Description = "Through setting up a network of messengers, skilled agents can be employed to deliver information that you may find of use...after a short rest, of course.";
-		this.m.Image = "ui/campfire/legend_agent_01";
-		this.m.Cost = 2000;
-		this.m.Effects = [
-			"Reveals available contracts and active situations in the tooltip of settlements no matter where you are"
-		];
+                this.m.Name = "Привал гонцов";
+                this.m.Description = "Организовав сеть гонцов, можно нанять умелых агентов для доставки полезной информации... но сперва им нужно немного отдохнуть.";
+                this.m.Image = "ui/campfire/legend_agent_01";
+                this.m.Cost = 2000;
+                this.m.Effects = [
+                        "Показывает доступные контракты и активные события в подсказке поселений, где бы вы ни находились"
+                ];
 
-		this.addRequirement("Have allied relations with a noble house or city state", function() {
+                this.addRequirement("Иметь союзные отношения с домом знати или городом-государством", function() {
 
 			if (::World.Retinue.m.Slots.filter(function(i,v){if (v == null){return false} else {return v.getID() == "follower.agent"}}).len() > 0)
 			{
@@ -30,7 +30,7 @@
 			return false;
 		});
 
-		this.addSkillRequirement("Have at least one of the following backgrounds: Eunuch, Messenger, Assassin (Southern or Northern)", [
+                this.addSkillRequirement("Иметь хотя бы одну из следующих предысторий: Евнух, Гонец, Убийца (южный или северный)", [
 			"background.eunuch",
 			"background.messenger",
 			"background.assassin",

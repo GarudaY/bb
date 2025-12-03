@@ -1,44 +1,44 @@
 ::mods_hookNewObject("ui/screens/tooltip/tooltip_events", function(o) {
 
-	o.onQueryFollowerTooltipData = function ( _followerID )
-	{
-		if (typeof _followerID == "integer")
-		{
-			local renown = "\'" + this.Const.Strings.BusinessReputation[this.Const.FollowerSlotRequirements[_followerID]] + "\' (" + this.Const.BusinessReputation[this.Const.FollowerSlotRequirements[_followerID]] + ")";
-			local ret = [
-				{
-					id = 1,
-					type = "title",
-					text = "Insufficient Renown"
-				},
-				{
-					id = 4,
-					type = "description",
-					text = "Your company lacks the renown necessary to accommodate more equipment in your camp. Attain at least " + renown + " renown in order to unlock this space. Gain renown by completing ambitions and contracts, as well as by winning battles."
-				}
-			];
+o.onQueryFollowerTooltipData = function ( _followerID )
+{
+if (typeof _followerID == "integer")
+{
+local renown = "\'" + this.Const.Strings.BusinessReputation[this.Const.FollowerSlotRequirements[_followerID]] + "\' (" + this.Const.BusinessReputation[this.Const.FollowerSlotRequirements[_followerID]] + ")";
+local ret = [
+{
+id = 1,
+type = "title",
+text = "Недостаточно известности"
+},
+{
+id = 4,
+type = "description",
+text = "Вашей компании не хватает известности, чтобы позволить больше снаряжения в лагере. Наберите минимум " + renown + " известности, чтобы открыть это место. Получайте известность за выполнение амбиций и контрактов, а также за победы в битвах."
+}
+];
 			return ret;
 		}
-		else if (_followerID == "free")
-		{
-			local ret = [
-				{
-					id = 1,
-					type = "title",
-					text = "Free Space"
-				},
-				{
-					id = 4,
-					type = "description",
-					text = "There\'s space here to buy more equipment for your company specialists to use."
-				},
-				{
-					id = 1,
-					type = "hint",
-					icon = "ui/icons/mouse_left_button.png",
-					text = "Buy Equipment"
-				}
-			];
+else if (_followerID == "free")
+{
+local ret = [
+{
+id = 1,
+type = "title",
+text = "Свободное место"
+},
+{
+id = 4,
+type = "description",
+text = "Здесь есть место, чтобы купить больше экипировки для специалистов вашей компании."
+},
+{
+id = 1,
+type = "hint",
+icon = "ui/icons/mouse_left_button.png",
+text = "Купить снаряжение"
+}
+];
 			return ret;
 		}
 		else
@@ -48,42 +48,42 @@
 		}
 	}
 
-	local _onQuerySkillTooltipData = o.onQuerySkillTooltipData;
-	o.onQuerySkillTooltipData = function ( _entityId, _skillId )
-	{
-		local tooltip = _onQuerySkillTooltipData(_entityId, _skillId);
+local _onQuerySkillTooltipData = o.onQuerySkillTooltipData;
+o.onQuerySkillTooltipData = function ( _entityId, _skillId )
+{
+local tooltip = _onQuerySkillTooltipData(_entityId, _skillId);
 
-		if (tooltip == null)
-		{
-			local entity = ::Tactical.getEntityByID(_entityId);
-			local item = entity.getItems().getItemByInstanceID(_skillId);
+if (tooltip == null)
+{
+local entity = ::Tactical.getEntityByID(_entityId);
+local item = entity.getItems().getItemByInstanceID(_skillId);
 
-			if (item != null)
-			{
-				local currentItem = entity.getItems().getItemAtSlot(item.getSlotType());
-				tooltip = [
-					{
-						id = 1,
-						type = "title",
-						text = "Switch to " + item.getName()
-					},
-					{
-						id = 2,
-						type = "description",
-						text = "Quickly switch to another item from your bag"
-					},
-					{
-						id = 3,
-						type = "text",
-						text = "Costs [b][color=%positive%] " + entity.getItems().getActionCost(currentItem != null ? [
-							currentItem,
-							item
-						] : [
-							item
-						]) + "[/color][/b] AP to switch"
-					}
-				];
-			}
+if (item != null)
+{
+local currentItem = entity.getItems().getItemAtSlot(item.getSlotType());
+tooltip = [
+{
+id = 1,
+type = "title",
+text = "Переключиться на " + item.getName()
+},
+{
+id = 2,
+type = "description",
+text = "Быстро сменить на другой предмет из сумки"
+},
+{
+id = 3,
+type = "text",
+text = "Стоит [b][color=%positive%] " + entity.getItems().getActionCost(currentItem != null ? [
+currentItem,
+item
+] : [
+item
+]) + "[/color][/b] ОД для смены"
+}
+];
+}
 		}
 
 		return tooltip;
@@ -214,41 +214,41 @@
 			stashLocked = this.Stash.isLocked();
 		}
 
-		local tooltip = [];
-		if (::Legends.Mod.ModSettings.getSetting("ShowItemTradeHistory").getValue() && _item.getOriginSettlementID() > 0)
-		{
-			if (_item.getTradeHistorySettlementIDs().len() == 0)
-			{
-				tooltip.push({
-					id = 50,
-					type = "hint",
-					icon = "ui/icons/settlement_tier_icon.png",
-					text = "Produced in " + ::Const.UI.getColorized(_item.getOriginSettlement().getName(), ::Const.UI.Color.getHighlightLightBackgroundValue()),
-					divider = "bottom",
-				});
-			}
-			else if (_item.getTradeHistorySettlementIDs().len() == 1)
-			{
-				tooltip.push({
-					id = 50,
-					type = "hint",
-					icon = "ui/icons/settlement_tier_icon.png",
-					text = ::Const.UI.getColorized("Imported", ::Const.UI.Color.NegativeValue) + " from " + ::Const.UI.getColorized(_item.getOriginSettlement().getName(), ::Const.UI.Color.getHighlightLightBackgroundValue()) + " to " + ::Const.UI.getColorized(_item.getTradeHistorySettlements()[0].getName(), ::Const.UI.Color.getHighlightLightBackgroundValue()),
-					divider = "bottom",
-				});
-			}
-			else if (_item.getTradeHistorySettlementIDs().len() > 1)
-			{
-				local arr = _item.getTradeHistorySettlements().map(function(s){return s.getName()});
-				local slice = arr.slice(0,arr.len() - 1);
-				tooltip.push({
-					id = 50,
-					type = "hint",
-					icon = "ui/icons/settlement_tier_icon.png",
-					text = ::Const.UI.getColorized("Imported", ::Const.UI.Color.NegativeValue) + " from " + ::Const.UI.getColorized(_item.getOriginSettlement().getName(), ::Const.UI.Color.getHighlightLightBackgroundValue()) + " to " + ::Const.UI.getColorized(arr[arr.len() - 1], ::Const.UI.Color.getHighlightLightBackgroundValue()) + " via " + ::Const.LegendMod.Language.arrayToText(slice, "and"),
-					divider = "bottom",
-				});
-			}
+local tooltip = [];
+if (::Legends.Mod.ModSettings.getSetting("ShowItemTradeHistory").getValue() && _item.getOriginSettlementID() > 0)
+{
+if (_item.getTradeHistorySettlementIDs().len() == 0)
+{
+tooltip.push({
+id = 50,
+type = "hint",
+icon = "ui/icons/settlement_tier_icon.png",
+text = "Произведено в " + ::Const.UI.getColorized(_item.getOriginSettlement().getName(), ::Const.UI.Color.getHighlightLightBackgroundValue()),
+divider = "bottom",
+});
+}
+else if (_item.getTradeHistorySettlementIDs().len() == 1)
+{
+tooltip.push({
+id = 50,
+type = "hint",
+icon = "ui/icons/settlement_tier_icon.png",
+text = ::Const.UI.getColorized("Импортировано", ::Const.UI.Color.NegativeValue) + " из " + ::Const.UI.getColorized(_item.getOriginSettlement().getName(), ::Const.UI.Color.getHighlightLightBackgroundValue()) + " в " + ::Const.UI.getColorized(_item.getTradeHistorySettlements()[0].getName(), ::Const.UI.Color.getHighlightLightBackgroundValue()),
+divider = "bottom",
+});
+}
+else if (_item.getTradeHistorySettlementIDs().len() > 1)
+{
+local arr = _item.getTradeHistorySettlements().map(function(s){return s.getName()});
+local slice = arr.slice(0,arr.len() - 1);
+tooltip.push({
+id = 50,
+type = "hint",
+icon = "ui/icons/settlement_tier_icon.png",
+text = ::Const.UI.getColorized("Импортировано", ::Const.UI.Color.NegativeValue) + " из " + ::Const.UI.getColorized(_item.getOriginSettlement().getName(), ::Const.UI.Color.getHighlightLightBackgroundValue()) + " в " + ::Const.UI.getColorized(arr[arr.len() - 1], ::Const.UI.Color.getHighlightLightBackgroundValue()) + " через " + ::Const.LegendMod.Language.arrayToText(slice, "и"),
+divider = "bottom",
+});
+}
 			else
 			{
 				::logError("Something wrong with Trade History");
@@ -257,44 +257,44 @@
 
 		tooltip.extend(_item.getTooltip());
 
-		if (stashLocked == true && _ignoreStashLocked == false)
-		{
-			if (_item.isChangeableInBattle() == false)
-			{
-				tooltip.push({
-					id = 1,
-					type = "hint",
-					icon = "ui/icons/icon_locked.png",
-					text = this.Const.Strings.Tooltip.Tactical.Hint_CannotChangeItemInCombat
-				});
-				return tooltip;
-			}
+if (stashLocked == true && _ignoreStashLocked == false)
+{
+if (_item.isChangeableInBattle() == false)
+{
+tooltip.push({
+id = 1,
+type = "hint",
+icon = "ui/icons/icon_locked.png",
+text = this.Const.Strings.Tooltip.Tactical.Hint_CannotChangeItemInCombat
+});
+return tooltip;
+}
 
-			if (_activeEntity == null || _entity != null && _activeEntity != null && _entity.getID() != _activeEntity.getID())
-			{
-				tooltip.push({
-					id = 1,
-					type = "hint",
-					icon = "ui/icons/icon_locked.png",
-					text = this.Const.Strings.Tooltip.Tactical.Hint_OnlyActiveCharacterCanChangeItemsInCombat
-				});
-				return tooltip;
-			}
+if (_activeEntity == null || _entity != null && _activeEntity != null && _entity.getID() != _activeEntity.getID())
+{
+tooltip.push({
+id = 1,
+type = "hint",
+icon = "ui/icons/icon_locked.png",
+text = this.Const.Strings.Tooltip.Tactical.Hint_OnlyActiveCharacterCanChangeItemsInCombat
+});
+return tooltip;
+}
 
-			if (_activeEntity != null && _activeEntity.getItems().isActionAffordable([
-				_item
-			]) == false)
-			{
-				tooltip.push({
-					id = 1,
-					type = "hint",
-					icon = "ui/tooltips/warning.png",
-					text = "Not enough Action Points to change items ([b][color=%negative%]" + _activeEntity.getItems().getActionCost([
-						_item
-					]) + "[/color][/b] required)"
-				});
-				return tooltip;
-			}
+if (_activeEntity != null && _activeEntity.getItems().isActionAffordable([
+_item
+]) == false)
+{
+tooltip.push({
+id = 1,
+type = "hint",
+icon = "ui/tooltips/warning.png",
+text = "Недостаточно очков действия, чтобы сменить предметы ([b][color=%negative%]" + _activeEntity.getItems().getActionCost([
+_item
+]) + "[/color][/b] требуется)"
+});
+return tooltip;
+}
 		}
 
 		switch(_itemOwner)
@@ -306,177 +306,177 @@
 				{
 					if (_item.getSlotType() != this.Const.ItemSlot.Bag && (_entity.getItems().getItemAtSlot(_item.getSlotType()) == null || _entity.getItems().getItemAtSlot(_item.getSlotType()) == "-1" || _entity.getItems().getItemAtSlot(_item.getSlotType()).isAllowedInBag()))
 					{
-						tooltip.push({
-							id = 1,
-							type = "hint",
-							icon = "ui/icons/mouse_right_button.png",
-							text = "Equip item ([b][color=%positive%]" + _activeEntity.getItems().getActionCost([
-								_item,
-								_entity.getItems().getItemAtSlot(_item.getSlotType()),
-								_entity.getItems().getItemAtSlot(_item.getBlockedSlotType())
-							]) + "[/color][/b] AP)"
-						});
-					}
+tooltip.push({
+id = 1,
+type = "hint",
+icon = "ui/icons/mouse_right_button.png",
+text = "Надеть предмет ([b][color=%positive%]" + _activeEntity.getItems().getActionCost([
+_item,
+_entity.getItems().getItemAtSlot(_item.getSlotType()),
+_entity.getItems().getItemAtSlot(_item.getBlockedSlotType())
+]) + "[/color][/b] ОД)"
+});
+}
 
-					tooltip.push({
-						id = 2,
-						type = "hint",
-						icon = "ui/icons/mouse_right_button_ctrl.png",
-						text = "Drop item on ground ([b][color=%positive%]" + _activeEntity.getItems().getActionCost([
-							_item
-						]) + "[/color][/b] AP)"
-					});
-				}
-				else
+tooltip.push({
+id = 2,
+type = "hint",
+icon = "ui/icons/mouse_right_button_ctrl.png",
+text = "Бросить предмет на землю ([b][color=%positive%]" + _activeEntity.getItems().getActionCost([
+_item
+]) + "[/color][/b] ОД)"
+});
+}
+else
 				{
-					if (_item.getSlotType() != this.Const.ItemSlot.Bag && (_entity.getItems().getItemAtSlot(_item.getSlotType()) == null || _entity.getItems().getItemAtSlot(_item.getSlotType()) == "-1" || _entity.getItems().getItemAtSlot(_item.getSlotType()).isAllowedInBag()))
-					{
-						tooltip.push({
-							id = 1,
-							type = "hint",
-							icon = "ui/icons/mouse_right_button.png",
-							text = "Equip item"
-						});
-					}
+if (_item.getSlotType() != this.Const.ItemSlot.Bag && (_entity.getItems().getItemAtSlot(_item.getSlotType()) == null || _entity.getItems().getItemAtSlot(_item.getSlotType()) == "-1" || _entity.getItems().getItemAtSlot(_item.getSlotType()).isAllowedInBag()))
+{
+tooltip.push({
+id = 1,
+type = "hint",
+icon = "ui/icons/mouse_right_button.png",
+text = "Надеть предмет"
+});
+}
 
-					tooltip.push({
-						id = 2,
-						type = "hint",
-						icon = "ui/icons/mouse_right_button_ctrl.png",
-						text = "Place item in stash"
-					});
-				}
-			}
-			else if (stashLocked == true)
-			{
-				if (_item.isChangeableInBattle() && _item.isAllowedInBag() && _entity.getItems().hasEmptySlot(this.Const.ItemSlot.Bag))
-				{
-					tooltip.push({
-						id = 1,
-						type = "hint",
-						icon = "ui/icons/mouse_right_button.png",
-						text = "Place item in bag ([b][color=%positive%]" + _activeEntity.getItems().getActionCost([
-							_item
-						]) + "[/color][/b] AP)"
-					});
-				}
+tooltip.push({
+id = 2,
+type = "hint",
+icon = "ui/icons/mouse_right_button_ctrl.png",
+text = "Положить предмет на склад"
+});
+}
+}
+else if (stashLocked == true)
+{
+if (_item.isChangeableInBattle() && _item.isAllowedInBag() && _entity.getItems().hasEmptySlot(this.Const.ItemSlot.Bag))
+{
+tooltip.push({
+id = 1,
+type = "hint",
+icon = "ui/icons/mouse_right_button.png",
+text = "Положить предмет в сумку ([b][color=%positive%]" + _activeEntity.getItems().getActionCost([
+_item
+]) + "[/color][/b] ОД)"
+});
+}
 
-				tooltip.push({
-					id = 2,
-					type = "hint",
-					icon = "ui/icons/mouse_right_button_ctrl.png",
-					text = "Drop item on ground ([b][color=%positive%]" + _activeEntity.getItems().getActionCost([
-						_item
-					]) + "[/color][/b] AP)"
-				});
-			}
-			else
-			{
-				if (_item.isChangeableInBattle() && _item.isAllowedInBag())
-				{
-					tooltip.push({
-						id = 1,
-						type = "hint",
-						icon = "ui/icons/mouse_right_button.png",
-						text = "Place item in bag"
-					});
-				}
+tooltip.push({
+id = 2,
+type = "hint",
+icon = "ui/icons/mouse_right_button_ctrl.png",
+text = "Бросить предмет на землю ([b][color=%positive%]" + _activeEntity.getItems().getActionCost([
+_item
+]) + "[/color][/b] ОД)"
+});
+}
+else
+{
+if (_item.isChangeableInBattle() && _item.isAllowedInBag())
+{
+tooltip.push({
+id = 1,
+type = "hint",
+icon = "ui/icons/mouse_right_button.png",
+text = "Положить предмет в сумку"
+});
+}
 
-				tooltip.push({
-					id = 2,
-					type = "hint",
-					icon = "ui/icons/mouse_right_button_ctrl.png",
-					text = "Place item in stash"
-				});
-			}
+tooltip.push({
+id = 2,
+type = "hint",
+icon = "ui/icons/mouse_right_button_ctrl.png",
+text = "Положить предмет на склад"
+});
+}
 
 			break;
 
-		case "ground":
-		case "character-screen-inventory-list-module.ground":
-			if (_item.isChangeableInBattle())
-			{
-				if (_item.getSlotType() != this.Const.ItemSlot.None)
-				{
-					tooltip.push({
-						id = 1,
-						type = "hint",
-						icon = "ui/icons/mouse_right_button.png",
-						text = "Equip item ([b][color=%positive%]" + _activeEntity.getItems().getActionCost([
-							_item,
-							_entity.getItems().getItemAtSlot(_item.getSlotType()),
-							_entity.getItems().getItemAtSlot(_item.getBlockedSlotType())
-						]) + "[/color][/b] AP)"
-					});
-				}
+case "ground":
+case "character-screen-inventory-list-module.ground":
+if (_item.isChangeableInBattle())
+{
+if (_item.getSlotType() != this.Const.ItemSlot.None)
+{
+tooltip.push({
+id = 1,
+type = "hint",
+icon = "ui/icons/mouse_right_button.png",
+text = "Надеть предмет ([b][color=%positive%]" + _activeEntity.getItems().getActionCost([
+_item,
+_entity.getItems().getItemAtSlot(_item.getSlotType()),
+_entity.getItems().getItemAtSlot(_item.getBlockedSlotType())
+]) + "[/color][/b] ОД)"
+});
+}
 
-				if (_item.isAllowedInBag())
-				{
-					tooltip.push({
-						id = 2,
-						type = "hint",
-						icon = "ui/icons/mouse_right_button_ctrl.png",
-						text = "Place item in bag ([b][color=%positive%]" + _activeEntity.getItems().getActionCost([
-							_item
-						]) + "[/color][/b] AP)"
-					});
-				}
-			}
+if (_item.isAllowedInBag())
+{
+tooltip.push({
+id = 2,
+type = "hint",
+icon = "ui/icons/mouse_right_button_ctrl.png",
+text = "Положить предмет в сумку ([b][color=%positive%]" + _activeEntity.getItems().getActionCost([
+_item
+]) + "[/color][/b] ОД)"
+});
+}
+}
 
 			break;
 
-		case "stash":
-		case "character-screen-inventory-list-module.stash":
-			if (_item.isUsable())
-			{
-				tooltip.push({
-					id = 1,
-					type = "hint",
-					icon = "ui/icons/mouse_right_button.png",
-					text = "Use item"
-				});
-			}
-			else if (_item.getSlotType() != this.Const.ItemSlot.None && _item.getSlotType() != this.Const.ItemSlot.Bag)
-			{
-				tooltip.push({
-					id = 1,
-					type = "hint",
-					icon = "ui/icons/mouse_right_button.png",
-					text = "Equip item"
-				});
-			}
+case "stash":
+case "character-screen-inventory-list-module.stash":
+if (_item.isUsable())
+{
+tooltip.push({
+id = 1,
+type = "hint",
+icon = "ui/icons/mouse_right_button.png",
+text = "Использовать предмет"
+});
+}
+else if (_item.getSlotType() != this.Const.ItemSlot.None && _item.getSlotType() != this.Const.ItemSlot.Bag)
+{
+tooltip.push({
+id = 1,
+type = "hint",
+icon = "ui/icons/mouse_right_button.png",
+text = "Надеть предмет"
+});
+}
 
-			if (_item.isChangeableInBattle() == true && _item.isAllowedInBag())
-			{
-				tooltip.push({
-					id = 2,
-					type = "hint",
-					icon = "ui/icons/mouse_right_button_ctrl.png",
-					text = "Place item in bag"
-				});
-			}
+if (_item.isChangeableInBattle() == true && _item.isAllowedInBag())
+{
+tooltip.push({
+id = 2,
+type = "hint",
+icon = "ui/icons/mouse_right_button_ctrl.png",
+text = "Положить предмет в сумку"
+});
+}
 
-			if (_item.getRepair() >= _item.getRepairMax())
-			{
-				tooltip.push({
-					id = 3,
-					type = "hint",
-					icon = "ui/icons/mouse_right_button_alt.png",
-					text = "Set item to be salvaged"
-				});
-			}
-			else if (_item.getRepair() < _item.getRepairMax())
-			{
-				local text = "Set item to be repaired";
+if (_item.getRepair() >= _item.getRepairMax())
+{
+tooltip.push({
+id = 3,
+type = "hint",
+icon = "ui/icons/mouse_right_button_alt.png",
+text = "Отправить предмет на разбор"
+});
+}
+else if (_item.getRepair() < _item.getRepairMax())
+{
+local text = "Отправить предмет на ремонт";
 
-				if (_item.isToBeRepaired())
-				{
-					text = "Set item to be salvaged";
-				}
-				else if (_item.isToBeSalvaged())
-				{
-					text = "Set item to not be salvaged or repaired";
-				}
+if (_item.isToBeRepaired())
+{
+text = "Отправить предмет на разбор";
+}
+else if (_item.isToBeSalvaged())
+{
+text = "Не чинить и не разбирать предмет"
+}
 
 				tooltip.push({
 					id = 3,
@@ -488,96 +488,96 @@
 
 			break;
 
-		case "tactical-combat-result-screen.stash":
-			tooltip.push({
-				id = 1,
-				type = "hint",
-				icon = "ui/icons/mouse_right_button.png",
-				text = "Drop item on the ground"
-			});
+case "tactical-combat-result-screen.stash":
+tooltip.push({
+id = 1,
+type = "hint",
+icon = "ui/icons/mouse_right_button.png",
+text = "Бросить предмет на землю"
+});
+break;
+
+case "tactical-combat-result-screen.found-loot":
+if (this.Stash.hasEmptySlot())
+{
+tooltip.push({
+id = 1,
+type = "hint",
+icon = "ui/icons/mouse_right_button.png",
+text = "Положить предмет на склад"
+});
+}
+else
+{
+tooltip.push({
+id = 1,
+type = "hint",
+icon = "ui/tooltips/warning.png",
+text = "Склад заполнен"
+});
+}
+
 			break;
 
-		case "tactical-combat-result-screen.found-loot":
-			if (this.Stash.hasEmptySlot())
-			{
-				tooltip.push({
-					id = 1,
-					type = "hint",
-					icon = "ui/icons/mouse_right_button.png",
-					text = "Put item into stash"
-				});
-			}
-			else
-			{
-				tooltip.push({
-					id = 1,
-					type = "hint",
-					icon = "ui/tooltips/warning.png",
-					text = "Stash is full"
-				});
-			}
+case "camp-screen-repair-dialog-module.stash":
+case "camp-screen-workshop-dialog-module.stash":
+case "world-town-screen-shop-dialog-module.stash":
+tooltip.push({
+id = 1,
+type = "hint",
+icon = "ui/icons/mouse_right_button.png",
+text = "Продать предмет за [img]gfx/ui/tooltips/money.png[/img]" + _item.getSellPrice()
+});
 
-			break;
-
-		case "camp-screen-repair-dialog-module.stash":
-		case "camp-screen-workshop-dialog-module.stash":
-		case "world-town-screen-shop-dialog-module.stash":
-			tooltip.push({
-				id = 1,
-				type = "hint",
-				icon = "ui/icons/mouse_right_button.png",
-				text = "Sell item for [img]gfx/ui/tooltips/money.png[/img]" + _item.getSellPrice()
-			});
-
-			if (this.World.State.getCurrentTown() != null && this.World.State.getCurrentTown().getCurrentBuilding() != null && this.World.State.getCurrentTown().getCurrentBuilding().isRepairOffered() && _item.getRepairMax() > 1 && _item.getRepair() < _item.getRepairMax())
-			{
-				local price = (_item.getRepairMax() - _item.getRepair()) * this.Const.World.Assets.CostToRepairPerPoint;
+if (this.World.State.getCurrentTown() != null && this.World.State.getCurrentTown().getCurrentBuilding() != null && this.World.State.getCurrentTown().getCurrentBuilding().isRepairOffered() && _item.getRepairMax() > 1 && _item.getRepair() < _item.getRepairMax())
+{
+local price = (_item.getRepairMax() - _item.getRepair()) * this.Const.World.Assets.CostToRepairPerPoint;
 				local value = _item.getRawValue() * (1.0 - _item.getRepair() / _item.getRepairMax()) * 0.2 * this.World.State.getCurrentTown().getPriceMult() * this.Const.Difficulty.SellPriceMult[this.World.Assets.getEconomicDifficulty()];
 				price = this.Math.max(price, value);
 
-				if (this.World.Assets.getMoney() >= price)
-				{
-					tooltip.push({
-						id = 3,
-						type = "hint",
-						icon = "ui/icons/mouse_right_button_alt.png",
-						text = "Pay [img]gfx/ui/tooltips/money.png[/img]" + price + " to have it repaired"
-					});
-				}
-				else
-				{
-					tooltip.push({
-						id = 3,
-						type = "hint",
-						icon = "ui/tooltips/warning.png",
-						text = "Not enough crowns to pay for repairs!"
-					});
-				}
-			}
+if (this.World.Assets.getMoney() >= price)
+{
+tooltip.push({
+id = 3,
+type = "hint",
+icon = "ui/icons/mouse_right_button_alt.png",
+text = "Заплатить [img]gfx/ui/tooltips/money.png[/img]" + price + " за ремонт"
+});
+}
+else
+{
+tooltip.push({
+id = 3,
+type = "hint",
+icon = "ui/tooltips/warning.png",
+text = "Недостаточно крон, чтобы оплатить ремонт!"
+});
+}
+}
 
-			break;
+break;
 
-		case "camp-screen-repair-dialog-module.shop":
-		case "camp-screen-workshop-dialog-module.shop":
-		case "world-town-screen-shop-dialog-module.shop":
-			if (this.Stash.hasEmptySlot())
-			{
-				tooltip.push({
-					id = 1,
-					type = "hint",
-					icon = "ui/icons/mouse_right_button.png",
-					text = "Buy item for [img]gfx/ui/tooltips/money.png[/img]" + _item.getBuyPrice()
-				});
-			}
-			else
-			{
-				tooltip.push({
-					id = 1,
-					type = "hint",
-					icon = "ui/tooltips/warning.png",
-					text = "Stash is full"
-				});
-			}
+case "camp-screen-repair-dialog-module.shop":
+case "camp-screen-workshop-dialog-module.shop":
+case "world-town-screen-shop-dialog-module.shop":
+if (this.Stash.hasEmptySlot())
+{
+tooltip.push({
+id = 1,
+type = "hint",
+icon = "ui/icons/mouse_right_button.png",
+text = "Купить предмет за [img]gfx/ui/tooltips/money.png[/img]" + _item.getBuyPrice()
+});
+}
+else
+{
+tooltip.push({
+id = 1,
+type = "hint",
+icon = "ui/tooltips/warning.png",
+text = "Склад заполнен"
+});
+}
 
 			break;
 		}

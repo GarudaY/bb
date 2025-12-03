@@ -13,7 +13,7 @@
 	o.queryBlueprints = function()
 	{
 		local result = queryBlueprints();
-		result.SubTitle = "A taxidermist can create useful items from all kinds of beast trophies that you bring";
+                result.SubTitle = "Таксидермист может создавать полезные предметы из любых трофеев чудовищ, которые вы принесёте";
 
 		local bps = ::World.Crafting.getQualifiedBlueprintsForUI(this.m.InventoryFilter);
 		result.Pages <- (bps.len() > 0 ? ::Math.floor((bps.len() + 3) / 4) : 1);

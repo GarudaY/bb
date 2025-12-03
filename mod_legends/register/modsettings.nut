@@ -1,88 +1,88 @@
 ::Legends.Settings <- {
-	skipCamp = @() ::Legends.Mod.ModSettings.getSetting("SkipCamp").getValue() || ::Legends.S.oneOf(::World.Assets.getOrigin().getID(), "scenario.legend_risen_legion", "scenario.legends_solo_necro", "scenario.raiders")
+    skipCamp = @() ::Legends.Mod.ModSettings.getSetting("SkipCamp").getValue() || ::Legends.S.oneOf(::World.Assets.getOrigin().getID(), "scenario.legend_risen_legion", "scenario.legends_solo_necro", "scenario.raiders")
 }
 
 local function addNCSetting( _page, _setting )
 {
-	_setting.getData().NewCampaign <- true;
-	_setting.getData().NewCampaignOnly <- true;
-	_page.addElement(_setting);
+    _setting.getData().NewCampaign <- true;
+    _setting.getData().NewCampaignOnly <- true;
+    _page.addElement(_setting);
 }
 
-local map = ::Legends.Mod.ModSettings.addPage("Map Options");
+local map = ::Legends.Mod.ModSettings.addPage("Настройки карты");
 
 //Setting, Default, Min, Max, ?, Name, Description
 //Setting, Default, Min, Max, ?, Name, Description
-addNCSetting(map, ::MSU.Class.RangeSetting("LandRatio", 50, 45, 70, 1, "Land Mass Ratio", "Minimum land to water ratio for an acceptable map. Default is 50. Going either extremes on this slider can result in map never getting generated."));
-addNCSetting(map, ::MSU.Class.RangeSetting("Water", 38, 28, 48, 1, "Water", "Impacts how much of the map is water. Small value results in patchy water around the corners of the map. Larger numbers can create a single large island given a low enough land mass ratio."));
-addNCSetting(map, ::MSU.Class.RangeSetting("Snowline", 85, 75, 95, 1, "Snowline", "Determines where the snowline is generated. Default is 90. This value is inverted. A value of 10 would mean the top 90% of the map is snow."));
-addNCSetting(map, ::MSU.Class.RangeSetting("Settlements", 19, 19, 27, 1, "Settlements", "Maximum number of settlements. Depending on map size, this will try to add the number of settlements on the slider. It will keep the same ratio of settlement types as default Battle Brothers maps. Minimum distance between settlements is 12 tiles. Vanilla default is 19."));
-addNCSetting(map, ::MSU.Class.RangeSetting("Factions", 3, 1, 6, 1, "Factions", "Maximum number of Factions to try and generate. Depending on map size, this may not add all the factions on the slider."));
+addNCSetting(map, ::MSU.Class.RangeSetting("LandRatio", 50, 45, 70, 1, "Соотношение суши и воды", "Минимальное соотношение суши к воде для подходящей карты. Значение по умолчанию — 50. Крайние значения ползунка могут привести к невозможности сгенерировать карту."));
+addNCSetting(map, ::MSU.Class.RangeSetting("Water", 38, 28, 48, 1, "Вода", "Влияет на то, какая часть карты покрыта водой. Малое значение даёт пятна воды у углов карты. Большие значения могут создать один большой остров при низком соотношении суши."));
+addNCSetting(map, ::MSU.Class.RangeSetting("Snowline", 85, 75, 95, 1, "Линия снега", "Определяет, где проходит линия снега. Значение по умолчанию — 90. Это инвертированная величина: значение 10 означает, что верхние 90% карты покрыты снегом."));
+addNCSetting(map, ::MSU.Class.RangeSetting("Settlements", 19, 19, 27, 1, "Поселения", "Максимальное количество поселений. В зависимости от размера карты попробует добавить число поселений из ползунка, сохраняя пропорции типов, как на стандартных картах Battle Brothers. Минимальная дистанция между поселениями — 12 тайлов. Базовое значение — 19."));
+addNCSetting(map, ::MSU.Class.RangeSetting("Factions", 3, 1, 6, 1, "Фракции", "Максимальное количество фракций, которые пытаемся сгенерировать. В зависимости от размера карты может не добавить все выбранные фракции."));
 
 addNCSetting(map, ::MSU.Class.SettingsDivider("MapDivider1"));
 
-addNCSetting(map, ::MSU.Class.BooleanSetting("StackCitadels", false, "Decked Out Citadels", "If enabled, every Citadel will start with all those building attachments map scummers are re-rolling for."));
-addNCSetting(map, ::MSU.Class.BooleanSetting("AllTradeLocations", false, "All trade buildings available", "If enabled, ensures there is at least one of each trade location building on the map."));
-addNCSetting(map, ::MSU.Class.BooleanSetting("DebugMap", false, "(Debug) Show Entire Map", "If enabled, the map will start completely revealed and all enemies and camps will be visible."));
+addNCSetting(map, ::MSU.Class.BooleanSetting("StackCitadels", false, "Полноценные цитадели", "Если включено, каждая цитадель сразу стартует со всеми желанными пристройками."));
+addNCSetting(map, ::MSU.Class.BooleanSetting("AllTradeLocations", false, "Все торговые здания доступны", "Если включено, гарантируется наличие хотя бы одного здания каждого торгового типа на карте."));
+addNCSetting(map, ::MSU.Class.BooleanSetting("DebugMap", false, "(Отладка) Показать всю карту", "Если включено, карта будет открыта полностью, а все враги и лагеря будут видны."));
 
-local config = ::Legends.Mod.ModSettings.addPage("Campaign Options");
+local config = ::Legends.Mod.ModSettings.addPage("Параметры кампании");
 
-addNCSetting(config, ::MSU.Class.EnumSetting("GenderEquality", "Enabled", ["Disabled", "Enabled", "Enabled (Cosmetic)"], "Battle Sisters", "When enabled, most backgrounds will be randomly assigned male or female. Some backgrounds will remain exclusively male or female. Female characters receive +10 fatigue, but -10 hit points.\n\n[u]Disabled[/u]\nNearly Vanilla experience. Regular backgrounds have no female variant, although special backgrounds like the Vala will still appear. No enemy encounters with females. (Yes, your friend the Hex is still here!)\n\n[u]Enabled[/u]\nBeing female has gameplay effects.\n\n[u]Enabled (Cosmetic)[/u]\nBeing female has no effect on stats."));
-local myEnumTooltip = "Specialist Skills bonuses (in example Poacher\'s arm) count as 25% for non specialist weapons, but will grow by 5% according to the following rules.\n\n[u]Level[/u]\n5% per level (100% at level 16)\n\n[u]Week in company (SSU Style)[/u]\n5% per 7 days the mercenary has been in the company (100% at day 105)\n\n[u]Training[/u]\n5% per camp training level (100% when training completed)";
-addNCSetting(config, ::MSU.Class.EnumSetting("SpecialistSkillsSetting", "Level", ["Level", "Week in company", "Training"], "Specialist Skills Rules", myEnumTooltip));
+addNCSetting(config, ::MSU.Class.EnumSetting("GenderEquality", "Enabled", ["Disabled", "Enabled", "Enabled (Cosmetic)"], "Боевые сёстры", "При включении большинство происхождений случайно назначаются как мужские, так и женские. Некоторые происхождения остаются сугубо мужскими или женскими. Женские персонажи получают +10 к усталости, но -10 к здоровью.\n\n[u]Disabled[/u]\nПочти ванильный опыт. Обычные происхождения не имеют женских вариантов, хотя особые вроде Валы всё равно появляются. Нет вражеских столкновений с женщинами (да, твоя подруга Ведьма остаётся!).\n\n[u]Enabled[/u]\nЖенский пол влияет на характеристики.\n\n[u]Enabled (Cosmetic)[/u]\nЖенский пол не влияет на характеристики."));
+local myEnumTooltip = "Бонусы специалиста (например, руки егера) учитываются лишь на 25% для неспециализированного оружия, но будут расти на 5% по правилам ниже.\n\n[u]Уровень[/u]\n5% за уровень (100% на уровне 16)\n\n[u]Неделя в отряде (стиль SSU)[/u]\n5% за каждые 7 дней, проведённые в компании (100% на 105-й день)\n\n[u]Тренировка[/u]\n5% за уровень лагерной тренировки (100% по завершении тренировки)";
+addNCSetting(config, ::MSU.Class.EnumSetting("SpecialistSkillsSetting", "Level", ["Level", "Week in company", "Training"], "Правила специализации навыков", myEnumTooltip));
 addNCSetting(config, ::MSU.Class.SettingsDivider("ConfigDivider1"));
-addNCSetting(config, ::MSU.Class.BooleanSetting("DistanceScaling", true, "Distance Scaling", "If enabled, enemies will be stronger the further they spawn from civilization. \n\n Detail: Begins at 14 tiles from the nearest town, enemies spawned at 28 tiles will be twice as strong. \n\n This is in addition to other difficulty settings."));
-addNCSetting(config, ::MSU.Class.BooleanSetting("SkipCamp", true, "Skip Camp Tutorial", "If disabled, you will gradually unlock camping activities by visiting towns. Useful for first playthroughs. \n\n Detail: skips the camp unlock events and ambition, you still need to buy upgrades."));
-addNCSetting(config, ::MSU.Class.BooleanSetting("RecruitScaling", true, "Recruit Scaling", "If enabled, new recruits will gain levels based on the levels in your party and your renown in the world. \n\n  Details: The maximum level of recruits is increased by half the average level of mercs in your company, averaged with your reputation divided by 1,000. \n\n For example: if your company were all level 10, and your renown was 10,000, new recruits could gain up to 7 levels rounded down. \n\n This in addition to normal recruit level variance."));
-addNCSetting(config, ::MSU.Class.BooleanSetting("BleedKiller", true, "Effects Count As Kills", "If enabled, kills by bleeding out, poisoned to death or consecrated are granted to the actor who caused the relevant effect."));
-addNCSetting(config, ::MSU.Class.BooleanSetting("WorldEconomy", true, "World Economy", "If enabled, Settlements will actively trade items and resources and can grow or decline in value \n\n  Details: The value of a settlement is now a dynamic value that grows and declines with caravan arrivals and departures, contracts fullfilled or failed, good or bad settlement events. \n\n The value of the settlement determines how valuable the caravans it creates are, as well as the strength of local militia. \n\n Very prosperous settlements will continue to grow and potentialy add new locations."));
+addNCSetting(config, ::MSU.Class.BooleanSetting("DistanceScaling", true, "Скалирование по дальности", "Если включено, враги будут сильнее, чем дальше они появляются от цивилизации.\n\nПодробно: начиная с 14 тайлов от ближайшего города враги на отметке 28 тайлов будут вдвое сильнее.\n\nЭто дополнительно к другим настройкам сложности."));
+addNCSetting(config, ::MSU.Class.BooleanSetting("SkipCamp", true, "Пропустить обучение лагерю", "Если отключено, вы будете постепенно открывать лагерные активности, посещая города. Полезно для первого прохождения.\n\nПодробно: пропускает события и амбицию открытия лагеря, но улучшения всё равно нужно покупать."));
+addNCSetting(config, ::MSU.Class.BooleanSetting("RecruitScaling", true, "Скалирование рекрутов", "Если включено, новые рекруты будут получать уровни в зависимости от уровня вашего отряда и вашей славы.\n\nПодробно: максимальный уровень рекрутов повышается наполовину от среднего уровня братьев в компании, усреднённого с вашей репутацией, делённой на 1000.\n\nНапример, если весь отряд имеет 10 уровень, а слава равна 10 000, новые рекруты смогут получить до 7 уровней (с округлением вниз).\n\nЭто дополняет обычный разброс уровней рекрутов."));
+addNCSetting(config, ::MSU.Class.BooleanSetting("BleedKiller", true, "Эффекты считаются убийствами", "Если включено, убийства от кровотечения, яда или освящения засчитываются актёру, вызвавшему соответствующий эффект."));
+addNCSetting(config, ::MSU.Class.BooleanSetting("WorldEconomy", true, "Мировая экономика", "Если включено, поселения активно торгуют предметами и ресурсами и могут расти или деградировать.\n\nПодробно: ценность поселения — динамическая величина, которая растёт или падает с прибывающими и уходящими караванами, выполненными или проваленными контрактами, хорошими или плохими событиями.\n\nЦенность поселения определяет стоимость караванов, которые оно создаёт, а также силу ополчения.\n\nОчень процветающие поселения будут продолжать расти и потенциально добавят новые локации."));
 
 addNCSetting(config, ::MSU.Class.SettingsDivider("ConfigDivider2"));
 
-local tooltip = ::Legends.Mod.ModSettings.addPage("Tooltips / UI");
-tooltip.addTitle("TooltipCombat", "Tooltips - Combat");
-tooltip.addElement(::MSU.Class.BooleanSetting("EnhancedTooltips", false, "Enhanced Enemy Tooltips", "Enemy tooltips in tactical battles will show more information, like perks and statuses"));
+local tooltip = ::Legends.Mod.ModSettings.addPage("Подсказки / Интерфейс");
+tooltip.addTitle("TooltipCombat", "Подсказки — Бой");
+tooltip.addElement(::MSU.Class.BooleanSetting("EnhancedTooltips", false, "Расширенные подсказки врагов", "Подсказки врагов в тактических битвах показывают больше информации, например перки и статусы"));
 tooltip.addDivider("TooltipDivider1");
-tooltip.addTitle("TooltipInventory", "Tooltips - Inventory");
-tooltip.addElement(::MSU.Class.BooleanSetting("ShowArmorPerFatigueValue", true, "Show Armor/Fatigue Efficiency", "Show the Armor value gained per unit of Fatigue cost of an Armor/Helmet Piece/Layer in the Tooltip when the player mouses over an individual Armor/Helmet Piece/Layer.\n\nUseful for people who like to buy their groceries based on price per unit weight"));
-tooltip.addElement(::MSU.Class.BooleanSetting("ShowExpandedArmorLayerTooltip", true, "Expanded Armor Layer Tooltips", "Show the Armor value and Fatigue cost of each Armor/Helmet layer in the Tooltip when the player mouses over a combined Armor/Helmet set.\n\nDisabling this may help reduce the Tooltip length to fit better on lower resolution screens"));
-tooltip.addElement(::MSU.Class.BooleanSetting("ShowItemTradeHistory", true, "Show Item Trade History", "Show the trade history of items, such as where they were produced or imported from.\n\nHas no effect if World Economy is disabled"));
+tooltip.addTitle("TooltipInventory", "Подсказки — Инвентарь");
+tooltip.addElement(::MSU.Class.BooleanSetting("ShowArmorPerFatigueValue", true, "Эффективность брони/усталости", "Показывать в подсказке, сколько брони даёт каждый пункт усталости для элемента брони или шлема/слоя при наведении на отдельный элемент.\n\nПолезно тем, кто выбирает экипировку по цене за единицу веса"));
+tooltip.addElement(::MSU.Class.BooleanSetting("ShowExpandedArmorLayerTooltip", true, "Развёрнутые подсказки слоёв брони", "Показывать в подсказке броню и усталость каждого слоя брони/шлема при наведении на комбинированный набор.\n\nОтключение может сократить длину подсказки на экранах с низким разрешением"));
+tooltip.addElement(::MSU.Class.BooleanSetting("ShowItemTradeHistory", true, "Показывать историю торговли предмета", "Показывать торговую историю предметов, например, где они были произведены или откуда импортированы.\n\nНе действует, если отключена мировая экономика"));
 tooltip.addDivider("TooltipDivider2");
-tooltip.addTitle("TooltipCharacter", "Tooltips - Character");
-tooltip.addElement(::MSU.Class.BooleanSetting("ShowCharacterBackgroundType", true, "Show Character Background Types", "Show a character's Background Types in Tooltips.\n\nUseful when playing Origins with additional gameplay mechanics based on Background Types"));
+tooltip.addTitle("TooltipCharacter", "Подсказки — Персонаж");
+tooltip.addElement(::MSU.Class.BooleanSetting("ShowCharacterBackgroundType", true, "Показывать типы происхождения персонажа", "Показывать типы происхождения персонажа в подсказках.\n\nПолезно при игре с происхождениями, где механики завязаны на типы"));
 tooltip.addDivider("TooltipDivider3");
-tooltip.addTitle("TooltipWorldMap", "Tooltips - World Map");
-tooltip.addElement(::MSU.Class.BooleanSetting("ExactEngageNumbers", false, "Exact engagement numbers", "Display exact engagement numbers."));
+tooltip.addTitle("TooltipWorldMap", "Подсказки — Мир");
+tooltip.addElement(::MSU.Class.BooleanSetting("ExactEngageNumbers", false, "Точное число участников столкновения", "Отображать точное количество противников в столкновении."));
 tooltip.addDivider("TooltipDivider4");
-tooltip.addTitle("TooltipUI", "UI");
+tooltip.addTitle("TooltipUI", "Интерфейс");
 
-local cpLight = tooltip.addElement(::MSU.Class.ColorPickerSetting("HighlightLightBackground", "2,55,189,1", "Highlighted Text (Light Background)", "Customize the color for special highlighted text occurring in light backgrounds, such as in tooltips"));
+local cpLight = tooltip.addElement(::MSU.Class.ColorPickerSetting("HighlightLightBackground", "2,55,189,1", "Выделенный текст (светлый фон)", "Настройте цвет выделенного текста на светлых фонах, например в подсказках"));
 ::Const.UI.Color.getHighlightLightBackgroundValue <- function() {return "#" + cpLight.getValueAsHexString().slice(0,6)}
-local cpDark = tooltip.addElement(::MSU.Class.ColorPickerSetting("HighlightDarkBackground", "111,145,201,1", "Highlighted Text (Dark Background)", "Customize the color of special highlighted text occurring in dark backgrounds, such as in events"));
+local cpDark = tooltip.addElement(::MSU.Class.ColorPickerSetting("HighlightDarkBackground", "111,145,201,1", "Выделенный текст (тёмный фон)", "Настройте цвет выделенного текста на тёмных фонах, например в событиях"));
 ::Const.UI.Color.getHighlightDarkBackgroundValue <- function() {return "#" + cpDark.getValueAsHexString().slice(0,6)}
-local cpFade = tooltip.addElement(::MSU.Class.ColorPickerSetting("FadeDarkBackground", "135,114,81,1", "Faded Text (Dark Background)", "Customize the color of faded text occurring in dark backgrounds, such as in events"));
+local cpFade = tooltip.addElement(::MSU.Class.ColorPickerSetting("FadeDarkBackground", "135,114,81,1", "Приглушённый текст (тёмный фон)", "Настройте цвет приглушённого текста на тёмных фонах, например в событиях"));
 ::Const.UI.Color.getFadeDarkBackgroundValue <- function() {return "#" + cpFade.getValueAsHexString().slice(0,6)}
-tooltip.addElement(::MSU.Class.EnumSetting("ContractCategoryIconAlignment", "Middle", ["Left","Middle","Right","Below"], "Contract Category Icon Alignment", "Adjust the position of the Contract Category icon at the bottom of Contracts in the Settlement screen"));
+tooltip.addElement(::MSU.Class.EnumSetting("ContractCategoryIconAlignment", "Middle", ["Left","Middle","Right","Below"], "Расположение иконки категории контракта", "Настройте позицию иконки категории контракта внизу экрана поселения"));
 
-local misc = ::Legends.Mod.ModSettings.addPage("Misc");
-myEnumTooltip = "Define how Blueprints are shown: 'All Ingredients Available' is the Vanilla behavior; 'One Ingredient Available' shows recipes when one ingredient is fully satisfied; 'Always' shows all recipes at all time";
-misc.addElement(::MSU.Class.EnumSetting("ShowBlueprintsWhen", "All Ingredients Available", ["All Ingredients Available", "One Ingredient Available", "Always"], "Show Blueprints when", myEnumTooltip));
-misc.addElement(::MSU.Class.BooleanSetting("AutoRepairLayer", false, "Autorepair Layer", "Any Body or Helmet Layer that you strip from a piece of armor is automatically marked as 'to be repaired'."));
-misc.addElement(::MSU.Class.BooleanSetting("ClickPresetToSwitch", false, "Faster Camping Preset Switch", "Clicking on the camping preset slot immediately applies the preset"));
-misc.addElement(::MSU.Class.RangeSetting("MinimumChanceToHit", 5, 0, 100, 1, "Minimum hitchance", "Slider for minimum hitchance percentage. Pushing this slider too far will result in no chance to hit for anyone."));
-misc.addElement(::MSU.Class.RangeSetting("MaximumChanceToHit", 95, 0, 100, 1, "Maximum hitchance", "Slider for maximum hitchance percentage. Pushing this slider too far back will result in no chance to hit for anyone."));
-myEnumTooltip = "Define AI Rotation rules: 'Default' is the Vanilla behaviour, AI is free to rotate itself and your bros as long as the skill allows; 'Limited' AI can only rotate itself, but not your bros (unless they have the Twirl Perk); 'Disabled' disable AI Rotation entirely";
-misc.addElement(::MSU.Class.EnumSetting("AiRotation", "Default", ["Default", "Limited", "Disabled"], "AI Rotation Rules", myEnumTooltip));
-misc.addElement(::MSU.Class.BooleanSetting("SellDialogNamed", true, "Sell Famed Dialog", "Should sell confirmation dialog appear when selling famed items?"));
+local misc = ::Legends.Mod.ModSettings.addPage("Разное");
+myEnumTooltip = "Определяет, как показывать чертежи: 'Все ингредиенты доступны' — поведение по умолчанию; 'Доступен один ингредиент' показывает рецепты, когда один ингредиент полностью закрыт; 'Всегда' показывает все рецепты в любой момент";
+misc.addElement(::MSU.Class.EnumSetting("ShowBlueprintsWhen", "All Ingredients Available", ["All Ingredients Available", "One Ingredient Available", "Always"], "Когда показывать чертежи", myEnumTooltip));
+misc.addElement(::MSU.Class.BooleanSetting("AutoRepairLayer", false, "Автопочинка слоя", "Любой снятый слой тела или шлема автоматически помечается как 'отремонтировать'."));
+misc.addElement(::MSU.Class.BooleanSetting("ClickPresetToSwitch", false, "Быстрая смена пресета лагеря", "Клик по слоту лагерного пресета сразу применяет пресет"));
+misc.addElement(::MSU.Class.RangeSetting("MinimumChanceToHit", 5, 0, 100, 1, "Минимальный шанс попадания", "Ползунок минимального процента попадания. Слишком низкое значение приведёт к невозможности попасть всем"));
+misc.addElement(::MSU.Class.RangeSetting("MaximumChanceToHit", 95, 0, 100, 1, "Максимальный шанс попадания", "Ползунок максимального процента попадания. Слишком низкое значение приведёт к невозможности попасть всем"));
+myEnumTooltip = "Определяет правила поворота ИИ: 'Default' — ванильное поведение, ИИ может поворачивать себя и братьев, если навык позволяет; 'Limited' — ИИ может поворачивать только себя, но не братьев (если у них нет перка Кружение); 'Disabled' — полностью отключает поворот ИИ";
+misc.addElement(::MSU.Class.EnumSetting("AiRotation", "Default", ["Default", "Limited", "Disabled"], "Правила поворота ИИ", myEnumTooltip));
+misc.addElement(::MSU.Class.BooleanSetting("SellDialogNamed", true, "Окно продажи именных предметов", "Показывать ли окно подтверждения при продаже именных предметов?"));
 
-local logging = ::Legends.Mod.ModSettings.addPage("Logging");
+local logging = ::Legends.Mod.ModSettings.addPage("Логирование");
 foreach(f in ::Const.LegendMod.Debug.FlagDefs)
 {
-	local b = logging.addElement(::MSU.Class.BooleanSetting(f.ID, f.Value, f.Name, f.Description)); // Set the default MSU Debug logging flags based on configuration in ::Const.LegendMod.Debug.FlagDefs
-	b.Data.FlagID <- f.ID;
-	b.addBeforeChangeCallback(function(_value)
-		{
-			::Legends.Mod.Debug.setFlag(this.Data.FlagID, _value);
-		}
-	);
+    local b = logging.addElement(::MSU.Class.BooleanSetting(f.ID, f.Value, f.Name, f.Description)); // Set the default MSU Debug logging flags based on configuration in ::Const.LegendMod.Debug.FlagDefs
+    b.Data.FlagID <- f.ID;
+    b.addBeforeChangeCallback(function(_value)
+        {
+            ::Legends.Mod.Debug.setFlag(this.Data.FlagID, _value);
+        }
+    );
 }

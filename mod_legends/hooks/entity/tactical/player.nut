@@ -193,7 +193,7 @@
 					id = 3,
 					type = "headerText",
 					icon = "ui/icons/hitchance.png",
-					text = "[color=%positive%]" + _targetedWithSkill.getHitchance(this) + "%[/color] chance to hit",
+                                        text = "[color=%positive%]" + _targetedWithSkill.getHitchance(this) + "%[/color] шанс попасть",
 					children = _targetedWithSkill.getHitFactors(tile)
 				});
 			}
@@ -204,7 +204,7 @@
 				id = 2,
 				type = "text",
 				icon = "ui/icons/initiative.png",
-				text = this.Tactical.TurnSequenceBar.getActiveEntity() == this ? "Acting right now!" : this.m.IsTurnDone || turnsToGo == null ? "Turn done" : "Acts in " + turnsToGo + (turnsToGo > 1 ? " turns" : " turn")
+                                text = this.Tactical.TurnSequenceBar.getActiveEntity() == this ? "Действует прямо сейчас!" : this.m.IsTurnDone || turnsToGo == null ? "Ход завершён" : "Подходит через " + turnsToGo + (turnsToGo > 1 ? " хода" : " ход")
 			},
 			{
 				id = 3,
@@ -293,35 +293,35 @@
 
 			if (this.m.Background != null && this.m.Background.getID() == "background.companion")
 			{
-				text = "With the company from the very beginning.";
+                            text = "В отряде с самого начала.";
 			}
 			else if (time > 1)
 			{
-				text = "With the company for " + time + " days.";
+                            text = "В отряде уже " + time + " дн.";
 			}
 			else
 			{
-				text = "Has just joined the company.";
+                            text = "Только что присоединился к отряду.";
 			}
 
 			if (this.m.LifetimeStats.Battles != 0)
 			{
 				if (this.m.LifetimeStats.Battles == 1)
 				{
-					text = text + (" Took part in " + this.m.LifetimeStats.Battles + " battle");
+                            text = text + (" Принял участие в " + this.m.LifetimeStats.Battles + " битве");
 				}
 				else
 				{
-					text = text + (" Took part in " + this.m.LifetimeStats.Battles + " battles");
+                            text = text + (" Принял участие в " + this.m.LifetimeStats.Battles + " битвах");
 				}
 
 				if (this.m.LifetimeStats.Kills == 1)
 				{
-					text = text + (" and has " + this.m.LifetimeStats.Kills + " kill.");
+                            text = text + (" и имеет " + this.m.LifetimeStats.Kills + " убийство.");
 				}
 				else if (this.m.LifetimeStats.Kills > 1)
 				{
-					text = text + (" and has " + this.m.LifetimeStats.Kills + " kills.");
+                            text = text + (" и имеет " + this.m.LifetimeStats.Kills + " убийств.");
 				}
 				else
 				{
@@ -330,7 +330,7 @@
 
 				if (this.m.LifetimeStats.MostPowerfulVanquished != "")
 				{
-					local vanquishedText = "{" + (" The most powerful opponent %they% vanquished was " + this.m.LifetimeStats.MostPowerfulVanquished + ".") + "}";
+                            local vanquishedText = "{" + (" Самый сильный противник, которого %they% одолел%g% — " + this.m.LifetimeStats.MostPowerfulVanquished + ".") + "}";
 					local vars = [];
 					::Const.LegendMod.extendVarsWithPronouns(vars, this);
 					vanquishedText = this.buildTextFromTemplate(vanquishedText, vars);
@@ -347,7 +347,7 @@
 				id = 5,
 				type = "text",
 				icon = "ui/icons/xp_received.png",
-				text = "Level " + this.m.Level
+                            text = "Уровень " + this.m.Level
 			});
 
 			if (this.getDailyCost() != 0)
@@ -356,7 +356,7 @@
 					id = 3,
 					type = "text",
 					icon = "ui/icons/asset_daily_money.png",
-					text = "Paid [img]gfx/ui/tooltips/money.png[/img]" + this.getDailyCost() + " daily"
+                                    text = "Плата [img]gfx/ui/tooltips/money.png[/img]" + this.getDailyCost() + " в день"
 				});
 			}
 
@@ -371,18 +371,18 @@
 			{
 				tooltip.push({
 					id = 6,
-					type = "hint",
-					icon = "ui/icons/stat_screen_dmg_dealt.png",
-					text = "In the fighting line"
+                                    type = "hint",
+                                    icon = "ui/icons/stat_screen_dmg_dealt.png",
+                                    text = "На линии боя"
 				});
 			}
 			else
 			{
 				tooltip.push({
 					id = 6,
-					type = "hint",
-					icon = "ui/icons/camp.png",
-					text = "In reserve"
+                                    type = "hint",
+                                    icon = "ui/icons/camp.png",
+                                    text = "В резерве"
 				});
 			}
 
@@ -403,7 +403,7 @@
 						id = 90,
 						type = "text",
 						icon = injury.getIcon(),
-						text = injury.getName() + " (" + ht.Min + "-" + ht.Max + " days)"
+                                    text = injury.getName() + " (" + ht.Min + "-" + ht.Max + " дн.)"
 					});
 				}
 				else if (ht.Min > 1)
@@ -412,7 +412,7 @@
 						id = 90,
 						type = "text",
 						icon = injury.getIcon(),
-						text = injury.getName() + " (" + ht.Min + " days)"
+                                    text = injury.getName() + " (" + ht.Min + " дн.)"
 					});
 				}
 				else
@@ -421,7 +421,7 @@
 						id = 90,
 						type = "text",
 						icon = injury.getIcon(),
-						text = injury.getName() + " (" + ht.Min + " day)"
+                                    text = injury.getName() + " (" + ht.Min + " дн.)"
 					});
 				}
 			}
@@ -446,7 +446,7 @@
 					id = 133,
 					type = "text",
 					icon = "ui/icons/days_wounded.png",
-					text = "Light Wounds (" + ht + " days)"
+                                    text = "Лёгкие раны (" + ht + " дн.)"
 				});
 			}
 			else
@@ -455,7 +455,7 @@
 					id = 133,
 					type = "text",
 					icon = "ui/icons/days_wounded.png",
-					text = "Light Wounds (" + ht + " day)"
+                                    text = "Лёгкие раны (" + ht + " дн.)"
 				});
 			}
 		}
@@ -1763,12 +1763,12 @@
 			{
 				id = 1,
 				type = "title",
-				text = "Accessory Layer"
+                           text = "Слой аксессуаров"
 			},
 			{
 				id = 2,
 				type = "description",
-				text = "Click to toggle the visibility of the accessory layer."
+                           text = "Нажмите, чтобы переключить видимость слоя аксессуаров."
 			}
 		];
 		return tt;
@@ -1782,27 +1782,27 @@
 		switch(_layer)
 		{
 		case 0:
-			title = _slot == this.Const.ItemSlot.Body ? "Chain Mail Layer" : "Helmet Layer";
+                   title = _slot == this.Const.ItemSlot.Body ? "Слой кольчуги" : "Слой шлема";
 			break;
 
 		case 1:
-			title = _slot == this.Const.ItemSlot.Body ? "Plate Layer" : "Top Layer";
+                   title = _slot == this.Const.ItemSlot.Body ? "Слой пластин" : "Верхний слой";
 			break;
 
 		case 2:
-			title = _slot == this.Const.ItemSlot.Body ? "Tabard Layer" : "Vanity Layer";
+                   title = _slot == this.Const.ItemSlot.Body ? "Слой табарда" : "Слой украшений";
 			break;
 
 		case 3:
-			title = _slot == this.Const.ItemSlot.Body ? "Cloak Layer" : "Aesthetic Vanity Layer";
+                   title = _slot == this.Const.ItemSlot.Body ? "Слой плаща" : "Эстетический слой";
 			break;
 
 		case 4:
-			title = _slot == this.Const.ItemSlot.Body ? "Upgrade Attachment Layer" : "Rune Layer";
+                   title = _slot == this.Const.ItemSlot.Body ? "Слой улучшений" : "Слой рун";
 			break;
 
 		case 5:
-			title = "Rune Layer";
+                   title = "Слой рун";
 			break;
 		}
 
@@ -1819,7 +1819,7 @@
 			tt.push({
 				id = 2,
 				type = "description",
-				text = _slot == this.Const.ItemSlot.Body ? "A base piece of armor, such as a tunic or surcoat, needs to be worn in order to attach a layer" : "A base piece of helmet, such as a hood or scarf, needs to be worn in order to attach a layer"
+                           text = _slot == this.Const.ItemSlot.Body ? "Чтобы прикрепить слой, нужно надеть базовый элемент брони, например тунику или сюрко." : "Чтобы прикрепить слой, нужен базовый шлем, например капюшон или шарф."
 			});
 			return tt;
 		}
@@ -1829,7 +1829,7 @@
 			tt.push({
 				id = 2,
 				type = "description",
-				text = _slot == this.Const.ItemSlot.Body ? "The layer can not be attached to this piece of armor." : "The layer can not be attached to this helmet"
+                           text = _slot == this.Const.ItemSlot.Body ? "Этот слой нельзя прикрепить к этой броне." : "Этот слой нельзя прикрепить к этому шлему"
 			});
 			return tt;
 		}
@@ -1841,7 +1841,7 @@
 			tt.push({
 				id = 2,
 				type = "description",
-				text = "This layer is vacant. Right-click or drag a layer piece from the stash to attach it to this armor"
+                           text = "Слой пуст. Щёлкните ПКМ или перетащите элемент слоя из склада, чтобы закрепить его на броне"
 			});
 			return tt;
 		}
@@ -1851,7 +1851,7 @@
 			id = 1,
 			type = "hint",
 			icon = "ui/icons/mouse_left_button.png",
-			text = "UnEquip layer"
+                   text = "Снять слой"
 		});
 
 		foreach( t in tt )
@@ -1861,7 +1861,7 @@
 				continue;
 			}
 
-			t.text = "Click this button to remove the attached layer and return it to the stash.";
+                   t.text = "Нажмите, чтобы снять прикреплённый слой и вернуть его на склад.";
 			break;
 		}
 

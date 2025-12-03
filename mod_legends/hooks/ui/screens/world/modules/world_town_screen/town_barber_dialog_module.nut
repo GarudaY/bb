@@ -4,7 +4,7 @@
 	o.queryRosterInformation = function ()
 	{
 		result = queryRosterInformation();
-		result.SubTitle = "Customize the appearance of your mercenaries at the barber";
+                result.SubTitle = "Настройте внешность ваших наёмников у цирюльника";
 
 		return result;
 	}

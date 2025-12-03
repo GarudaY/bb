@@ -1,9 +1,9 @@
 ::mods_hookExactClass("scenarios/world/deserters_scenario", function (o) {
 	o.create = function ()
 	{
-		this.m.ID = "scenario.deserters";
-		this.m.Name = "Deserters";
-		this.m.Description = "[p=c][img]gfx/ui/events/event_88.png[/img][/p][p]For too long have you been dragged from one bloody battle to another at the whim of lords sitting in high towers. Last night, you absconded from camp together with three others. You\'re dressed like soldiers still, but you\'re deserters, and the noose will be your end if you stay here for too long.\n[color=#bcad8c]Deserters:[/color] Start with three deserters and decent armor, but lower funds, you can only be joined by outlaws or combat backgrounds, and a noble house that wants to hunt you down.\n[color=#bcad8c]First to Run:[/color] Your men always are first to act in the very first round of combat.\n[color=#c90000]Like Minded:[/color] Increased chance of finding craven dastards, deserters and the disowned. [/p]";
+                this.m.ID = "scenario.deserters";
+                this.m.Name = "Дезертиры";
+                this.m.Description = "[p=c][img]gfx/ui/events/event_88.png[/img][/p][p]Слишком долго вас швыряли из одной кровавой битвы в другую по прихоти лордов в высоких башнях. Прошлой ночью вы сбежали из лагеря вместе ещё с тремя людьми. Одеты вы всё ещё как солдаты, но теперь вы дезертиры, и петля ждёт вас, если задержитесь надолго.\n[color=#bcad8c]Дезертиры:[/color] Начните с тремя дезертирами и приличной бронёй, но с малыми средствами; к вам смогут примкнуть лишь головорезы или бойцы, а один из дворянских домов захочет на вас охотиться.\n[color=#bcad8c]Первые бегут:[/color] Ваши люди всегда ходят первыми в самом первом раунде боя.\n[color=#c90000]Единомышленники:[/color] Повышенный шанс встретить трусов, дезертиров и изгнанников. [/p]";
 		this.m.Difficulty = 2;
 		this.m.Order = 100;
 		this.m.StartingBusinessReputation = 150;
@@ -15,8 +15,8 @@
 		_bro.setStartValuesEx([
 			"deserter_background"
 		]);
-		_bro.worsenMood(1.0, "Was dragged from one bloody battle to the next");
-		_bro.improveMood(1.5, "Deserted from the army");
+                _bro.worsenMood(1.0, "Его таскали из одной кровавой битвы в другую");
+                _bro.improveMood(1.5, "Дезертировал из армии");
 		_bro.m.HireTime = this.Time.getVirtualTimeF();
 		_bro.m.Talents = [];
 		_bro.m.Attributes = [];
@@ -272,7 +272,7 @@
 			id = 16,
 			type = "text",
 			icon = "ui/icons/special.png",
-			text = "Always acts first in the very first round of combat"
+                        text = "Всегда ходит первым в самом первом раунде боя"
 		});
 	}
 
