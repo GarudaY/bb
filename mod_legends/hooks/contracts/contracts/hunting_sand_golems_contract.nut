@@ -5,12 +5,12 @@
 	{
 		create();
 		this.m.DescriptionTemplates = [
-			"Shimmering spirits of air have been sighted in the desert, an ill-omen for the locals.",
-			"Beware the desert\'s silent guardians: the sand golems, whose massive forms emerge from the sands to block the path of any travelers who dare to cross their domain.",
-			"The desert holds more than just heat and sun - the sand golems lurk beneath the dunes, their massive fists ready to smash any who stray too close.",
-			"The desert sands hold more than just heat and thirst - they are the domain of the air spirits, whose capricious whims can turn a pile of dusty rocks into a towering sand golem.",
-			"Travelers in the desert face a relentless foe: the air spirits, whose tempestuous fury can reduce even the hardiest of caravans to naught but dust and memories.",
-			"Beware the desert\'s haunted wastelands, for the spirits of the ancients are said to linger there, twisted by centuries of anger and resentment.",
+                        "В пустыне заметили мерцающих духов воздуха — дурное знамение для местных.",
+                        "Остерегайтесь безмолвных стражей пустыни: песчаных големов, чьи массивные тела выходят из песков, преграждая путь любым путникам, рискнувшим войти на их территорию.",
+                        "В пустыне есть не только жара и солнце — под дюнами прячутся песчаные големы, готовые своими тяжёлыми кулаками сокрушить каждого, кто подойдет слишком близко.",
+                        "В песках пустыни таится не только зной и жажда — это владения духов воздуха, чьи капризные причуды способны превратить груду камней в исполинского песчаного голема.",
+                        "Путникам в пустыне противостоит неумолимый враг: духи воздуха, чья бурная ярость обращает в пыль даже самые стойкие караваны.",
+                        "Остерегайтесь проклятых пустошей: говорят, духи древних обитают там, веками искривлённые гневом и злобой.",
 		];
 	}
 

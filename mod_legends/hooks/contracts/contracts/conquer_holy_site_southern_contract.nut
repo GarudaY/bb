@@ -5,10 +5,10 @@
 	{
 		create();
 		this.m.DescriptionTemplates = [
-			"A Holy Site is being trespassed by northern rats. Flush them out.",
-			"The Gilder faithful demand the recapture of a revered holy site. You demand coin.",
-			"Despite your heathen ways, the Gilder will permit your assistance in securing a sacred place.",
-			"The Gilder\'s gleam will surely shine down on those who reclaim a holy site for the faith.",
+            "Святыню оскверняют северные крысы. Выбейте их оттуда.",
+            "Верные Гильдеру требуют вернуть почитаемую святыню. Вы же требуете монеты.",
+            "Несмотря на ваше язычество, Гильдер дозволит вам помочь в защите священного места.",
+                        "Блеск Гильдера наверняка озарит тех, кто вернёт святыню вере.",
 		];
 	}
 
