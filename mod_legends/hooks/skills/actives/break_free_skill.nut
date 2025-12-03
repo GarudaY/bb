@@ -39,7 +39,7 @@
 				id = 5,
 				type = "hint",
 				icon = "ui/icons/special.png",
-				text = "Net Mastery makes this significantly easier",
+                                text = "Мастерство сетей заметно упрощает это",
 			});
 		}
 
@@ -49,7 +49,7 @@
 				id = 5,
 				type = "hint",
 				icon = "ui/icons/special.png",
-				text = "Escape Artist makes this significantly easier",
+                                text = "Артист побега делает это гораздо проще",
 			});
 		}
 
@@ -59,7 +59,7 @@
 				id = 5,
 				type = "hint",
 				icon = "ui/icons/special.png",
-				text = "The size of this character makes this significantly easier",
+                                text = "Размер этого персонажа заметно упрощает задачу",
 			});
 		}
 

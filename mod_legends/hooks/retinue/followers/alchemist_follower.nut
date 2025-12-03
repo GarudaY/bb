@@ -3,26 +3,26 @@
 	{
 		this.follower.create();
 		this.m.ID = "follower.alchemist";
-		this.m.Name = "Alchemy Tools";
-		this.m.Description = "An Alchemist is knowledgeable in crafting all kinds of mysterious contraptions and concoctions from exotic ingredients when given access to taxidermist equipment, and uses less material to do so.";
-		this.m.Image = "ui/campfire/legend_alchemist_01";
-		this.m.Cost = 1250;
-		this.m.Effects = [
-			"Has a 25% chance of not consuming any crafting component used by you",
-			"Unlocks \'Snake Oil\' recipe to earn money by crafting from various low tier components",
-			"Allows you to refill bombs and flasks with ammunition"
-		];
+                this.m.Name = "Алхимические инструменты";
+                this.m.Description = "Алхимик умеет создавать всевозможные загадочные устройства и настойки из редких ингредиентов, получив доступ к оснащению таксидермиста, и тратит при этом меньше материалов.";
+                this.m.Image = "ui/campfire/legend_alchemist_01";
+                this.m.Cost = 1250;
+                this.m.Effects = [
+                        "25% шанс не расходовать компонент ремесла, используемый вами",
+                        "Открывает рецепт 'Змеиное масло' для заработка на создании из разных базовых компонентов",
+                        "Позволяет пополнять бомбы и колбы боеприпасами"
+                ];
 
-		this.addRequirement("Crafted 10 items", function() {
-			return ::World.Statistics.getFlags().getAsInt("ItemsCrafted") >= 10;
-		}, false, function( _r ) {
-			_r.Count <- 10;
-			_r.UpdateText <- function() {
-				this.Text = "Crafted " + ::Math.min(this.Count, ::World.Statistics.getFlags().getAsInt("ItemsCrafted")) + "/" + this.Count + " items"
-			};
-		});
+                this.addRequirement("Создать 10 предметов", function() {
+                        return ::World.Statistics.getFlags().getAsInt("ItemsCrafted") >= 10;
+                }, false, function( _r ) {
+                        _r.Count <- 10;
+                        _r.UpdateText <- function() {
+                                this.Text = "Создано предметов: " + ::Math.min(this.Count, ::World.Statistics.getFlags().getAsInt("ItemsCrafted")) + "/" + this.Count
+                        };
+                });
 
-		this.addSkillRequirement("Have at least one of the following backgrounds: Herbalist, Taxidermist, Druid, Alchemist", [
+                this.addSkillRequirement("Иметь хотя бы одну из следующих предысторий: Травник, Таксидермист, Друид, Алхимик", [
 			"background.legend_herbalist",
 			"background.legend_taxidermist",
 			"background.legend_druid",

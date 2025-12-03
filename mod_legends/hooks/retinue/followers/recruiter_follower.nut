@@ -3,16 +3,16 @@
 	{
 		this.follower.create();
 		this.m.ID = "follower.recruiter";
-		this.m.Name = "Pre-filled Contracts";
-		this.m.Description = "The deviousness of a pre-filled contract that needs a single signature can make the labours of arguing about pay a thing of the past. Just simply sign on the line and you are ready to go! Just don't let them read the small print.";
-		this.m.Image = "ui/campfire/legend_recruiter_01";
-		this.m.Cost = 1500;
-		this.m.Effects = [
-			"Makes you pay 10% less up front for hiring new men, and 50% less for tryouts",
-			"Makes between 2 and 4 additional men available to recruit in every settlement"
-		];
+                this.m.Name = "Заполненные контракты";
+                this.m.Description = "Хитрость заранее заполненных контрактов, требующих лишь подписи, избавляет от утомительных споров об оплате. Просто распишитесь на линии — и вперёд! Только не давайте им читать мелкий шрифт.";
+                this.m.Image = "ui/campfire/legend_recruiter_01";
+                this.m.Cost = 1500;
+                this.m.Effects = [
+                        "Уменьшает первоначальный платёж за наём новичков на 10% и стоимость пробы на 50%",
+                        "Добавляет от 2 до 4 дополнительных кандидатов для найма в каждом поселении"
+                ];
 
-		this.addSkillRequirement("Have a mercenary who has taken the Inspiring Presence perk. Guaranteed on Cultists, Pimps, Retired Soldiers and many others.", [
+                this.addSkillRequirement("Иметь наёмника с умением 'Вдохновляющее присутствие'. Гарантировано у Культистов, Сводников, Отставных солдат и многих других", [
 			::Legends.Perks.getID(::Legends.Perk.InspiringPresence),
 			"background.legend_companion_melee",
 			"background.legend_companion_ranged"

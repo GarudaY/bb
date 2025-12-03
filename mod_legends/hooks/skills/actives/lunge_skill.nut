@@ -1,18 +1,18 @@
 ::mods_hookExactClass("skills/actives/lunge_skill", function(o)
 {
-	o.m.isGreatLunge <- false;
+        o.m.isGreatLunge <- false;
 
-	o.setItem <- function (_item)
-	{
-		this.skill.setItem(_item);
-		if (this.m.isGreatLunge)
-		{
-			this.m.Name = "Great Lunge";
-			this.m.Description = "A stronger lunge towards a target 2 tiles away, followed by a precise thrusting attack to catch them unprepared. The faster you are, the more damage you do.";
-			this.m.ActionPointCost = 5;
-			this.m.FatigueCost = 30;
-		}
-	}
+        o.setItem <- function (_item)
+        {
+                this.skill.setItem(_item);
+                if (this.m.isGreatLunge)
+                {
+                        this.m.Name = "Мощный выпад";
+                        this.m.Description = "Более сильный выпад по цели в 2 клетках, за которым следует точный колющий удар, застигнувший её врасплох. Чем быстрее вы, тем больше урон.";
+                        this.m.ActionPointCost = 5;
+                        this.m.FatigueCost = 30;
+                }
+        }
 
 	local onAnySkillUsed = o.onAnySkillUsed;
 	o.onAnySkillUsed = function ( _skill, _targetEntity, _properties )

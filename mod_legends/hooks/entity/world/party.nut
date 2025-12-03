@@ -34,7 +34,7 @@
 					id = 50,
 					type = "hint",
 					icon = f.getUIBanner(),
-					text = "A caravan from " + town.getName()
+                                        text = "Караван из " + town.getName()
 				});
 			}
 		}
@@ -48,7 +48,7 @@
 				ret.push({
 					id = 51,
 					type = "text",
-					text = "[color=%negative%][u]Inventory is empty[/u][/color]"
+                                        text = "[color=%negative%][u]Сумка пуста[/u][/color]"
 				});
 			}
 			else
@@ -58,7 +58,7 @@
 				ret.push({
 					id = 51,
 					type = "text",
-					text = "[u]Transporting:[/u]"
+                                        text = "[u]Везёт:[/u]"
 				});
 
 				for (local i = 0; i < num; ++i)
@@ -76,7 +76,7 @@
 					ret.push({
 						id = 53 + num,
 						type = "text",
-						text = "And " + (inv.len() - ::Const.World.Common.WorldEconomy.Trade.AmountOfLeakedCaravanInventoryInfo) + " more item(s)"
+                                                text = "И ещё " + (inv.len() - ::Const.World.Common.WorldEconomy.Trade.AmountOfLeakedCaravanInventoryInfo) + " предмет(ов)"
 					});
 				}
 			}
@@ -88,12 +88,12 @@
 				{
 					id = 6,
 					type = "hint",
-					text = "Resources: " + this.getResources()
+                                        text = "Ресурсы: " + this.getResources()
 				},
 				{
 					id = 6,
 					type = "hint",
-					text = "Goods: " + this.getInventory().len()
+                                        text = "Товары: " + this.getInventory().len()
 				}
 			]);
 		}

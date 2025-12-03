@@ -3,19 +3,19 @@
 	{
 		this.follower.create();
 		this.m.ID = "follower.scout";
-		this.m.Name = "Watcher's Totem";
-		this.m.Description = "The people of the woods and hinterlands swear that the presence of this totem grants good fortune to those around it, somehow preventing sickness and accidents as long as it is in the camp. Sounds like farking nonsense but if it keeps them happy...";
-		this.m.Image = "ui/campfire/legend_scout_01";
-		this.m.Cost = 1250;
-		this.m.Effects = [
-			"Reduces the movement penalty of difficult terrain by 15%",
-			"Prevents sickness and accidents due to terrain"
-		];
+                this.m.Name = "Тотем дозорного";
+                this.m.Description = "Люди из лесов и окраин клянутся, что присутствие этого тотема приносит удачу окружающим, каким-то образом предотвращая болезни и несчастья, пока он стоит в лагере. Звучит как полнейшая чушь, но если они от этого довольны...";
+                this.m.Image = "ui/campfire/legend_scout_01";
+                this.m.Cost = 1250;
+                this.m.Effects = [
+                        "Снижает штраф к перемещению по сложной местности на 15%",
+                        "Предотвращает болезни и несчастья из-за местности"
+                ];
 
-		this.addSkillRequirement("Have at least one of the following backgrounds: Wildman/Wildwoman, Hunter, Lumberjack, Ranger, Master Archer", [
-			"background.wildman",
-			"background.hunter",
-			"background.lumberjack",
+                this.addSkillRequirement("Иметь хотя бы один из следующих предысторий: Дикий/Дикая, Охотник, Лесоруб, Следопыт, Мастер-лучник", [
+                        "background.wildman",
+                        "background.hunter",
+                        "background.lumberjack",
 			"background.legend_ranger",
 			"background.legend_commander_ranger",
 			"background.legend_master_archer",

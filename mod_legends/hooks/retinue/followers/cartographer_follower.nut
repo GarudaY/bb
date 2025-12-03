@@ -3,19 +3,19 @@
 	{
 		this.follower.create();
 		this.m.ID = "follower.cartographer";
-		this.m.Name = "Mapping Supplies";
-		this.m.Description = "Learning to read is a rare skill and can take some a lifetime to master. Reading maps on the other head can be a little less taxing on the average mercenary. Giving the best and brightest of the company what they need to draw could prove useful.";
+		this.m.Name = "Принадлежности картографа";
+		this.m.Description = "Умение читать — редкий навык, на освоение которого порой уходит вся жизнь. Разбираться в картах для обычного наёмника чуть проще. Если дать лучшим и смышлёным в отряде всё необходимое для рисования, это может пригодиться.";
 		this.m.Image = "ui/campfire/legend_cartographer_01";
 		this.m.Cost = 1250;
 		this.m.Effects = [
-			"Pays you between 100 and 400 crowns for every location you discover on your own. The further away from civilization, the more you\'re paid. Legendary locations pay double."
+			"Платит от 100 до 400 крон за каждую найденную лично локацию. Чем дальше от цивилизации, тем выше плата. Легендарные места оплачиваются вдвое дороже."
 		];
 
-		this.addRequirement("Discovered a legendary location", function() {
+		this.addRequirement("Обнаружить легендарную локацию", function() {
 			return ::World.Flags.getAsInt("LegendaryLocationsDiscovered") >= 1;
 		});
 
-		this.addSkillRequirement("Have at least one of the following backgrounds: Adventurous Noble/Lady, Noble Commander, Philosopher, Historian", [
+		this.addSkillRequirement("Иметь хотя бы одну из следующих предысторий: Отважный дворянин/Дама, Дворянский командир, Философ, Историк", [
 			"background.adventurous_noble",
 			"background.historian",
 			"background.legend_philosopher",

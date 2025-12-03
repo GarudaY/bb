@@ -1509,14 +1509,14 @@
 			allyBanners = [];
 			enemyBanners = [];
 
-			if (!_isPlayerInitiated)
-			{
-				text = "You can\'t make out who is attacking you in time.<br/>You have to defend yourself!";
-			}
-			else
-			{
-				text = "You can\'t make out who you\'ll be facing. Attack at your own peril and be prepared to retreat if need be!";
-			}
+                        if (!_isPlayerInitiated)
+                        {
+                                text = "Вы не успеваете понять, кто нападает.<br/>Нужно обороняться!";
+                        }
+                        else
+                        {
+                                text = "Не видно, с кем предстоит столкнуться. Нападайте на свой страх и риск и будьте готовы отступить!";
+                        }
 		}
 
 		local tile = ::World.getTile(::World.worldToTile(_pos));
@@ -1534,7 +1534,7 @@
 		this.m.EngageByPlayer = _isPlayerInitiated;
 		this.Tooltip.hide();
 		this.m.WorldScreen.hide();
-		this.m.CombatDialog.show(entities, allyBanners, enemyBanners, _isPlayerInitiated || this.m.EscortedEntity != null, _allowFormationPicking, text, image, this.m.EscortedEntity != null ? "Flee!" : "Fall back!");
+                this.m.CombatDialog.show(entities, allyBanners, enemyBanners, _isPlayerInitiated || this.m.EscortedEntity != null, _allowFormationPicking, text, image, this.m.EscortedEntity != null ? "Бежать!" : "Отступить!");
 		this.m.MenuStack.push(function ()
 		{
 			this.m.EngageCombatPos = null;

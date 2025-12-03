@@ -7,136 +7,136 @@
 	local title;
 	if (encounter != null)
 		title = encounter.getName();
-	if (title == null)
-		title = "Error";
+        if (title == null)
+                title = "Ошибка";
 	return [{
 		id = 1,
 		type = "title",
 		text = title
 	}, {
 		id = 2,
-		type = "description",
-		text = "Click to check what is going on here."
-	}];
+                type = "description",
+                text = "Нажмите, чтобы узнать, что здесь происходит."
+        }];
 }
 
 ::Legends.Mod.Tooltips.setTooltips({
 
 	// Camping - Commander's Tent
 	CampingPresets = {
-		ButtonSavePreset = ::MSU.Class.BasicTooltip("Save Preset","Save the current camping assignments to the currently selected numbered preset slot"),
-		ButtonLoadPreset = ::MSU.Class.BasicTooltip("Load Preset","Load the camping assignments from the currently selected numbered preset slot"),
-		ButtonPresetName = ::MSU.Class.BasicTooltip("Customize Preset Name","Give a custom name to the currently selected numbered preset slot"),
-		ButtonPresetSlot = ::MSU.Class.BasicTooltip(
-			@(_data) "Preset Slot " + (_data.index + 1),
-			function(_data)
-			{
-				local name = ::World.Camp.getPresetName(_data.index);
-				if (name)
-					return name;
+                ButtonSavePreset = ::MSU.Class.BasicTooltip("Сохранить пресет","Сохраните текущие назначения лагеря в выбранный пронумерованный слот пресета"),
+                ButtonLoadPreset = ::MSU.Class.BasicTooltip("Загрузить пресет","Загрузите назначения лагеря из выбранного пронумерованного слота пресета"),
+                ButtonPresetName = ::MSU.Class.BasicTooltip("Изменить имя пресета","Дайте пользовательское имя выбранному пронумерованному слоту пресета"),
+                ButtonPresetSlot = ::MSU.Class.BasicTooltip(
+                        @(_data) "Слот пресета " + (_data.index + 1),
+                        function(_data)
+                        {
+                                local name = ::World.Camp.getPresetName(_data.index);
+                                if (name)
+                                        return name;
 				return "";
 			}
 		),
 		PresetNameDialog = {
-			ButtonDelete = ::MSU.Class.BasicTooltip("Delete Preset Name","Delete the current preset slot's custom name and close this pop-up"),
-			ButtonCancel = ::MSU.Class.BasicTooltip("Cancel Changes","Discard any changes and close this pop-up"),
-			ButtonOk = ::MSU.Class.BasicTooltip("Save Preset Name","Save the input name as the current preset slot's custom name and close this pop-up"),
-		},
-	}
+                        ButtonDelete = ::MSU.Class.BasicTooltip("Удалить имя пресета","Удалите пользовательское имя текущего слота пресета и закройте это окно"),
+                        ButtonCancel = ::MSU.Class.BasicTooltip("Отменить изменения","Отмените любые изменения и закройте это окно"),
+                        ButtonOk = ::MSU.Class.BasicTooltip("Сохранить имя пресета","Сохраните введённое имя как имя текущего слота пресета и закройте это окно"),
+                },
+        }
 
-	Camping = {
-		ButtonAssignAll = ::MSU.Class.BasicTooltip("Assign All","Assign all mercenaries to the current tent"),
-		ButtonConfigure = ::MSU.Class.CustomTooltip(function(_data){
-			local ret = [];
-			switch(_data.tent)
-			{
-				case ::Const.World.CampBuildings.Hunter:
+        Camping = {
+                ButtonAssignAll = ::MSU.Class.BasicTooltip("Назначить всех","Назначить всех наёмников в текущую палатку"),
+                ButtonConfigure = ::MSU.Class.CustomTooltip(function(_data){
+                        local ret = [];
+                        switch(_data.tent)
+                        {
+                                case ::Const.World.CampBuildings.Hunter:
 					if (::World.Camp.getBuildingByID(::Const.World.CampBuildings.Hunter).getUpgraded())
 					{
-						ret.push({
-							id = 0,
-							type = "title",
-							text = "Hunting Mode",
-						});
-						ret.push({
-							id = 1,
-							type = "description",
-							text = "Customize the priorities of the hunting party."
-						})
-					}
-					else
-					{
-						ret.push({
-							id = 0,
-							type = "title",
-							text = "Hunting Mode",
-						});
-						ret.push({
-							id = 1,
-							type = "description",
-							text = "Customize the priorities of the hunting party.\n\n" + ::Const.UI.getColorized("Requires the Kitchen Tent upgrade",::Const.UI.Color.NegativeValue),
-						})
-					}
-					break;
-				default:
-					ret.push({
-						id = 0,
-						type = "title",
-						text = "Configure",
-					});
-					ret.push({
-						id = 1,
-						type = "description",
-						text = "There are no special configurations for this tent."
-					})
-			}
-			return ret;
-		}),
-	},
+                                                ret.push({
+                                                        id = 0,
+                                                        type = "title",
+                                                        text = "Режим охоты",
+                                                });
+                                                ret.push({
+                                                        id = 1,
+                                                        type = "description",
+                                                        text = "Настройте приоритеты охотничьей партии."
+                                                })
+                                        }
+                                        else
+                                        {
+                                                ret.push({
+                                                        id = 0,
+                                                        type = "title",
+                                                        text = "Режим охоты",
+                                                });
+                                                ret.push({
+                                                        id = 1,
+                                                        type = "description",
+                                                        text = "Настройте приоритеты охотничьей партии.\n\n" + ::Const.UI.getColorized("Требуется улучшение кухни",::Const.UI.Color.NegativeValue),
+                                                })
+                                        }
+                                        break;
+                                default:
+                                        ret.push({
+                                                id = 0,
+                                                type = "title",
+                                                text = "Настройка",
+                                        });
+                                        ret.push({
+                                                id = 1,
+                                                type = "description",
+                                                text = "Для этой палатки нет особых настроек."
+                                        })
+                        }
+                        return ret;
+                }),
+        },
 
-	CampingHuntingMode = {
-		Default = ::MSU.Class.BasicTooltip("Default Mode","Your hunting party will carry out their activities at the baseline rates."),
-		Cook = ::MSU.Class.BasicTooltip(
-			"Meal Preparation",
-			format(
-				"Allow cooks more time to prepare better food.\n\nDoubles the drop rate of %s, but increases foraging and hunting time by about %s",
-				::Const.UI.getColorized("improved food items",::Const.UI.Color.PositiveValue),
-				::Const.UI.getColorized("40%",::Const.UI.Color.NegativeValue)
-			)
-		),
-		Brew = ::MSU.Class.BasicTooltip(
-			"Alcohol Brewing",
-			format(
-				"Focus on brewing alcoholic drinks.\n\nDoubles the drop rate of %s, but increases foraging and hunting time by about %s",
-				::Const.UI.getColorized("brewed items",::Const.UI.Color.PositiveValue),
-				::Const.UI.getColorized("40%",::Const.UI.Color.NegativeValue)
-			)
-		),
-		Hunt = ::MSU.Class.BasicTooltip(
-			"Focused Hunting",
-			format(
-				"Your hunting party will %s for animals or monsters, taking their time to scour the remains for loot.\n\nDoubles the drop rate of %s, but increases hunting time by about %s\n\n%s are required for loot items to be obtainable",
-				::Const.UI.getColorized("only hunt",::Const.UI.Color.PositiveValue),
-				::Const.UI.getColorized("loot items",::Const.UI.Color.PositiveValue),
-				::Const.UI.getColorized("40%",::Const.UI.Color.NegativeValue),
-				::Const.UI.getColorized("Expert Hunters",::Const.UI.Color.NegativeValue)
-			)
-		),
-		Forage = ::MSU.Class.BasicTooltip(
-			"Focused Foraging",
-			format(
-				"Your hunting party will %s for food and do so quickly.\n\nDecreases foraging time by about %s",
-				::Const.UI.getColorized("only forage",::Const.UI.Color.PositiveValue),
-				::Const.UI.getColorized("15%",::Const.UI.Color.PositiveValue)
-			)
-		),
-	},
-	CombatResult = {
-		Sort = ::MSU.Class.BasicTooltip("Sort Items", "Sort items by type.")
-	},
-	Encounters = {
-		Element = ::MSU.Class.CustomTooltip(@(_data) ::Legends.getEncounterUIData(_data))
-	},
+        CampingHuntingMode = {
+                Default = ::MSU.Class.BasicTooltip("Обычный режим","Ваша охотничья партия будет действовать с базовой скоростью."),
+                Cook = ::MSU.Class.BasicTooltip(
+                        "Подготовка еды",
+                        format(
+                                "Дайте поварам больше времени на приготовление лучшей еды.\n\nУдваивает шанс получения %s, но увеличивает время собирательства и охоты примерно на %s",
+                                ::Const.UI.getColorized("улучшенных продуктов",::Const.UI.Color.PositiveValue),
+                                ::Const.UI.getColorized("40%",::Const.UI.Color.NegativeValue)
+                        )
+                ),
+                Brew = ::MSU.Class.BasicTooltip(
+                        "Варка алкоголя",
+                        format(
+                                "Сосредоточьтесь на приготовлении алкогольных напитков.\n\nУдваивает шанс получения %s, но увеличивает время собирательства и охоты примерно на %s",
+                                ::Const.UI.getColorized("настойки и напитков",::Const.UI.Color.PositiveValue),
+                                ::Const.UI.getColorized("40%",::Const.UI.Color.NegativeValue)
+                        )
+                ),
+                Hunt = ::MSU.Class.BasicTooltip(
+                        "Упор на охоту",
+                        format(
+                                "Ваша охотничья партия будет %s на животных или чудовищ, тщательно обыскивая останки в поисках трофеев.\n\nУдваивает шанс получения %s, но увеличивает время охоты примерно на %s\n\nДля добычи трофеев требуются %s",
+                                ::Const.UI.getColorized("только охотиться",::Const.UI.Color.PositiveValue),
+                                ::Const.UI.getColorized("трофеев",::Const.UI.Color.PositiveValue),
+                                ::Const.UI.getColorized("40%",::Const.UI.Color.NegativeValue),
+                                ::Const.UI.getColorized("Искусные охотники",::Const.UI.Color.NegativeValue)
+                        )
+                ),
+                Forage = ::MSU.Class.BasicTooltip(
+                        "Упор на собирательство",
+                        format(
+                                "Ваша охотничья партия будет %s еду и делать это быстро.\n\nУменьшает время собирательства примерно на %s",
+                                ::Const.UI.getColorized("только собирать",::Const.UI.Color.PositiveValue),
+                                ::Const.UI.getColorized("15%",::Const.UI.Color.PositiveValue)
+                        )
+                ),
+        },
+        CombatResult = {
+                Sort = ::MSU.Class.BasicTooltip("Сортировать предметы", "Отсортировать предметы по типу.")
+        },
+        Encounters = {
+                Element = ::MSU.Class.CustomTooltip(@(_data) ::Legends.getEncounterUIData(_data))
+        },
 
-	Placeholder = ::MSU.Class.BasicTooltip("Placeholder","Under development"),
+        Placeholder = ::MSU.Class.BasicTooltip("Заглушка","В разработке"),
 });
