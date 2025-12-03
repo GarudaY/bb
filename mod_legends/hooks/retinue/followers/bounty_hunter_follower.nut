@@ -3,20 +3,20 @@
 	{
 		this.follower.create();
 		this.m.ID = "follower.bounty_hunter";
-		this.m.Name = "Bounty Board";
-		this.m.Description = "A well maintained bounty board can keep everyone up to date on which heads they should be taking after a battle.";
-		this.m.Image = "ui/campfire/legend_bounty_hunter_01";
-		this.m.Cost = 4000;
-		this.m.Effects = [
-			"Significantly increases the chance of encountering champions",
-			"Pays between 300 and 750 crowns for every champion slain"
-		];
+                this.m.Name = "Доска розыска";
+                this.m.Description = "Хорошо оформленная доска объявлений помогает всем знать, чьи головы нужно брать после боя.";
+                this.m.Image = "ui/campfire/legend_bounty_hunter_01";
+                this.m.Cost = 4000;
+                this.m.Effects = [
+                        "Значительно повышает шанс встретить чемпионов",
+                        "Платит от 300 до 750 крон за каждого убитого чемпиона"
+                ];
 
-		this.addRequirement("Have at least a named or a legendary items in your possession ", function() {
-			return this.getNumberOfNamedItems() >= 1;
-		});
+                this.addRequirement("Иметь хотя бы один именной или легендарный предмет в распоряжении", function() {
+                        return this.getNumberOfNamedItems() >= 1;
+                });
 
-		this.addSkillRequirement("Have at least one of the following backgrounds: Manhunter, Witch Hunter, Beast Slayer, Bounty Hunter", [
+                this.addSkillRequirement("Иметь хотя бы одну из следующих предысторий: Охотник за людьми, Охотник на ведьм, Истребитель чудовищ, Охотник за головами", [
 			"background.witchhunter",
 			"background.beast_slayer",
 			"background.manhunter",

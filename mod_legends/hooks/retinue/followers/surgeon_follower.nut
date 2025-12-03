@@ -3,16 +3,16 @@
 	{
 		this.follower.create();
 		this.m.ID = "follower.surgeon";
-		this.m.Name = "Triage Table";
-		this.m.Description = "Having an area set up and ready to treat the worst injuries could be the hair between life and death for the company. Maybe even yourself...one day.";
-		this.m.Image = "ui/campfire/legend_surgeon_01";
-		this.m.Cost = 1750;
-		this.m.Effects = [
-			"Makes every man without a permanent injury guaranteed to survive an otherwise fatal blow",
-			"Makes every injury take one less day to heal"
-		];
+                this.m.Name = "Стол для сортировки";
+                this.m.Description = "Подготовленное место для обработки тяжёлых ран может стать тонкой гранью между жизнью и смертью для отряда. Возможно, однажды и для вас самого...";
+                this.m.Image = "ui/campfire/legend_surgeon_01";
+                this.m.Cost = 1750;
+                this.m.Effects = [
+                        "Гарантирует выживание от смертельного удара каждому без постоянных травм",
+                        "Сокращает время лечения каждой раны на один день"
+                ];
 
-		this.addSkillRequirement("Have someone with the Field Triage perk. Guaranteed on Monks and Nuns", [
+                this.addSkillRequirement("Иметь кого-то с умением 'Полевое сортирование'. Гарантировано у Монахов и Монахинь", [
 			::Legends.Perks.getID(::Legends.Perk.LegendFieldTriage),
 			"background.legend_companion_melee",
 			"background.legend_companion_ranged"

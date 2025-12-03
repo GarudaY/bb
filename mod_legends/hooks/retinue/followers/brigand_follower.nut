@@ -3,25 +3,25 @@
 	{
 		this.follower.create();
 		this.m.ID = "follower.brigand";
-		this.m.Name = "Stolen Documents";
-		this.m.Description = "The nobles and merchants are sloppy with their security and their underlings are easily intimidated. A well placed bribe, brawl or a set of light fingers can keep you informed on who is taking what where.";
-		this.m.Image = "ui/campfire/legend_brigand_01";
-		this.m.Cost = 2500;
-		this.m.Effects = [
-			"Makes you see the position of some caravans at all times and even if outside your sight radius",
-			"Allows you to see up to 3 of the most valuable items that are being transporting by caravans"
-		];
+                this.m.Name = "Похищенные документы";
+                this.m.Description = "Знать и торговцы беспечны в вопросах охраны, а их слуг легко запугать. Ловко вложенная взятка, заварушка или шустрые пальцы помогут узнать, кто и что куда везёт.";
+                this.m.Image = "ui/campfire/legend_brigand_01";
+                this.m.Cost = 2500;
+                this.m.Effects = [
+                        "Позволяет всегда видеть расположение некоторых караванов, даже вне радиуса обзора",
+                        "Позволяет увидеть до 3 самых ценных предметов, перевозимых караванами"
+                ];
 
 		this.addRequirement("Raided at least 3 caravans", function() {
 			return ::World.Statistics.getFlags().getAsInt("CaravansRaided") >= 3;
 		}, true, function( _r ) {
-			_r.Count <- 3;
-			_r.UpdateText <- function() {
-				this.Text = "Raided " + ::Math.min(this.Count, ::World.Statistics.getFlags().getAsInt("CaravansRaided")) + "/" + this.Count + " caravans"
-			};
-		});
+                        _r.Count <- 3;
+                        _r.UpdateText <- function() {
+                                this.Text = "Разграблено караванов: " + ::Math.min(this.Count, ::World.Statistics.getFlags().getAsInt("CaravansRaided")) + "/" + this.Count
+                        };
+                });
 
-		this.addSkillRequirement("Have at least one of the following backgrounds: Raider, Barbarian, Deserter", [
+                this.addSkillRequirement("Иметь хотя бы одну из следующих предысторий: Налётчик, Варвар, Дезертир", [
 			"background.raider",
 			"background.barbarian",
 			"background.deserter",
