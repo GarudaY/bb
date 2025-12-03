@@ -5,13 +5,13 @@
 	{
 		create();
 		this.m.DescriptionTemplates = [
-			"Folks are reporting there\'s a giant roaming around these parts, stealing livestock from farms.",
-			"Giant marauders are slowly plundering the region of crops, livestock, and anything else tasty-lookin\' they can lay their colossal hands upon.",
-			"Tearful shepherds claim a hungry stone giant has come down from the mountains, one which has a taste for sheep.",
-			"While usually peaceful, unholds can make formidable adversaries when angered, capable of crushing men with ease.",
-			"The bards may love to sing of the \'gentle giants of mountain-holm\', but in your experience unholds tend to break your arms with a single swipe and then devour your horse.",
-			"Though their movements may be ponderous, unholds possess an unstoppable strength that allows them to overpower their enemies with sheer brute force, shattering armor and bones alike.",
-			"Stone giants may lack speed, but their resilience and titanic strength make them fearsome adversaries.",
+                        "Говорят, поблизости бродит великан и тырит скот с ферм.",
+                        "Гигантские мародёры медленно разоряют округу, унося урожай, скот и всё вкусное, до чего дотянутся их лапы.",
+                        "Заплаканные пастухи твердят, что с гор спустился голодный каменный гигант, падкий на овец.",
+                        "Обычно безобидные унхольды в ярости становятся грозными противниками, способными с лёгкостью размозжить человека.",
+                        "Бардов тянет распевать о \"добрых великанах горных долин\", но по опыту унхольды скорее переломают руки одним взмахом и потом слопают твоего коня.",
+                        "Хотя движения унхольдов медлительны, они обладают неукротимой силой, позволяющей им брать врагов грубой мощью, ломая и броню, и кости.",
+                        "Каменные великаны не так быстры, но их живучесть и титаническая сила делают их устрашающими соперниками.",
 		];
 	}
 

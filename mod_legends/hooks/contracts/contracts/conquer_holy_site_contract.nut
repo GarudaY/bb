@@ -5,10 +5,10 @@
 	{
 		create();
 		this.m.DescriptionTemplates = [
-			"A Holy Site has been conquered by southern heathens. Honor and fear of the Old Gods demands that it be retaken.",
-			"Purify a holy site in a way most pleasing to the Old Gods... with blood.",
-			"Glory, renown and much coin awaits in the recapture of a most sacred site.",
-			"The faith demands the recapture of a revered holy site. You demand coin.",
+            "Святыню захватили южные язычники. Честь и страх перед Старыми богами требуют вернуть её.",
+            "Очистите святыню так, как угодно Старым богам... кровью.",
+            "Слава, известность и немало монет ждут за возвращение священного места.",
+            "Вера требует вернуть почитаемую святыню. Вы требуете плату.",
 		];
 	}
 

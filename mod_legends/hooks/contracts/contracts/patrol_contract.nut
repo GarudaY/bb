@@ -1,21 +1,21 @@
 ::mods_hookExactClass("contracts/contracts/patrol_contract", function(o)
 {
 	local create = o.create;
-	o.create = function()
-	{
-		create();
-		this.m.Name = "Patrol Duty";
-		this.m.DescriptionTemplates = [
-			"Hiring mercenaries to protect the roads is a costly business, but it appears %s has been left with little choice.",
-			"While the presence of sellswords may deter banditry and ensure safe passage along the roads, such services come at a premium.",
-			"Banditry and highway robbery in their lands makes the nobility look weak, thus making fighting patrols a reliable repeat contract.",
-			"As rumors of bandit gangs plundering the trade routes to %s spread, the need for vigilant patrols becomes paramount.",
-			"With merchants hesitant to travel to %s due to the growing threat of banditry, the nobility needs to be seen doing something to restore confidence.",
-			"Amidst escalating reports of bandit attacks and caravan ambushes, the imperative to patrol the roads becomes undeniable.",
-			"Whilst neither glamorous or especially exciting work, it feels undeniably good to be paid for just plodding about.",
-			"Getting paid to walk the lads about for a few days might just be the best deal of the year.",
-		];
-	}
+o.create = function()
+{
+create();
+this.m.Name = "Патрульная служба";
+this.m.DescriptionTemplates = [
+"Нанять наёмников для защиты дорог дорого, но похоже, у %s не осталось выбора.",
+"Само присутствие наёмников может отпугнуть разбойников и обеспечить безопасный путь, но такая услуга стоит немало.",
+"Разбойные нападения на их землях заставляют знать выглядеть слабой, поэтому платные патрули — надёжный повторяющийся контракт.",
+"По мере того как слухи о бандитских шайках, грабящих торговые пути к %s, расползаются, необходимость бдительных патрулей становится первостепенной.",
+"Когда из-за растущей угрозы разбойников купцы боятся ехать к %s, знать должна показать, что предпринимает меры для восстановления уверенности.",
+"На фоне множащихся сообщений о нападениях бандитов и засадах на караваны необходимость патрулировать дороги уже не оспаривается.",
+"Работа не самая славная и не особенно увлекательная, но получать деньги за то, что просто топаешь туда-сюда, приятно.",
+"Получать плату за то, что несколько дней водишь парней по округе, — пожалуй, лучшая сделка года.",
+];
+}
 
 	o.formatDescription <- function ()
 	{
@@ -57,31 +57,31 @@
 		}
 	}
 
-	local createScreens = o.createScreens;
-	o.createScreens = function()
-	{
-		createScreens();
-		foreach (s in this.m.Screens)
-		{
-			if (s.ID == "Task")
-			{
-				s.Title = this.m.Name;
-			}
-			if (s.ID == "CrucifiedF")
-			{
-				foreach (option in s.Options)
-				{
-					option.Text = "Rest in peace. (Increase Moral Reputation)";
-				}
-				s.start <- function ()
-				{
-					local brothers = this.World.getPlayerRoster().getAll();
+local createScreens = o.createScreens;
+o.createScreens = function()
+{
+createScreens();
+foreach (s in this.m.Screens)
+{
+if (s.ID == "Task")
+{
+s.Title = this.m.Name;
+}
+if (s.ID == "CrucifiedF")
+{
+foreach (option in s.Options)
+{
+option.Text = "Пусть упокоится с миром. (Повысить репутацию нравов)";
+}
+s.start <- function ()
+{
+local brothers = this.World.getPlayerRoster().getAll();
 
-					foreach( bro in brothers )
-					{
-						if (bro.getBackground().isBackgroundType(this.Const.BackgroundType.OffendedByViolence) && !bro.getBackground().isBackgroundType(this.Const.BackgroundType.Combat))
-						{
-							bro.worsenMood(0.5, "You let a crucified man die a slow death");
+foreach( bro in brothers )
+{
+if (bro.getBackground().isBackgroundType(this.Const.BackgroundType.OffendedByViolence) && !bro.getBackground().isBackgroundType(this.Const.BackgroundType.Combat))
+{
+bro.worsenMood(0.5, "Вы позволили распятому умереть мучительно медленно");
 
 							if (bro.getMoodState() < this.Const.MoodState.Neutral)
 							{
@@ -96,10 +96,10 @@
 				}
 
 			}
-			if (s.ID == "Success3")
-			{
-				s.Text = "[img]gfx/ui/events/event_45.png[/img]{Your return to %employer% is met with curiosity. He\'s counting crowns but, before giving you any, asks you how many \'heads\' you collected in your journey. After reporting %killcount% kills, he purses his lips and nods.%SPEECH_ON%Good enough.%SPEECH_OFF%The man spills some crowns into a satchel and hands it over. | Returning to %employer%, you find the man sitting deeply into an enormous chair, as if he needed all that space to support his nobility, opulence, and pride.\n\nYou talk about the patrol, how you killed %killcount% while on the road. Your emphasis is on the kills, as that is what you\'re being paid for. %employer% nods and has one of his men throw crowns into a satchel and hand it over. | %employer% stands by a window, drinking wine and seeming to ogle a few women gardening below. Without turning to face you, he asks how many you killed on your journey.%SPEECH_ON%%killcount%.%SPEECH_OFF%The nobleman chuckles.%SPEECH_ON%You make it seem so easy.%SPEECH_OFF%Again without looking, he snaps his fingers. A man appears from the side with a satchel in hand. You take it, then take your leave. | %employer% is reading scrolls of papers as he welcomes you in. He\'s curious as to how many kills you racked up on patrol. You report %killcount%, to which he hums and makes a small note on one of the papers. Nodding his head, he kicks open a chest next to him and starts scooping crowns into a satchel. He hands it over and then, without even looking up, tells you to get out. | There\'s a party going on at %employer%\'s abode. You weave through the crowd and drunken opulence to get to the man. He shouts over the music and noise, asking how many you cut down on your patrol. It\'s odd, but shouting that you killed %killcount% seems to have no effect on the partygoers. Shrugging, %employer% turns and leaves, slipping into the crowd of attendees. You try to chase, but a man cuts you off, slamming a satchel into your chest.%SPEECH_ON%Your payment, mercenary. Now, please, see to the door. People are beginning to notice you and they did not come here to feel uncomfortable.%SPEECH_OFF%}";
-			}
-		}
-	}
+if (s.ID == "Success3")
+{
+s.Text = "[img]gfx/ui/events/event_45.png[/img]{Ваше возвращение к %employer% встречают с любопытством. Он пересчитывает кроны, но прежде чем заплатить, спрашивает, сколько \"голов\" вы собрали в пути. Вы докладываете о %killcount% убийств, он поджимает губы и кивает.%SPEECH_ON%Этого достаточно.%SPEECH_OFF%Мужчина пересыпает немного крон в котомку и протягивает её. | Вернувшись к %employer%, вы находите его, глубоко утонувшим в огромном кресле, будто ему требуется столько места, чтобы поддерживать свою знатность, роскошь и гордость.\n\nВы рассказываете о патруле и о том, как убили %killcount% врагов на дороге. Делаете упор на убийства — именно за них вам платят. %employer% кивает и велит одному из людей насыпать крон в сумку и передать её. | %employer% стоит у окна, пьёт вино и, кажется, посматривает на нескольких женщин, работающих в саду внизу. Не оборачиваясь, он спрашивает, сколько вы убили в пути.%SPEECH_ON%%killcount%.%SPEECH_OFF%Дворянин усмехается.%SPEECH_ON%Ты говоришь так, будто это проще простого.%SPEECH_OFF%Не глядя, он щёлкает пальцами. Из боковой комнаты появляется человек с котомкой в руках. Вы берёте её и уходите. | %employer% читает свитки, приветствуя вас. Его интересует, сколько убийств вы совершили на патруле. Вы сообщаете %killcount%, он хмыкает и делает небольшую пометку на одном из листов. Кивнув, он пинком открывает сундук рядом и начинает сгребать кроны в сумку. Он протягивает её и, даже не поднимая глаз, велит вам убираться. | В доме %employer% идёт вечеринка. Вы пробираетесь сквозь толпу и пьяную роскошь, чтобы добраться до хозяина. Он перекрикивает музыку и шум, спрашивая, сколько вы уложили на патруле. Забавно, но крик о %killcount% убитых никак не действует на гостей. Пожав плечами, %employer% разворачивается и растворяется в толпе. Вы пытаетесь догнать, но один из людей преграждает путь, вбивая вам в грудь сумку.%SPEECH_ON%Твоё жалованье, наёмник. А теперь, будь добр, к дверям. Люди начинают замечать тебя, а они сюда пришли не за этим.%SPEECH_OFF%}";
+}
+}
+}
 });

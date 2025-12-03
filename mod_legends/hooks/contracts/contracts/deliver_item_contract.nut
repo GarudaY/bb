@@ -1,23 +1,23 @@
 ::mods_hookExactClass("contracts/contracts/deliver_item_contract", function(o)
 {
 	local create = o.create;
-	o.create = function()
-	{
-		create();
-		this.m.DescriptionTemplates = [
-			"A valuable cargo requires express, armed delivery. Discretion preferred.",
-			"Complete the delivery, claim your payment. Sounds so simple.",
-			"Secure the package, fulfill the contract, collect your fee.",
-			"Get paid for the armed delivery of this crucial item.",
-			"\'Deliver with maximum security.\' You have to wonder what kind of item demands such lengths.",
-			"Handle with care, deliver securely, enjoy the payout. Sounds easy enough.",
-			"From pickup to drop-off, prioritize security, earn your pay.",
-			"Make sure the package arrives intact to secure your compensation.",
-			"Secure the package, ensure safe delivery, earn your reward.",
-			"Guard the item closely, hand only to its intended recipient to fulfill the contract.",
-			"Navigate dangerous roads, fulfill the contract, and get paid.",
-		];
-	}
+o.create = function()
+{
+create();
+this.m.DescriptionTemplates = [
+"Ценный груз требует срочной вооружённой доставки. Предпочтительна осторожность.",
+"Доставьте посылку — получите оплату. Что может быть проще.",
+"Обеспечьте сохранность груза, выполните контракт и заберите своё вознаграждение.",
+"Заплатят за вооружённую доставку этого важного предмета.",
+"\"Доставка с максимальной охраной\" — интересно, что за вещь требует таких мер.",
+"Обращайтесь бережно, доставьте без потерь и наслаждайтесь выплатой. Кажется, ничего сложного.",
+"От получения до передачи груз должен быть в безопасности — и вы получите деньги.",
+"Убедитесь, что посылка прибыла целой, чтобы гарантировать себе оплату.",
+"Обезопасьте груз, доставьте его без происшествий и получите награду.",
+"Охраняйте предмет и отдавайте только нужному получателю — так вы выполните контракт.",
+"Пройдите по опасным дорогам, выполните контракт и получите плату.",
+];
+}
 
 	o.setup = function ()
 	{

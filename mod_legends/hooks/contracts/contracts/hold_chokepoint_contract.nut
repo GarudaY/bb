@@ -5,10 +5,10 @@
 	{
 		create();
 		this.m.DescriptionTemplates = [
-			"A Vizier can find many uses for a Crownling company it would seem. Such as holding a crumbling ruin in the arse-end of nowhere.",
-			"This \'desert fortress\' seems little more than a pile of rubble, yet it seems men are destined to die over it.",
-			"There are many ancient ruins amidst the sands, all abandoned long ago and now apparently vital to defend.",
-			"Hold a sand-blasted ruin against an invading northern army. For an outrageous fee of course.",
+            "Кажется, визирь нашёл массу применений для шайки коронников. Например, удержать разваливающиеся руины в задворках мира.",
+                        "Эта \"пустынная крепость\" больше похожа на груду камней, но, похоже, людям суждено умирать из-за неё.",
+            "Среди песков множество древних руин, давно заброшенных, но теперь почему-то жизненно важных для обороны.",
+            "Удержите песками засыпанную руину от наступающей северной армии. Разумеется, за неприличную плату.",
 		];
 	}
 

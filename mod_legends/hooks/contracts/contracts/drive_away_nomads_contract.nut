@@ -1,19 +1,19 @@
 ::mods_hookExactClass("contracts/contracts/drive_away_nomads_contract", function(o)
 {
 	local create = o.create;
-	o.create = function()
-	{
-		create();
-		this.m.Name = "Desert Raiders";
-		this.m.DescriptionTemplates = [
-			"A nomadic camp has been preying on roads to %s. Elusive and evasive, the desert tribes have been here for centuries.",
-			"Life among the sand nomads is a constant journey beneath the scorching sun. Help them journey elsewhere.",
-			"Amidst the dunes, the sand nomads carve out a life of resilience and adaptability. Do not underestimate them.",
-			"Among the sand nomads, kinship and tradition are the bedrock of their society. Sounds lovely, but you\'ve seen what they do to unarmed traders on the roads.",
-			"Sand nomads strike swiftly, their raids leaving nothing but dust and despair.",
-			"Nomads haunt the desert around %s, their raids a constant threat to those who traverse the sands.",
-		];
-	}
+o.create = function()
+{
+create();
+this.m.Name = "Песчаные налётчики";
+this.m.DescriptionTemplates = [
+"Ночлег кочевников устроен недалеко от дорог к %s. Изворотливые и неуловимые, пустынные племена ходят тут веками.",
+"Жизнь среди песчаных кочевников — бесконечный путь под палящим солнцем. Помогите им продолжить этот путь в другом месте.",
+"Среди дюн песчаные кочевники выживают благодаря стойкости и умению приспосабливаться. Не стоит их недооценивать.",
+"Родство и традиции — основа общества песчаных кочевников. Звучит мило, но вы видели, что они творят с безоружными торговцами на дорогах.",
+"Песчаные кочевники бьют молниеносно, оставляя после набегов лишь пыль и отчаяние.",
+"Кочевники рыщут в пустыне вокруг %s, их налёты — постоянная угроза всем, кто осмеливается пройти по пескам.",
+];
+}
 
 	o.formatDescription <- function ()
 	{

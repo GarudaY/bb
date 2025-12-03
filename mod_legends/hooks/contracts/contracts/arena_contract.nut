@@ -6,14 +6,14 @@
 	o.create = function()
 	{
 		create();
-		this.m.DescriptionTemplates = [
-			"The buzzing roar of the crowd draw many to the Arena. Gold, glory and death can be found inside.",
-			"Amidst the cheers and jeers, the Arena stands as a testament to the might of the Southern Realms.",
-			"The Imperial Arena, where gold and glory are earned through blood and sweat.",
-			"Legends are made and dreams shattered within the walls of the Imperial Arena.",
-			"Nobles and commoners alike gather to witness the spectacle of the Imperial Arena.",
-			"Glittering under the sun, the sands of the Imperial Arena bear witness to countless contests."
-		];
+                this.m.DescriptionTemplates = [
+                        "Гул толпы манит многих в Арену. Золото, слава и смерть ждут внутри.",
+                        "Посреди выкриков и свиста Арена стоит как доказательство мощи Южных земель.",
+                        "Имперская Арена, где золото и слава добываются кровью и потом.",
+                        "Легенды рождаются и мечты рушатся внутри стен Имперской Арены.",
+                        "Знать и простолюдины собираются, чтобы наблюдать за зрелищем Имперской Арены.",
+                        "Сверкая под солнцем, пески Имперской Арены видели бесчисленные поединки."
+                ];
 	}
 
 	o.newTwist <- function (_chance, _flag, _payment) {
@@ -119,7 +119,7 @@
 			{
 				s.Options.push(
 				{
-					Text = "{This isn\'t what I had in mind. | I\'ll sit this one out. | I\'ll wait for the next fight.}",
+                                        Text = "{Это не то, что я ожидал. | Я пропущу этот бой. | Подожду следующего поединка.}",
 					function getResult()
 					{
 						this.Contract.getHome().getBuilding("building.arena").registerAttempt();
@@ -133,13 +133,13 @@
 			if (s.ID == "Start")
 			{
 				s.Options.push({
-					Text = "I\'ll have to think it over.",
+                                        Text = "Мне нужно обдумать это.",
 					getResult = @() 0
 				});
 
 				s.start <- function ()
 				{
-					this.Text += "\n\n\n\n\n\n\n\nThe following characters will enter the arena:\n\n%bro1name%\n%bro2name%\n%bro3name%";
+                                        this.Text += "\n\n\n\n\n\n\n\nВ Арену выйдут следующие бойцы:\n\n%bro1name%\n%bro2name%\n%bro3name%";
 				}
 			}
 
@@ -147,13 +147,13 @@
 			{
 				s.start <- function ()
 				{
-					this.Text = "[img]gfx/ui/events/event_147.png[/img]{The arena master talks as if he doesn\'t even remember your face, then again he probably doesn\'t.%SPEECH_ON%Here\'s your pay, please come again.%SPEECH_OFF% | Without even raising his head from a rag of papyrus, the arena master throws you a purse of coin.%SPEECH_ON%I heard the crowds, and so here are your crowns. May you come visit the pits again.%SPEECH_OFF% | The arena master is waiting for you.%SPEECH_ON%That was a mighty fine show, Crownling. Would not mind it in the slightest if you come back again.%SPEECH_OFF%}";
+                                        this.Text = "[img]gfx/ui/events/event_147.png[/img]{Управляющий ареной говорит так, будто даже не помнит вашего лица, да он, вероятно, и не помнит.%SPEECH_ON%Вот ваша плата, приходите ещё.%SPEECH_OFF% | Не отрывая головы от куска папируса, хозяин арены кидает вам кошель с монетами.%SPEECH_ON%Слышал рев толпы, так что держи свои кроны. Заходи в ямы ещё.%SPEECH_OFF% | Управляющий ареной уже ждёт вас.%SPEECH_ON%Вы устроили славное представление, коронник. Буду только рад видеть вас снова.%SPEECH_OFF%}";
 
 					local arena = this.Contract.getHome().getBuilding("building.arena");
 					if (arena.getCurrentAttempts() == arena.getMaxAttempts() - 1) {
-						this.Text += "The arena will be closed for the day, but you could return as early as tomorrow.";
-					} else {
-						this.Text += "You can continue fighting today if you want.";
+                                                this.Text += "Арена сегодня закроется, но вы сможете вернуться уже завтра.";
+                                        } else {
+                                                this.Text += "Можете продолжить сражаться сегодня, если хотите.";
 					}
 
 					foreach( bro in ::Legends.Arena.getCollaredBros()) {
@@ -188,7 +188,7 @@
 							this.List.push({
 								id = 12,
 								icon = "ui/items/" + a.getUpgrade().getIcon(),
-								text = "You gain a " + a.getName()
+                                                                text = "Вы получаете " + a.getName()
 							});
 							break;
 
@@ -200,7 +200,7 @@
 							this.List.push({
 								id = 12,
 								icon = "ui/items/" + a.getUpgrade().getIcon(),
-								text = "You gain a " + a.getName()
+                                                                text = "Вы получаете " + a.getName()
 							});
 							break;
 
@@ -213,7 +213,7 @@
 							this.List.push({
 								id = 12,
 								icon = "ui/items/" + a.getIcon(),
-								text = "You gain a " + a.getName()
+                                                                text = "Вы получаете " + a.getName()
 							});
 							break;
 						}
