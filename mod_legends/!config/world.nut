@@ -19,27 +19,27 @@ for (local i = 0; i < ::Const.World.TerrainType.COUNT; i++)
 }
 
 ::Const.World.TerrainLocation <- [
-	"at an impassable location",
-	"at sea",
-	"on the plains",
-	"in the swamps",
-	"on the hills",
-	"in the forests",
-	"in the snowy forests",
-	"in the leafy forests",
-	"in the autumn forests",
-	"in the mountains",
-	"in an urban location",
-	"in the farmlands",
-	"in the snow",
-	"in the badlands",
-	"in the tundra",
-	"in the steppes",
-	"by the shore",
-	"in the desert",
-	"in the oasis",
-	"in the green swamps",
-	"in the forested swamps"
+    "в непроходимой местности",
+    "в море",
+    "на равнинах",
+    "в болотах",
+    "на холмах",
+    "в лесах",
+    "в снежных лесах",
+    "в лиственных лесах",
+    "в осенних лесах",
+    "в горах",
+    "в поселении",
+    "на фермах",
+    "в снегах",
+    "в пустошах",
+    "в тундре",
+    "в степях",
+    "у побережья",
+    "в пустыне",
+    "в оазисе",
+    "в зелёных болотах",
+    "в лесистых болотах"
 ];
 
 ::Const.World.TerrainTacticalType.SwampGreen <- 25;
