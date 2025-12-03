@@ -3,25 +3,25 @@
 	{
 		this.follower.create();
 		this.m.ID = "follower.negotiator";
-		this.m.Name = "Meeting Point";
-		this.m.Description = "Having a dedicated meeting place where negotiators can talk, barter and trade insults with prominent figures or their lackeys can help in finding work.";
-		this.m.Image = "ui/campfire/legend_negotiator_01";
-		this.m.Cost = 3500;
-		this.m.Effects = [
-			"Allows for more rounds of contract negotiations and greater payment with your potential employers before they abort, and with only a 10% chance on a hit to relations. Bad relations recover faster"
-			//"Greater contract payment if negotiations are successful and makes good relations with any faction decay slower and bad relations recover faster"
-		];
+                this.m.Name = "Место переговоров";
+                this.m.Description = "Выделенное место встречи, где переговорщики могут говорить, торговаться и обмениваться колкостями с важными особами или их приспешниками, помогает находить работу.";
+                this.m.Image = "ui/campfire/legend_negotiator_01";
+                this.m.Cost = 3500;
+                this.m.Effects = [
+                        "Позволяет больше раундов переговоров о контракте и повышенную оплату, прежде чем наниматели прервут разговор, с лишь 10% шансом ухудшить отношения. Плохие отношения восстанавливаются быстрее"
+                        //"Greater contract payment if negotiations are successful and makes good relations with any faction decay slower and bad relations recover faster"
+                ];
 
-		this.addRequirement("Negotiated for the payment of contracts x times", function() {
-			return ::World.Statistics.getFlags().getAsInt("NegotiatingTries") >= 10;
-		}, true, function( _r ) {
-			_r.Count <- 10;
-			_r.UpdateText <- function() {
-				this.Text = "Negotiated for the payment of contracts " + ::Math.min(this.Count, ::World.Statistics.getFlags().getAsInt("NegotiatingTries")) + "/" + this.Count + " times (attempts only be counted after accepting the contract)"
-			};
-		});
+                this.addRequirement("Вести переговоры об оплате контрактов заданное число раз", function() {
+                        return ::World.Statistics.getFlags().getAsInt("NegotiatingTries") >= 10;
+                }, true, function( _r ) {
+                        _r.Count <- 10;
+                        _r.UpdateText <- function() {
+                                this.Text = "Переговоры об оплате контрактов: " + ::Math.min(this.Count, ::World.Statistics.getFlags().getAsInt("NegotiatingTries")) + "/" + this.Count + " (попытки считаются только после принятия контракта)"
+                        };
+                });
 
-		this.addSkillRequirement("Have someone with the Pacifist perk. Guaranteed on Widow, Inventor, Tailor and many others", [
+                this.addSkillRequirement("Иметь кого-то с умением 'Пацифист'. Гарантировано у Вдовы, Изобретателя, Портного и многих других", [
 			::Legends.Perks.getID(::Legends.Perk.LegendPacifist),
 			"background.legend_companion_melee",
 			"background.legend_companion_ranged"

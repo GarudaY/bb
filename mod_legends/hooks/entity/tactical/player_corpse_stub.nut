@@ -35,27 +35,27 @@
 		local time = this.m.DaysWithCompany;
 		local text;
 
-		if (time == -1)
-		{
-			text = "With the company from the very beginning.";
-		}
-		else if (time > 1)
-		{
-			text = "With the company for " + time + " days.";
-		}
-		else
-		{
-			text = "Had just joined the company.";
-		}
+                if (time == -1)
+                {
+                        text = "В отряде с самого начала.";
+                }
+                else if (time > 1)
+                {
+                        text = "В отряде уже " + time + " дн.";
+                }
+                else
+                {
+                        text = "Только что присоединился к отряду.";
+                }
 
 		if (this.m.LifetimeStats.Battles != 0)
 		{
-			text = text + (" Took part in " + this.m.LifetimeStats.Battles + " battles and has " + this.m.LifetimeStats.Kills + " kills.");
+                        text = text + (" Принял участие в " + this.m.LifetimeStats.Battles + " битвах и имеет " + this.m.LifetimeStats.Kills + " убийств.");
 		}
 
 		if (this.m.LifetimeStats.MostPowerfulVanquished != "")
 		{
-			local vanquishedText = "{" + (" The most powerful opponent %they% vanquished was " + this.m.LifetimeStats.MostPowerfulVanquished + ".") + "}";
+                        local vanquishedText = "{" + (" Самый сильный противник, которого %they% одолел%g% — " + this.m.LifetimeStats.MostPowerfulVanquished + ".") + "}";
 			local vars = [];
 			::Const.LegendMod.extendVarsWithPronouns(vars, this);
 			vanquishedText = this.buildTextFromTemplate(vanquishedText, vars);
@@ -71,7 +71,7 @@
 			id = 5,
 			type = "text",
 			icon = "ui/icons/xp_received.png",
-			text = "Level " + this.m.Level
+                        text = "Уровень " + this.m.Level
 		});
 
 		if (this.m.DailyCost != 0)
@@ -80,7 +80,7 @@
 				id = 3,
 				type = "text",
 				icon = "ui/icons/asset_daily_money.png",
-				text = "Paid [img]gfx/ui/tooltips/money.png[/img]" + this.m.DailyCost + " daily"
+                                text = "Плата [img]gfx/ui/tooltips/money.png[/img]" + this.m.DailyCost + " в день"
 			});
 		}
 
