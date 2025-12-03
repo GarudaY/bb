@@ -3,16 +3,16 @@
 	{
 		this.follower.create();
 		this.m.ID = "follower.quartermaster";
-		this.m.Name = "Ordered Inventory";
-		this.m.Description = "With years of experience from traveling with caravans, the Quartermaster is able to squeeze and rotate any piece of gear, luggage or armor into the perfect spot to use space as efficiently as possible.";
-		this.m.Image = "ui/campfire/legend_quartermaster_01";
-		this.m.Cost = 3500;
-		this.m.Effects = [
-			"Increases the amount of you can carry of ammunition by 100, medical supplies and tools by 50",
-			"Increases stash size by 27"
-		];
+                this.m.Name = "Упорядоченный инвентарь";
+                this.m.Description = "Годы путешествий с караванами научили квартирмейстера втискивать и перекладывать любое снаряжение, поклажу или броню так, чтобы использовать место максимально эффективно.";
+                this.m.Image = "ui/campfire/legend_quartermaster_01";
+                this.m.Cost = 3500;
+                this.m.Effects = [
+                        "Увеличивает переносимый запас боеприпасов на 100, медикаментов и инструментов на 50",
+                        "Увеличивает размер тайника на 27"
+                ];
 
-		this.addSkillRequirement("Have someone with the Skillful Stacking perk. Guaranteed on Vagabonds, Millers, Donkeys and many others", [
+                this.addSkillRequirement("Иметь кого-то с умением 'Умелая укладка'. Гарантировано у Бродяг, Мельников, Ослов и многих других", [
 			::Legends.Perks.getID(::Legends.Perk.LegendSkillfulStacking),
 			"background.legend_companion_melee",
 			"background.legend_companion_ranged"
