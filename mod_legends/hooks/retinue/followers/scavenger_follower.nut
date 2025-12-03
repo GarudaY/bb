@@ -3,16 +3,16 @@
 	{
 		this.follower.create();
 		this.m.ID = "follower.scavenger";
-		this.m.Name = "Scavenger's Cart";
-		this.m.Description = "While mundane, the act of taking everything not nailed down after a battle can save a lot of money later down the road. Comes with pliars to open deathgrips.";
-		this.m.Image = "ui/campfire/legend_scavenger_01";
-		this.m.Cost = 1500;
-		this.m.Effects = [
-			"Recovers a part of all ammo you use during battle",
-			"Recovers tools and supplies from every armor destroyed by you during battle"
-		];
+                this.m.Name = "Тележка мародёра";
+                this.m.Description = "Хотя это и рутинно, привычка забирать всё, что не прибито, после боя может сэкономить много денег в будущем. В комплекте — щипцы, чтобы разжимать мёртвые хватки.";
+                this.m.Image = "ui/campfire/legend_scavenger_01";
+                this.m.Cost = 1500;
+                this.m.Effects = [
+                        "Возвращает часть всего использованного в бою боезапаса",
+                        "Возвращает инструменты и припасы с каждой уничтоженной вами брони"
+                ];
 
-		this.addSkillRequirement("Have at least one of the following backgrounds: Beggar, Cripple, Refugee, Indebted", [
+                this.addSkillRequirement("Иметь хотя бы одну из следующих предысторий: Нищий, Инвалид, Беженец, Должник", [
 			"background.beggar",
 			"background.cripple",
 			"background.refugee",

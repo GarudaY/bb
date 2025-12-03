@@ -10,7 +10,7 @@
 		this.m.OptionsMenuModule.connectUI(this.m.JSHandle);
 		this.m.CreditsModule.connectUI(this.m.JSHandle);
 		this.m.JSHandle.asyncCall("setVersion", [this.GameInfo.getVersionNumber() + " " + this.GameInfo.getVersionName(), "Legends Mod " + ::Legends.Version + " " + ::Legends.BuildName]);
-		local dlc = [];
+local dlc = [];
 
 		for( local i = 0; i < 32; i = ++i )
 		{
@@ -27,24 +27,24 @@
 
 
 		this.m.JSHandle.asyncCall("setDLC", dlc);
-		local missingFiles = this.checkForRequiredFiles();
-		local test = false;
-		if (!this.Const.DLC.Unhold || !this.Const.DLC.Wildmen || !this.Const.DLC.Desert || missingFiles.len() > 0)
-		{
-			local disabledMotdText = "You are missing critical files!";
-			if (!this.Const.DLC.Unhold || !this.Const.DLC.Wildmen || !this.Const.DLC.Desert) disabledMotdText += "\nLegends extensively uses features and assets from all official DLC. We would not be able to offer this mod experience without all the awesome work from Overhype.";
-			if(!this.Const.DLC.Unhold) disabledMotdText += "\nMissing 'Beasts and Exploration' DLC";
-			if(!this.Const.DLC.Wildmen) disabledMotdText += "\nMissing 'Warriors of the North' DLC'";
-			if(!this.Const.DLC.Desert) disabledMotdText += "\nMissing 'Blazing Deserts' DLC'";
-			if(missingFiles.len() > 0) {
-				foreach (fileType, fileName in missingFiles){
-					disabledMotdText += format("\nMissing %s file %s", fileType, fileName);
-				}
-			}
-			this.m.JSHandle.asyncCall("setLMOTD", disabledMotdText);
-		} else {
-			this.m.JSHandle.asyncCall("setMOTD", "Welcome to Legends. \n\n To report bugs, share strategies and ideas, or try out new test builds, join us on https://discord.gg/ZfCHGuC");
-		}
+local missingFiles = this.checkForRequiredFiles();
+local test = false;
+if (!this.Const.DLC.Unhold || !this.Const.DLC.Wildmen || !this.Const.DLC.Desert || missingFiles.len() > 0)
+{
+local disabledMotdText = "Отсутствуют критически важные файлы!";
+if (!this.Const.DLC.Unhold || !this.Const.DLC.Wildmen || !this.Const.DLC.Desert) disabledMotdText += "\nLegends активно использует возможности и ресурсы всех официальных DLC. Мы не смогли бы дать вам этот опыт без потрясающей работы Overhype.";
+if(!this.Const.DLC.Unhold) disabledMotdText += "\nОтсутствует DLC ‘Beasts and Exploration’";
+if(!this.Const.DLC.Wildmen) disabledMotdText += "\nОтсутствует DLC ‘Warriors of the North’";
+if(!this.Const.DLC.Desert) disabledMotdText += "\nОтсутствует DLC ‘Blazing Deserts’";
+if(missingFiles.len() > 0) {
+foreach (fileType, fileName in missingFiles){
+disabledMotdText += format("\nОтсутствует %s файл %s", fileType, fileName);
+}
+}
+this.m.JSHandle.asyncCall("setLMOTD", disabledMotdText);
+} else {
+this.m.JSHandle.asyncCall("setMOTD", "Добро пожаловать в Legends.\n\nЧтобы сообщить об ошибках, поделиться стратегиями и идеями или попробовать тестовые сборки, заходите к нам: https://discord.gg/ZfCHGuC");
+}
 	}
 
 	o.checkForRequiredFiles <- function (){

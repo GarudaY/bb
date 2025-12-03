@@ -1,6 +1,6 @@
-::Const.Strings.Difficulty.push("Legendary");
+::Const.Strings.Difficulty.push("Легендарный");
 
-::Const.Strings.FootprintsType.push("Basilisks");
+::Const.Strings.FootprintsType.push("Василиски");
 
 ::Const.Strings.ShipNames = [
 	"Summer Daze",

@@ -3,15 +3,15 @@
 	{
 		this.follower.create();
 		this.m.ID = "follower.cook";
-		this.m.Name = "Cooking Equipment";
-		this.m.Description = "A good warm meal goes a long way towards healing body and mind. A cook can only do so much with whatever there is to hand in the wilderness, Having the proper equipment to prepare meals makes sure that no provisions go to waste.";
-		this.m.Image = "ui/campfire/legend_cook_01";
-		this.m.Cost = 1000;
-		this.m.Effects = [
-			"Makes all provisions last 4 extra days"
-		];
+                this.m.Name = "Кухонное оборудование";
+                this.m.Description = "Хорошая горячая еда сильно помогает восстановить тело и дух. В дикой местности повар может делать лишь немногое из того, что под рукой, но правильное снаряжение для готовки гарантирует, что ни одна провизия не пропадёт зря.";
+                this.m.Image = "ui/campfire/legend_cook_01";
+                this.m.Cost = 1000;
+                this.m.Effects = [
+                        "Продлевает срок годности всех запасов на 4 дня"
+                ];
 
-		this.addSkillRequirement("Have someone who's learned the Camp Cook perk. Guaranteed on Bakers, Fishwives, Cannibals and Butchers, may be rarely found on many others", [
+                this.addSkillRequirement("Иметь кого-то с умением 'Полевой повар'. Гарантировано у Пекарей, Рыбачек, Каннибалов и Мясников, реже встречается у многих других", [
 			::Legends.Perks.getID(::Legends.Perk.LegendCampCook),
 			"background.legend_companion_melee",
 			"background.legend_companion_ranged"
