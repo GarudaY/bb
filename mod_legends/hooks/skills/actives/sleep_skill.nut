@@ -1,11 +1,11 @@
 ::mods_hookExactClass("skills/actives/sleep_skill", function(o)
 {
-	local create = o.create;
-	o.create = function ()
-	{
-		create();
-		this.m.Description = "Use soothing vapours to lull an enemy to sleep. The chance of success is determined by their resolve";
-	}
+        local create = o.create;
+        o.create = function ()
+        {
+                create();
+                this.m.Description = "Используйте успокаивающие испарения, чтобы усыпить врага. Шанс успеха зависит от его решимости";
+        }
 
 	o.onVerifyTarget = function ( _userTile, _targetTile )
 	{

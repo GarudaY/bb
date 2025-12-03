@@ -14,25 +14,25 @@
 };
 
 ::Const.Strings.MercenaryCompanyNames.extend([
-	"Iron Brigade",
-	"The Ubermensche",
-	"Bottle Brothers",
-	"Mordhau Brigands",
-	"Rules of Poss",
-	"The Elder Ones",
-	"Enduring Eels",
-	"Rat Petters",
-	"Placid Hunters",
-	"Heartpiercers",
-	"Silver Company",
-	"Kraken Band",
-	"Sons of Talos",
-	"Steel Born",
-	"Stormtaken",
-	"Unhold Breakers",
-	"Tunnel Snakes",
-	"Moronic Plungers",
-	"The Bloodhound Gang"
+        "Железная бригада",
+        "Сверхлюди",
+        "Бутылочные братья",
+        "Разбойники Мордау",
+        "Законы Посса",
+        "Древние",
+        "Выносливые угри",
+        "Крысогладцы",
+        "Мирные охотники",
+        "Пронзающие сердца",
+        "Серебряная компания",
+        "Банда Кракена",
+        "Сыны Талоса",
+        "Рождённые сталью",
+        "Унесённые бурей",
+        "Ломатели унхольдов",
+        "Туннельные змеи",
+        "Тупые ныряльщики",
+        "Банда ищей"
 ]);
 ::Const.Strings.FreeCompanyNames <- clone ::Const.Strings.MercenaryCompanyNames;
 ::Const.Strings.CityEncounterNames <- [

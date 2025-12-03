@@ -6,218 +6,218 @@
 				this.Const.FactionTrait.Warmonger,
 				this.Const.FactionTrait.Tyrant
 			],
-			Description = "The noble house of %noblehousename% is a proud and unrelenting family with a long and bloodstained history of conquest. Seated in their fortress of %factionfortressname%, they take with arms what they consider theirs by right. An ancestral feud with house %othernoblehouse% provides never ending reasons to keep both hate in the hearts and ore smelters burning.",
-			Mottos = [
-				"He stands by his own powers",
-				"He conquers who endures",
-				"Boldly and rightly",
-				"Under this sign thou shalt conquer",
-				"He dies not whose fame survives",
-				"No steps backwards",
-				"Through arrows and enemies",
-				"Nothing resists valour and arms",
-				"Such is the way to immortality",
-				"And we also have hurled our javelins",
-				"The heron seeks high places"
-			]
-		},
-		{
-			Traits = [
-				this.Const.FactionTrait.NobleHouse,
-				this.Const.FactionTrait.Warmonger,
-				this.Const.FactionTrait.Marauder
-			],
-			Description = "Disdained for their ruthlessness, brutality and greed, house %noblehousename% has little interaction with other noble families. Their captains and soldiers are known for raiding trade caravans, outlying farms and small settlements from their fortress of %factionfortressname%. A life is not worth much in the realm of house %noblehousename% and many a mercenary on the look for a quick coin only found a quick end here.",
-			Mottos = [
-				"Whatever grows perishes in ashes",
-				"We trample it under our feet",
-				"For me and for mine",
-				"The eagle catches not flies",
-				"Deeds not words",
-				"The gods feed the ravens",
-				"Always thirsty",
-				"Sons of hounds come here and get flesh",
-				"Not without booty"
-			]
-		},
-		{
+                        Description = "Благородный дом %noblehousename% — гордая и неумолимая семья с длинной и кровавой историей завоеваний. Осев в своей крепости %factionfortressname%, они силой берут то, что считают своим по праву. Родовая вражда с домом %othernoblehouse% даёт бесконечные поводы и ненависть в сердцах поддерживать, и плавильни держать горячими.",
+                        Mottos = [
+                                "Он стоит на собственной силе",
+                                "Побеждает тот, кто терпит",
+                                "Смело и по праву",
+                                "Под этим знаменем ты победишь",
+                                "Не умирает тот, чья слава живёт",
+                                "Ни шагу назад",
+                                "Сквозь стрелы и врагов",
+                                "Ничто не устоит перед доблестью и клинками",
+                                "Таков путь к бессмертию",
+                                "И мы тоже бросали копья",
+                                "Цапля ищет высоты"
+                        ]
+                },
+                {
+                        Traits = [
+                                this.Const.FactionTrait.NobleHouse,
+                                this.Const.FactionTrait.Warmonger,
+                                this.Const.FactionTrait.Marauder
+                        ],
+                        Description = "Презираемый за жестокость, зверство и жадность, дом %noblehousename% почти не общается с другими родами. Их капитаны и солдаты из крепости %factionfortressname% известны набегами на торговые караваны, дальние фермы и малые поселения. Жизнь здесь мало чего стоит, и многие наёмники, желавшие лёгкой монеты, находили у %noblehousename% лишь быструю смерть.",
+                        Mottos = [
+                                "Всё, что растёт, погибает в пепле",
+                                "Мы растаптываем это ногами",
+                                "За себя и за своих",
+                                "Орел мух не ловит",
+                                "Дела, а не слова",
+                                "Боги кормят воронов",
+                                "Всегда жаждущие",
+                                "Сыны псов, идите сюда за мясом",
+                                "Без добычи не уйдём"
+                        ]
+                },
+                {
 			Traits = [
 				this.Const.FactionTrait.NobleHouse,
 				this.Const.FactionTrait.Collector,
 				this.Const.FactionTrait.Warmonger
 			],
-			Description = "The house of %noblehousename% always has their eyes on the horizon. Always chasing riches from foreign lands, and willing to take them by force.  Missions are launched from %factionfortressname% out to claim a world they believe to be rightfully theirs.",
-			Mottos = [
-				"Seize it",
-				"The thrill of the hunt",
-				"The endless hunt",
-				"The horizon calls",
-				"Find it and own it",
-				"All that we see, we own",
-				"Never stop hunting",
-				"Take it all",
-				"All belongs to us"
-			]
-		},
-		{
+                        Description = "Дом %noblehousename% всегда смотрит к горизонту. Они бесконечно гонятся за богатствами чужих земель и готовы брать их силой. Из %factionfortressname% отправляются походы, чтобы присвоить мир, который, как они верят, по праву принадлежит им.",
+                        Mottos = [
+                                "Забирай",
+                                "Азарт охоты",
+                                "Бесконечная охота",
+                                "Горизонт зовёт",
+                                "Найди и владей",
+                                "Всё, что мы видим, — наше",
+                                "Охоте нет конца",
+                                "Забрать всё",
+                                "Всё принадлежит нам"
+                        ]
+                },
+                {
 			Traits = [
 				this.Const.FactionTrait.NobleHouse,
 				this.Const.FactionTrait.ManOfThePeople,
 				this.Const.FactionTrait.Tyrant
 			],
-			Description = "The noble house of %noblehousename% is a proud and unrelenting family with a long and bloodstained history of total control. Seated in their fortress of %factionfortressname%, their people offer up a tithe consider theirs by birthright. Though their rule is cruel, the people adore them for their staunchness.",
-			Mottos = [
-				"Love thy betters",
-				"Born to rule, destined for brutality",
-				"For the Duke, kill them all",
-				"In his name, let none stand",
-				"The Duke protects with fury",
-				"Tough love",
-				"Hard lines provide good lives",
-				"Rest in his iron grip",
-				"Beg for his mercy, love his justice",
-				"The shepard's sacrifices to save the flock",
-				"Take heart, and take hearts"
-			]
-		}
-	],
-	[
-		{
+                        Description = "Благородный дом %noblehousename% — гордая и неумолимая семья с долгой и кровавой историей полного контроля. Обосновавшись в крепости %factionfortressname%, они принимают дань, считаемую их правом по крови. Хотя их правление жестоко, люди почитают их за стойкость.",
+                        Mottos = [
+                                "Люби своих вышестоящих",
+                                "Рождены править, обречены на жестокость",
+                                "За герцога, перебей их всех",
+                                "Во имя его пусть никто не устоит",
+                                "Герцог защищает яростью",
+                                "Жёсткая любовь",
+                                "Жёсткие рамки дают хорошую жизнь",
+                                "Покой в его железной хватке",
+                                "Проси его милости, люби его справедливость",
+                                "Жертвы пастуха ради спасения стада",
+                                "Крепись сердцем и забирай сердца"
+                        ]
+                }
+        ],
+        [
+                {
 			Traits = [
 				this.Const.FactionTrait.NobleHouse,
 				this.Const.FactionTrait.Schemer,
 				this.Const.FactionTrait.Sheriff
 			],
-			Description = "House %noblehousename% works in the dark to protect its lands. The agents of %noblehousename%  have eyes in every shady corner and ears in every wall, inside and outside their borders. Peace is maintained through their lands, because %noblehousename% is always watching.",
-			Mottos = [
-				"Eyes on all",
-				"Security through surveillance",
-				"Total information awareness",
-				"Report thy neighbour, to protect him",
-				"All seeing",
-				"Knowledge is safety",
-				"Shadows guard",
-				"Loose lips sink ships",
-				"Need to know only",
-				"Protected by secrecy",
-				"The grand plan"
-			]
-		},
-		{
-			Traits = [
-				this.Const.FactionTrait.NobleHouse,
-				this.Const.FactionTrait.Collector,
-				this.Const.FactionTrait.Tyrant
-			],
-			Description = "The house of %noblehousename% is well known for its jealously guarded horde of treasures. The hoarded treasures of %noblehousename% are whispered through the lands, and still they crave more.",
-			Mottos = [
-				"One of everything",
-				"To the zoo",
-				"For the collection",
-				"Everything in its place",
-				"A place for every thing",
-				"It all comes home",
-				"One for me, and one for me",
-				"We collect",
-				"The Horde's hoard"
-			]
-		},
-		{
-			Traits = [
+                        Description = "Дом %noblehousename% трудится в тени, чтобы защитить свои земли. У агентов %noblehousename% глаза в каждом тёмном углу и уши в каждой стене, и внутри, и вне их границ. Мир держится на их землях, потому что %noblehousename% всегда наблюдает.",
+                        Mottos = [
+                                "Глаза на всём",
+                                "Безопасность через надзор",
+                                "Полная осведомлённость",
+                                "Донос на соседа — во имя его защиты",
+                                "Всевидящие",
+                                "Знание — безопасность",
+                                "Тени охраняют",
+                                "Болтливые губы топят корабли",
+                                "Только по принципу нужды знать",
+                                "Хранимые тайной",
+                                "Великий план"
+                        ]
+                },
+                {
+                        Traits = [
+                                this.Const.FactionTrait.NobleHouse,
+                                this.Const.FactionTrait.Collector,
+                                this.Const.FactionTrait.Tyrant
+                        ],
+                        Description = "Дом %noblehousename% известен ревниво охраняемой кладовой сокровищ. Шёпотом по землям ходят легенды о запасах %noblehousename%, и всё же им мало.",
+                        Mottos = [
+                                "По одному всего",
+                                "В зверинец",
+                                "Для коллекции",
+                                "Всему своё место",
+                                "Место для каждой вещи",
+                                "Всё идёт домой",
+                                "Одно мне — и ещё одно мне",
+                                "Мы собираем",
+                                "Сокровищница Орды"
+                        ]
+                },
+                {
+                        Traits = [
 				this.Const.FactionTrait.NobleHouse,
 				this.Const.FactionTrait.ManOfThePeople,
 				this.Const.FactionTrait.Schemer
 			],
-			Description = "The house of %noblehousename% subtly manipulates events for the greater good. From their home in %factionfortressname%, they strategise to bring wellbeing to the common man. In a brutal world they are a faint glimmer of a better world.",
-			Mottos = [
-				"Plan for the future",
-				"Nurture with foresight",
-				"Towards a higher purpose",
-				"Plan together",
-				"For the greater good",
-				"The stars align in hope",
-				"Seeing beyond the pain",
-				"A brighter morning",
-				"A harvest sown",
-				"Seeds are planted for children",
-				"Building for tomorrow"
-			]
-		},
-		{
-			Traits = [
-				this.Const.FactionTrait.NobleHouse,
-				this.Const.FactionTrait.ManOfThePeople,
-				this.Const.FactionTrait.Marauder
-			],
-			Description = "Lauded as providers for their people %noblehousename% creates bounty by raiding their enemies. Their captains and soldiers are known for raiding trade caravans, outlying farms and small settlements from their fortress of %factionfortressname%. They bring supplies back home, to share the bounty among their people.",
-			Mottos = [
-				"Our own first",
-				"We are the chosen",
-				"The heathens shall fall",
-				"What's yours is ours",
-				"Anything for our people",
-				"Blood for my people",
-				"Bringing it home",
-				"Better us than them",
-				"Our folk are all"
-			]
-		},
-	],
-	[
-		{
+                        Description = "Дом %noblehousename% тонко направляет события ради высшего блага. Из своего дома в %factionfortressname% они выстраивают планы, чтобы принести благополучие простому люду. В жестоком мире они — слабый отблеск лучшего будущего.",
+                        Mottos = [
+                                "Планируй будущее",
+                                "Воспитывай с дальновидностью",
+                                "К более высокой цели",
+                                "Строим планы вместе",
+                                "Во благо всех",
+                                "Звёзды сходятся в надежде",
+                                "Видеть дальше боли",
+                                "Светлое утро",
+                                "Заложенный урожай",
+                                "Семена сажаем ради детей",
+                                "Строим завтрашний день"
+                        ]
+                },
+                {
+                        Traits = [
+                                this.Const.FactionTrait.NobleHouse,
+                                this.Const.FactionTrait.ManOfThePeople,
+                                this.Const.FactionTrait.Marauder
+                        ],
+                        Description = "Славимый как кормилец своего народа, %noblehousename% добывает богатство набегами на врагов. Их капитаны и солдаты из крепости %factionfortressname% известны набегами на торговые караваны, дальние фермы и мелкие поселения. Они несут припасы домой, чтобы делиться добычей со своими людьми.",
+                        Mottos = [
+                                "Своих — прежде всего",
+                                "Мы — избранные",
+                                "Неверные падут",
+                                "Ваше — наше",
+                                "Всё ради нашего народа",
+                                "Кровь за мой народ",
+                                "Несём всё домой",
+                                "Лучше мы, чем они",
+                                "Наш люд — это всё"
+                        ]
+                },
+        ],
+        [
+                {
 			Traits = [
 				this.Const.FactionTrait.NobleHouse,
 				this.Const.FactionTrait.Schemer,
 				this.Const.FactionTrait.Collector
 			],
-			Description = "Trading and haggling can be just as fierce as fighting a war, and the house of %noblehousename% is a true master of cunning bargains. Rumor has it that many a profitable deal made by house %noblehousename% is not only based on honest trading but also bribery, extortion and deception. The family resides in the pompous region capitol of %factionfortressname%, but despite their unmeasurable riches they are known to be notoriously close-fisted.",
-			Mottos = [
-				"To live without a wish concealed",
-				"Fortune favours the bold",
-				"The world does not suffice",
-				"Separate the honest from the useful",
-				"Our harvest will also arrive",
-				"I gain by hazard"
-			]
-		},
-		{
+                        Description = "Торговля и торг могут быть столь же яростными, как война, и дом %noblehousename% — настоящий мастер хитрых сделок. Говорят, многие выгодные сделки %noblehousename% держатся не только на честной торговле, но и на взятках, вымогательстве и обмане. Семья живёт в пышной столице региона %factionfortressname%, но при несметных богатствах известна свирепой скупостью.",
+                        Mottos = [
+                                "Жить без тайных желаний",
+                                "Смелым сопутствует удача",
+                                "Мир недостаточен",
+                                "Отделяй честных от полезных",
+                                "Наш урожай тоже придёт",
+                                "Зарабатываю, рискуя"
+                        ]
+                },
+                {
 			Traits = [
 				this.Const.FactionTrait.NobleHouse,
 				this.Const.FactionTrait.ManOfThePeople,
 				this.Const.FactionTrait.Collector
 			],
-			Description = "House %noblehousename% claims to have roots in the time when man first claimed this land, and the first king ruled all men. They are but one of many noble houses now, but proud of their long history and with ambitions to continue writing history. As their renown and their resources dwindle in the now, they are said to finance expeditions in an attempt to unearth long lost treasures from the past, in sunken cities and places long forgotten.",
-			Mottos = [
-				"He lives twice who lives well",
-				"Wealth to him who knows how to use it",
-				"Things locked up are safe",
-				"Once and always",
-				"Gauge and measure",
-				"Safe on the waves",
-				"Each his share",
-				"With sail and oars",
-				"Among the first"
-			]
-		},
-		{
-			Traits = [
-				this.Const.FactionTrait.NobleHouse,
-				this.Const.FactionTrait.Marauder,
-				this.Const.FactionTrait.Schemer
-			],
-			Description = "Most members of the house of %noblehousename% live secluded behind thick doors and barred windows and some of them have not been seen for years. Rumor has it that their noble blood is plagued with madness and insanity but no ordinary man dares to utter such claims in fear of their vengeance. Other noble houses mainly avoid contact with house %noblehousename% as guests may be greeted with open arms as well as crossbow bolts.",
-			Mottos = [
-				"Nothing in life is permanent",
-				"Consider the end",
-				"We neither despise nor fear",
-				"Judge not",
-				"All things change",
-				"Every man for himself",
-				"All things are thus unstable",
-				"Beware the wolf"
-			]
-		}
-	]
+                        Description = "Дом %noblehousename% заявляет, что берёт начало во времена, когда люди впервые заявили права на эти земли и первый король правил всеми. Теперь они лишь один из многих родов, но гордятся длинной историей и мечтают продолжать её писать. Когда слава и ресурсы тают, говорят, что они финансируют экспедиции, пытаясь выкопать давно утраченные сокровища в затонувших городах и забытых местах.",
+                        Mottos = [
+                                "Дважды живёт тот, кто живёт хорошо",
+                                "Богат тот, кто умеет им пользоваться",
+                                "Запертое — в безопасности",
+                                "Однажды и навсегда",
+                                "Меряй и взвешивай",
+                                "В безопасности на волнах",
+                                "Каждому — своя доля",
+                                "Под парусом и вёслами",
+                                "Среди первых"
+                        ]
+                },
+                {
+                        Traits = [
+                                this.Const.FactionTrait.NobleHouse,
+                                this.Const.FactionTrait.Marauder,
+                                this.Const.FactionTrait.Schemer
+                        ],
+                        Description = "Большинство членов дома %noblehousename% живут затворниками за толстыми дверями и решётчатыми окнами, и некоторых не видели годами. Ходят слухи, что их благородная кровь поражена безумием и помешательством, но простые люди не осмеливаются говорить об этом, опасаясь мести. Остальные дворянские дома избегают общения с %noblehousename%, ведь гостей там могут встретить и объятиями, и арбалетными болтами.",
+                        Mottos = [
+                                "Ничто в жизни не вечно",
+                                "Помни о конце",
+                                "Мы не презираем и не боимся",
+                                "Не суди",
+                                "Всё меняется",
+                                "Каждый сам за себя",
+                                "Всё нестабильно",
+                                "Берегись волка"
+                        ]
+                }
+        ]
 ]);
 
 
