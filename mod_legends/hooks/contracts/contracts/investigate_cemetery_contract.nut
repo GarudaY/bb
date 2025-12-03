@@ -1,48 +1,48 @@
 ::mods_hookExactClass("contracts/contracts/investigate_cemetery_contract", function(o) 
 {
 	local create = o.create;
-	o.create = function()
-	{
-		create();
-		this.m.Name = "Disturbed Rest";
-		this.m.DescriptionTemplates = [
-			"Something is defiling a local cemetery. Wicked tales of ghosts, ghouls and graverobbers are spreading.",
-			"Rumors abound of an eerie disturbance at the local cemetery, sending shivers down the spines of the locals.",
-			"Grim rumors are spreading of dark forces at play in the nearby cemetery.",
-			"Unsettling rumors swirl of strange occurrences plaguing the local cemetery.",
-			"Folk speak in hushed tones of eerie sights and mysterious sounds emanating from the cemetery, fueling speculation and fear among those who dare to listen.",
-			"Troubling rumors of necromancy grip the village, sparking superstition and dread among the wary inhabitants.",
-			"Local gossip is running wild with tales of spirits and otherworldly terrors haunting nearby tombstones.",
-			"The dead are not staying buried, causing great fear and upset among the locals.",
-			"Something is wrong at the local burial grounds. The locals are too frightened to speak of it beyond fearful murmurs.",
-			"Anxiety mounts as rumors circulate of a malevolent presence haunting the nearby graveyard.",
-		];
-	}
+o.create = function()
+{
+create();
+this.m.Name = "Нарушенный покой";
+this.m.DescriptionTemplates = [
+"Кто-то оскверняет местное кладбище. Ходят ужасные истории о призраках, гулях и расхитителях могил.",
+"Слухи о жутких происшествиях на местном кладбище холодят кровь у всех вокруг.",
+"Мрачные разговоры бродят о тёмных силах, творящихся на ближайшем кладбище.",
+"Тревожные слухи ходят о странных явлениях, преследующих местное кладбище.",
+"Люди шёпотом рассказывают о жутких видениях и загадочных звуках с кладбища, подпитывая догадки и страх у тех, кто осмеливается слушать.",
+"Тягостные слухи о некромантии охватили деревню, рождая суеверие и ужас у настороженных жителей.",
+"Местные пересуды полны рассказов о духах и нездешних ужасах, бродящих среди соседних могил.",
+"Мёртвые не остаются в земле, что сильно пугает и тревожит жителей.",
+"С местным кладбищем что-то не так. Люди слишком напуганы, чтобы говорить об этом громче тревожных шёпотов.",
+"Тревога растёт: ходят слухи о зловещем присутствии, преследующем ближайшее кладбище.",
+];
+}
 
-	local createScreens = o.createScreens;
-	o.createScreens = function()
-	{
-		createScreens();
+local createScreens = o.createScreens;
+o.createScreens = function()
+{
+createScreens();
 		foreach (s in this.m.Screens)
 		{
 			if (s.ID == "Task")
 			{
 				s.Title = this.m.Name;
 			}
-			if (s.ID == "Failure1")
-			{
-				foreach (option in s.Options)
-				{
-					option.Text = "Damn this! (Increase Moral Reputation)";
-				}
-			}
-			if (s.ID == "Failure2")
-			{
-				foreach (option in s.Options)
-				{
-					option.Text = "Hrm. (Increase Moral Reputation)";
-				}
-			}
+if (s.ID == "Failure1")
+{
+foreach (option in s.Options)
+{
+option.Text = "Чёрт бы всё побрал! (Повысить репутацию нравов)";
+}
+}
+if (s.ID == "Failure2")
+{
+foreach (option in s.Options)
+{
+option.Text = "Хм. (Повысить репутацию нравов)";
+}
+}
 		}
 	}
 });
