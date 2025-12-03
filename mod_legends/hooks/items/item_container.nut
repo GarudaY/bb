@@ -1,0 +1,209 @@
+::mods_hookNewObject("items/item_container", function(o)
+{
+	o.m.Appearance.ArmorLayerChain <- "";
+	o.m.Appearance.ArmorLayerPlate<- "";
+	o.m.Appearance.ArmorLayerTabbard<- "";
+	o.m.Appearance.ArmorLayerCloakFront <- "";
+	o.m.Appearance.ArmorLayerCloakBack <- "";
+	o.m.Appearance.CorpseArmorLayerChain <- "";
+	o.m.Appearance.CorpseArmorLayerPlate<- "";
+	o.m.Appearance.CorpseArmorLayerTabbard<- "";
+	o.m.Appearance.CorpseArmorLayerCloakFront <- "";
+	o.m.Appearance.CorpseArmorLayerCloakBack <- "";
+	o.m.Appearance.HelmetLayerVanityLower <- "";
+	o.m.Appearance.HelmetLayerVanity2Lower <- "";
+	o.m.Appearance.Helmet <- "";
+	o.m.Appearance.HelmetLayerHelm <- "";
+	o.m.Appearance.HelmetLayerTop <- "";
+	o.m.Appearance.HelmetLayerVanity <- "";
+	o.m.Appearance.HelmetLayerVanity2 <- "";
+	o.m.Appearance.HelmetLayerVanityLowerCorpse <- "";
+	o.m.Appearance.HelmetLayerVanity2LowerCorpse <- "";
+	o.m.Appearance.HelmetLayerHelmCorpse <- "";
+	o.m.Appearance.HelmetLayerTopCorpse <- "";
+	o.m.Appearance.HelmetLayerVanityCorpse <- "";
+	o.m.Appearance.HelmetLayerVanity2Corpse <- "";
+
+	local addToBag = o.addToBag;
+	o.addToBag = function ( _item, _slot = -1 )
+	{
+		return _item == null ? false : addToBag(_item, _slot);
+	}
+
+	local isActionAffordable = o.isActionAffordable;
+	o.isActionAffordable = function (_items)
+	{
+		local ret = isActionAffordable(_items);
+		if (!::Legends.Perks.has(this.m.Actor, ::Legends.Perk.LegendNetCasting))
+			return ret;
+		else if (::Legends.Perks.has(this.m.Actor, ::Legends.Perk.LegendNetCasting) && _items.len() == 1 && _items[0].getID().find("throwing_net") != null )
+			return true;
+		local nets = 0;
+		local notNets = 0;
+		foreach (item in _items)
+		{
+			if (item != null)
+			{
+				if (item.getID().find("throwing_net") != null)
+				{
+					nets += 1;
+				}
+				else
+				{
+					notNets += 1;
+				}
+			}
+		}
+
+		// Equipping a net into a free offhand (whether from the bag or from the ground) is always free
+		if (_items.len() == 3 && nets == 1 && notNets == 0)
+		{
+			return true;
+		}
+		return ret;
+	}
+
+	local getActionCost = o.getActionCost;
+	o.getActionCost = function ( _items )
+	{
+		local ret = getActionCost(_items);
+		if (!::Legends.Perks.has(this.m.Actor, ::Legends.Perk.LegendNetCasting))
+			return ret;
+		else if (::Legends.Perks.has(this.m.Actor, ::Legends.Perk.LegendNetCasting) && _items.len() == 1 && _items[0].getID().find("throwing_net") != null )
+			return 0;
+		local nets = 0;
+		local notNets = 0;
+		foreach (item in _items)
+		{
+			if (item != null)
+			{
+				if (item.getID().find("throwing_net") != null)
+				{
+					nets += 1;
+				}
+				else
+				{
+					notNets += 1;
+				}
+			}
+		}
+
+		if (_items.len() == 3 && nets == 1 && notNets == 0)
+		{
+			return 0;
+		}
+		return ret;
+	}
+
+	o.drop <- function( item )
+	{
+		if (!this.m.Actor.isPlacedOnMap())
+		{
+			return;
+		}
+
+		local _tile = this.m.Actor.getTile();
+		item.m.IsDroppedAsLoot = true;
+		item.drop(_tile);
+		_tile.IsContainingItemsFlipped = true;
+	}
+
+	local equip = o.equip;
+	o.equip = function (_item)
+	{
+		return _item == null ? false : equip(_item);
+	}
+
+	o.unequipNoUpdate <- function (_item)
+	{
+		if (_item == null || _item == -1)
+		{
+			return;
+		}
+
+		if (_item.getCurrentSlotType() == this.Const.ItemSlot.None || _item.getCurrentSlotType() == this.Const.ItemSlot.Bag)
+		{
+			this.logWarning("Attempted to unequip item " + _item.getName() + ", but is not equipped");
+			return false;
+		}
+
+		for( local i = 0; i < this.m.Items[_item.getSlotType()].len(); i = ++i )
+		{
+			if (this.m.Items[_item.getSlotType()][i] == _item)
+			{
+				// _item.onUnequip();
+				// _item.setContainer(null);
+				// _item.setCurrentSlotType(this.Const.ItemSlot.None);
+				this.m.Items[_item.getSlotType()][i] = null;
+
+				if (_item.getBlockedSlotType() != null)
+				{
+					for( local i = 0; i < this.m.Items[_item.getBlockedSlotType()].len(); i = ++i )
+					{
+						if (this.m.Items[_item.getBlockedSlotType()][i] == -1)
+						{
+							this.m.Items[_item.getBlockedSlotType()][i] = null;
+							break;
+						}
+					}
+				}
+				return true;
+			}
+		}
+
+		return false;
+	}
+
+	o.transferToList <- function( _stash )
+	{
+		for( local i = 0; i < this.Const.ItemSlot.COUNT; i = ++i )
+		{
+			for( local j = 0; j < this.m.Items[i].len(); j = ++j )
+			{
+				if (this.m.Items[i][j] == null || this.m.Items[i][j] == -1)
+				{
+					continue
+				}
+
+				local item = this.m.Items[i][j];
+				if (item.isEquipped())
+				{
+					this.unequip(item);
+				}
+				else
+				{
+					this.removeFromBag(item);
+				}
+				_stash.push(item);
+				// this.logInfo("Transferred " + item.m.Name + " : " + item.getInstanceID())
+				// local res = this.Stash.getItemByInstanceID(item.getInstanceID());
+				// if (res == null) {
+				//	 this.logInfo("saveFormation::could not find item for " + item.getInstanceID());
+				//	 continue
+				// }
+				//toTransfer.push(item);
+			}
+		}
+
+		// this.logInfo("TRANSFERED TO STASH COMPLETE. STASH SIZe = " + _stash.m.Items.len())
+
+		// foreach( item in toTransfer )
+		// {
+		// 	if (_stash.add(item) == null)
+		// 	{
+		//		 this.logInfo("STASH ADD ITEM IS NULL")
+		// 		break;
+		// 	}
+
+
+		// }
+	}
+
+	local canDropItems = o.canDropItems;
+	o.canDropItems = function ( _killer ) {
+		if(this.m.Actor == null || (this.m.Actor instanceof ::WeakTableRef && this.m.Actor.isNull()))
+			return false;
+		return canDropItems(_killer);
+	}
+
+});

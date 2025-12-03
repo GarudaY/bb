@@ -1,0 +1,60 @@
+this.legend_northern_sling <- this.inherit("scripts/items/weapons/weapon", {
+	m = {},
+	function create()
+	{
+		this.weapon.create();
+		this.m.ID = "weapon.legend_northern_sling";
+		this.m.Name = "Northern Sling";
+		this.m.Categories = "Sling/Staff, Two-Handed";
+		this.m.Description = "A sling adapted by the nothern houses for warfare. It features a bigger pouch for heavier rocks, but trades off precision for damage and range. With rocks being everywhere it will never run out of ammunition.";
+		this.m.WeaponType = this.Const.Items.WeaponType.Sling | this.Const.Items.WeaponType.Staff;
+		this.m.SlotType = this.Const.ItemSlot.Mainhand;
+		this.m.BlockedSlotType = this.Const.ItemSlot.Offhand;
+		this.m.ItemType = this.Const.Items.ItemType.Weapon | this.Const.Items.ItemType.RangedWeapon | this.Const.Items.ItemType.TwoHanded;
+		this.m.EquipSound = this.Const.Sound.ArmorLeatherImpact;
+		this.m.AddGenericSkill = true;
+		this.m.ShowQuiver = false;
+		this.m.ShowArmamentIcon = true;
+		this.m.Value = 1000;
+		this.m.RangeMin = 2;
+		this.m.RangeMax = 9;
+		this.m.RangeIdeal = 9;
+		this.m.StaminaModifier = -12;
+		this.m.Condition = 100.0;
+		this.m.ConditionMax = 100.0;
+		this.m.RegularDamage = 50;
+		this.m.RegularDamageMax = 75;
+		this.m.ArmorDamageMult = 1.6;
+		this.m.DirectDamageMult = 0.75;
+		this.m.Variant = this.Math.rand(1, 2);
+		this.updateVariant();
+	}
+
+	function updateVariant() {
+		this.m.Icon = "weapons/ranged/legend_northern_sling_01_" + this.m.Variant + "_70x70.png";
+		this.m.IconLarge = "weapons/ranged/legend_northern_sling_01_" + this.m.Variant + ".png";
+		this.m.ArmamentIcon = "icon_legend_northern_sling_01_" + this.m.Variant;
+	}
+
+	function onEquip()
+	{
+		this.weapon.onEquip();
+		::Legends.Actives.grant(this, ::Legends.Active.LegendSlingHeavyStone);
+
+		::Legends.Actives.grant(this, ::Legends.Active.LegendSlingstaffBash);
+		::Legends.Actives.grant(this, ::Legends.Active.LegendLaunchAcidFlask);
+		::Legends.Actives.grant(this, ::Legends.Active.LegendLaunchDazeBomb);
+		::Legends.Actives.grant(this, ::Legends.Active.LegendLaunchFireBomb);
+		::Legends.Actives.grant(this, ::Legends.Active.LegendLaunchHolyWater);
+		::Legends.Actives.grant(this, ::Legends.Active.LegendLaunchSmokeBomb);
+	}
+
+	function onUpdateProperties (_properties)
+	{
+		this.weapon.onUpdateProperties(_properties);
+		foreach (item in this.getContainer().getActor().getItems().getAllItemsAtSlot(this.Const.ItemSlot.Bag)) {
+			item.onSlingUpdateProperties();
+		}
+	}
+
+});
